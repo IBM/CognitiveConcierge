@@ -17,7 +17,6 @@
 import Foundation
 import UIKit
 import Freddy
-import CoreLocation
 
 class RestaurantViewController: UIViewController {
 
@@ -29,7 +28,6 @@ class RestaurantViewController: UIViewController {
     var chosenRestaurant: Restaurant?
     var keyWords = [:]
     var timeInput: String?
-    var location: CLLocation!
     
     private var occasion: String?
     private var loadingView : HorizontalOnePartStackView?
@@ -42,7 +40,6 @@ class RestaurantViewController: UIViewController {
     private let kNavigationBarTitle = "Restaurants"
     private let kBackButtonTitle = "CHAT"
     private let kLocationText = "AUSTIN, TX"
-    private let locationBackup = CLLocation(latitude: 36.1147, longitude: -115.1728)
     private let kHeightForHeaderInSection:CGFloat = 10
     private let kEstimatedHeightForRowAtIndexPath:CGFloat = 104.0
     private let kNumberOfRowsInTableViewSection = 1
@@ -85,10 +82,7 @@ class RestaurantViewController: UIViewController {
     */
     func getRestaurantRecommendations(occasion: String) {
         
-        if (location == nil) {
-            location = locationBackup
-        }
-        endpointManager.requestRestaurantRecommendations(occasion, location: location,
+        endpointManager.requestRestaurantRecommendations(occasion,
                                                          failure: { mockData in
             self.theRestaurants = mockData
             self.setUpTableView()
@@ -305,24 +299,10 @@ extension RestaurantViewController: UITableViewDataSource {
             }
             let occasionInput = occasion ?? ""
             let time = timeInput ?? ""
-            
-            //get Location Text
-            let geoCoder = CLGeocoder()
-            geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
-                if (error != nil) {
-                    stackView.setUpData(occasionInput.uppercaseString, location: self.kLocationText, time: time.uppercaseString)
-                    stackView.frame = CGRectMake(0, 0, self.view.frame.width, self.bannerView.frame.height)
-                    self.bannerView.addSubview(stackView)
-                    self.doneLoading()
-                } else {
-                    let theplacemark:CLPlacemark = placemarks![0]
-                    let theLocation = (theplacemark.locality?.uppercaseString)! + "," + (theplacemark.administrativeArea?.uppercaseString)!
-                    stackView.setUpData(occasionInput.uppercaseString, location: theLocation, time: time.uppercaseString)
-                    stackView.frame = CGRectMake(0, 0, self.view.frame.width, self.bannerView.frame.height)
-                    self.bannerView.addSubview(stackView)
-                    self.doneLoading()
-                }
-            })
+            stackView.setUpData(occasionInput.uppercaseString, location: kLocationText, time: time.uppercaseString)
+            stackView.frame = CGRectMake(0, 0, self.view.frame.width, bannerView.frame.height)
+            bannerView.addSubview(stackView)
+            doneLoading()
         }
     }
     func setupLoadingWatsonView() {

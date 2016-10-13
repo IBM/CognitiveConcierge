@@ -136,6 +136,7 @@ class RecommendedRestaurantDetailView: UIView {
     func setupData(openNowStatus : Bool?, openingTimeNow: Array<String>?, locationName : String?, locationAddress : String?, city : String?, fullAddress: String?, priceLevel : Double?, rating : Double?, reviewNegativeHighlight: String?, reviewPositiveHighlight: String?) {
         
         if let openNow = openNowStatus {
+            //let open = checkTime(openNow)
             if openNow {
                 openLabel.text = "OPEN"
                 openLabel.textColor = UIColor.customOpenGreenColor()

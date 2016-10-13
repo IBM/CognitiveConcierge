@@ -31,9 +31,9 @@ class EndpointManager: NSObject {
     //configuration for URL based on bluemix.plist, populated by ICT or manually.
     let config = BluemixConfiguration()
     
-    func requestRestaurantRecommendations(occasion: String, location: CLLocation, failure: [Restaurant] -> Void,
+    func requestRestaurantRecommendations(endpoint: String, failure: [Restaurant] -> Void,
                                           success: NSArray -> Void) {
-        let request = getBaseRequestURL() + "/api/v1/restaurants?occasion=" + occasion + "&location=" + String(location.coordinate.latitude) + "," + String(location.coordinate.longitude)
+        let request = getBaseRequestURL() + "/api/v1/restaurants?occasion=" + endpoint
         
         // Execute REST request to get all restaurant recommendations from API
         Alamofire.request(.GET, request, encoding:.JSON).responseJSON {
@@ -45,10 +45,10 @@ class EndpointManager: NSObject {
 
             case .Failure(let err):
                 print ("using mock data due to err: \(err)")
-                if occasion == "date" {
+                if endpoint == "date" {
                     failure(self.useMockData("anniversary"))
                 }
-                failure(self.useMockData(occasion))
+                failure(self.useMockData(endpoint))
             }
         }
     }

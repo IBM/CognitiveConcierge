@@ -52,10 +52,6 @@ router.get("/api/v1/restaurants") { request, response, next in
         //Log.error("Request does not contain occasion")
         return
     }
-    guard let location = request.queryParameters["location"] else {
-        return
-    }
-    Constants.location = location;
     response.headers["Content-Type"] = "text/plain; charset=utf-8"
     Log.verbose("getting restaurant reviews")
     getClosest20Restaurants(occasion) { restaurants in

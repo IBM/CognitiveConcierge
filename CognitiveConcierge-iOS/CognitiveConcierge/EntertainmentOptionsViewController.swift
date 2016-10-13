@@ -134,7 +134,7 @@ class EntertainmentOptionsViewController: UIViewController {
         })
     }
     
-    // Show alert to user
+    // Show alert to connect device to internet.
     func alertUserWithMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         

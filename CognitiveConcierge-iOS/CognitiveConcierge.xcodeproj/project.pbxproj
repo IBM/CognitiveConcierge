@@ -73,8 +73,6 @@
 		7FEAA4311D835AB300E4839C /* WatsonOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FEAA4301D835AB300E4839C /* WatsonOverlay.xib */; };
 		972AB5611DA5E17900985506 /* BluemixConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972AB5601DA5E17900985506 /* BluemixConfiguration.swift */; };
 		972AB5631DA5E6F600985506 /* bluemix.plist in Resources */ = {isa = PBXBuildFile; fileRef = 972AB5621DA5E6F600985506 /* bluemix.plist */; };
-		973DD93A1DAF17E50047DF5B /* SimulatorLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 973DD9391DAF17E50047DF5B /* SimulatorLocation.gpx */; };
-		973DD93C1DAF191E0047DF5B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973DD93B1DAF191E0047DF5B /* CoreLocation.framework */; };
 		CE1456181DAE8CEB00A7E744 /* DecisionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1456161DAE8CEB00A7E744 /* DecisionsView.swift */; };
 		CE1456191DAE8CEB00A7E744 /* DecisionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1456171DAE8CEB00A7E744 /* DecisionsView.xib */; };
 		CE1C1B621D79C07D00F1C4D2 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C1B611D79C07D00F1C4D2 /* UIViewExtensions.swift */; };
@@ -182,8 +180,6 @@
 		87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CognitiveConcierge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		972AB5601DA5E17900985506 /* BluemixConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluemixConfiguration.swift; sourceTree = "<group>"; };
 		972AB5621DA5E6F600985506 /* bluemix.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = bluemix.plist; path = Configuration/bluemix.plist; sourceTree = "<group>"; };
-		973DD9391DAF17E50047DF5B /* SimulatorLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SimulatorLocation.gpx; path = ../SimulatorLocation.gpx; sourceTree = "<group>"; };
-		973DD93B1DAF191E0047DF5B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		97C7BED51DA0ADA200C20230 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Pods/GooglePlaces/Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		CE1456161DAE8CEB00A7E744 /* DecisionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionsView.swift; sourceTree = "<group>"; };
 		CE1456171DAE8CEB00A7E744 /* DecisionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DecisionsView.xib; sourceTree = "<group>"; };
@@ -217,7 +213,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				973DD93C1DAF191E0047DF5B /* CoreLocation.framework in Frameworks */,
 				7F9F77181D635FC000B9114B /* Freddy.framework in Frameworks */,
 				7F9F77211D635FC000B9114B /* TextToSpeechV1.framework in Frameworks */,
 				7F9F77231D635FC000B9114B /* TradeoffAnalyticsV1.framework in Frameworks */,
@@ -258,7 +253,6 @@
 		7F6FAE7A1D6B4A0A00BE7829 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				973DD9391DAF17E50047DF5B /* SimulatorLocation.gpx */,
 				CE79F3821D8304DE00550967 /* Watson-blue.gif */,
 				7F6FAE7B1D6B4A1E00BE7829 /* Fonts */,
 			);
@@ -452,7 +446,6 @@
 		D58AA635FF82F295E566095A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				973DD93B1DAF191E0047DF5B /* CoreLocation.framework */,
 				97C7BED51DA0ADA200C20230 /* GooglePlaces.framework */,
 				7F9F76FB1D635FC000B9114B /* Alamofire.framework */,
 				7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */,
@@ -555,7 +548,6 @@
 				7FA7F89A1D60CEA70039792A /* LaunchScreen.storyboard in Resources */,
 				7FA7F8971D60CEA70039792A /* Assets.xcassets in Resources */,
 				7FEAA4311D835AB300E4839C /* WatsonOverlay.xib in Resources */,
-				973DD93A1DAF17E50047DF5B /* SimulatorLocation.gpx in Resources */,
 				7F9F774A1D664D2500B9114B /* RecommendedRestaurantTableViewCell.xib in Resources */,
 				CE72A1241DA30C9E00D6552E /* casual.json in Resources */,
 				CE72A11E1DA2AF7700D6552E /* LasVegasReviews.json in Resources */,

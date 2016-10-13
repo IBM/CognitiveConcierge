@@ -31,9 +31,8 @@
       "scale" : "3x"
     },
     {
-      "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "IBMwatson_120.png",
+      "size" : "60x60",
       "scale" : "2x"
     },
     {
@@ -72,9 +71,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "IBMwatson_76.png",
+      "size" : "76x76",
       "scale" : "1x"
     },
     {

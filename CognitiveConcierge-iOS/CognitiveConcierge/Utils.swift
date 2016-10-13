@@ -160,6 +160,18 @@ class Utils {
         }
         return openingTime
     }
+
+    class func checkTime(openHours: Array<String>) -> Bool {
+        //let date  = NSDate()
+        //let calendar = NSCalendar.currentCalendar()
+        //let components = calendar.components([.Hour, .Minute], fromDate: date)
+        //let hour = components.hour
+        //let minutes = components.minute
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "hhmm"
+        return false
+    }
     
     /**
      Method takes in a Int parameter and converts this to a string that represents how expense something is, ie. "€€€"

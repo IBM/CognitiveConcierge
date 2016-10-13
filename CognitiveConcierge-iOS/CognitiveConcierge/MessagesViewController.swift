@@ -35,7 +35,6 @@ class MessagesViewController: JSQMessagesViewController {
     private var decisionsView : DecisionsView?
     private var decisionsViewBottomSpacingConstraint : NSLayoutConstraint!
     private var defaultDecisionsViewBottomSpacingConstraintConstant : CGFloat!
-    var location:CLLocation!
     
     var viewModel: MessagesViewModel!
     
@@ -341,7 +340,6 @@ class MessagesViewController: JSQMessagesViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let restaurantsVC = segue.destinationViewController as? RestaurantViewController {
             restaurantsVC.keyWords = self.viewModel.watsonEntities
-            restaurantsVC.location = self.location;
             restaurantsVC.timeInput = self.viewModel.timeInput
         }
     }
@@ -408,9 +406,7 @@ extension MessagesViewController: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Grab last object to get the most recent updated location and send to backend.
-        let theLocation = locations[locations.count-1]
-        self.location = theLocation;
-        print(self.location)
+        //let location:CLLocation = locations[locations.count-1] as CLLocation
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
