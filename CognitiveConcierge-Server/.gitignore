@@ -1,0 +1,5 @@
+.build/*
+Packages/*
+restaurant-recommendations.xcodeproj/project.xcworkspace/xcuserdata/
+restaurant-recommendations.xcodeproj/xcuserdata/
+restaurant-recommendations.xcodeproj/

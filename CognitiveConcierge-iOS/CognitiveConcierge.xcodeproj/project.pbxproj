@@ -1,0 +1,841 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39A907EB378D2C4DA13F61F7 /* Pods_CognitiveConcierge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */; };
+		7F4F5BBF1D6E1B4400CF0A13 /* CognitiveConcierge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F5BBE1D6E1B4400CF0A13 /* CognitiveConcierge.plist */; };
+		7F642A7E1D610919007A0F53 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F642A7D1D610919007A0F53 /* Conversation.swift */; };
+		7F6FAE771D6A75F700BE7829 /* HorizontalOnePartStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FAE761D6A75F700BE7829 /* HorizontalOnePartStackView.xib */; };
+		7F6FAE791D6A760A00BE7829 /* HorizontalOnePartStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FAE781D6A760A00BE7829 /* HorizontalOnePartStackView.swift */; };
+		7F6FAE9C1D6B5E5800BE7829 /* RecommendedRestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FAE9B1D6B5E5800BE7829 /* RecommendedRestaurantDetailView.swift */; };
+		7F6FAE9E1D6B5E6800BE7829 /* RecommendedRestaurantDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FAE9D1D6B5E6800BE7829 /* RecommendedRestaurantDetailView.xib */; };
+		7F8F98161D61036F0061E220 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F98151D61036F0061E220 /* MessagesViewController.swift */; };
+		7F9F77101D635FC000B9114B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FB1D635FC000B9114B /* Alamofire.framework */; };
+		7F9F77111D635FC000B9114B /* AlchemyDataNewsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */; };
+		7F9F77121D635FC000B9114B /* AlchemyLanguageV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FD1D635FC000B9114B /* AlchemyLanguageV1.framework */; };
+		7F9F77131D635FC000B9114B /* AlchemyVisionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FE1D635FC000B9114B /* AlchemyVisionV1.framework */; };
+		7F9F77141D635FC000B9114B /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FF1D635FC000B9114B /* ConversationV1.framework */; };
+		7F9F77151D635FC000B9114B /* ConversationV1Experimental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77001D635FC000B9114B /* ConversationV1Experimental.framework */; };
+		7F9F77161D635FC000B9114B /* DialogV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77011D635FC000B9114B /* DialogV1.framework */; };
+		7F9F77171D635FC000B9114B /* DocumentConversionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77021D635FC000B9114B /* DocumentConversionV1.framework */; };
+		7F9F77181D635FC000B9114B /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77031D635FC000B9114B /* Freddy.framework */; };
+		7F9F77191D635FC000B9114B /* LanguageTranslatorV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77041D635FC000B9114B /* LanguageTranslatorV2.framework */; };
+		7F9F771A1D635FC000B9114B /* NaturalLanguageClassifierV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77051D635FC000B9114B /* NaturalLanguageClassifierV1.framework */; };
+		7F9F771B1D635FC000B9114B /* PersonalityInsightsV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77061D635FC000B9114B /* PersonalityInsightsV2.framework */; };
+		7F9F771C1D635FC000B9114B /* RelationshipExtractionV1Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77071D635FC000B9114B /* RelationshipExtractionV1Beta.framework */; };
+		7F9F771D1D635FC000B9114B /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77081D635FC000B9114B /* RestKit.framework */; };
+		7F9F771E1D635FC000B9114B /* RetrieveAndRankV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77091D635FC000B9114B /* RetrieveAndRankV1.framework */; };
+		7F9F771F1D635FC000B9114B /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770A1D635FC000B9114B /* SpeechToTextV1.framework */; };
+		7F9F77201D635FC000B9114B /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770B1D635FC000B9114B /* Starscream.framework */; };
+		7F9F77211D635FC000B9114B /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770C1D635FC000B9114B /* TextToSpeechV1.framework */; };
+		7F9F77221D635FC000B9114B /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770D1D635FC000B9114B /* ToneAnalyzerV3.framework */; };
+		7F9F77231D635FC000B9114B /* TradeoffAnalyticsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770E1D635FC000B9114B /* TradeoffAnalyticsV1.framework */; };
+		7F9F77241D635FC000B9114B /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770F1D635FC000B9114B /* VisualRecognitionV3.framework */; };
+		7F9F77261D636ABA00B9114B /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FB1D635FC000B9114B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77271D636ABA00B9114B /* AlchemyDataNewsV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77281D636ABA00B9114B /* AlchemyLanguageV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FD1D635FC000B9114B /* AlchemyLanguageV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77291D636ABA00B9114B /* AlchemyVisionV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FE1D635FC000B9114B /* AlchemyVisionV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F772A1D636ABA00B9114B /* ConversationV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FF1D635FC000B9114B /* ConversationV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F772B1D636ABA00B9114B /* ConversationV1Experimental.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77001D635FC000B9114B /* ConversationV1Experimental.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F772C1D636ABA00B9114B /* DialogV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77011D635FC000B9114B /* DialogV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F772D1D636ABA00B9114B /* DocumentConversionV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77021D635FC000B9114B /* DocumentConversionV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F772E1D636ABA00B9114B /* Freddy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77031D635FC000B9114B /* Freddy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F772F1D636ABA00B9114B /* LanguageTranslatorV2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77041D635FC000B9114B /* LanguageTranslatorV2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77301D636ABA00B9114B /* NaturalLanguageClassifierV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77051D635FC000B9114B /* NaturalLanguageClassifierV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77311D636ABA00B9114B /* PersonalityInsightsV2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77061D635FC000B9114B /* PersonalityInsightsV2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77321D636ABA00B9114B /* RelationshipExtractionV1Beta.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77071D635FC000B9114B /* RelationshipExtractionV1Beta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77331D636ABA00B9114B /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77081D635FC000B9114B /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77341D636ABA00B9114B /* RetrieveAndRankV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77091D635FC000B9114B /* RetrieveAndRankV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77351D636ABA00B9114B /* SpeechToTextV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770A1D635FC000B9114B /* SpeechToTextV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77361D636ABA00B9114B /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770B1D635FC000B9114B /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77371D636ABA00B9114B /* TextToSpeechV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770C1D635FC000B9114B /* TextToSpeechV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77381D636ABA00B9114B /* ToneAnalyzerV3.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770D1D635FC000B9114B /* ToneAnalyzerV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F77391D636ABA00B9114B /* TradeoffAnalyticsV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770E1D635FC000B9114B /* TradeoffAnalyticsV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F773A1D636ABA00B9114B /* VisualRecognitionV3.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770F1D635FC000B9114B /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F9F773E1D649FA600B9114B /* restaurantReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F773D1D649FA600B9114B /* restaurantReviews.json */; };
+		7F9F77401D64A3A500B9114B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F773F1D64A3A500B9114B /* Restaurant.swift */; };
+		7F9F77431D64CB5F00B9114B /* reviews.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F77411D64B6AD00B9114B /* reviews.txt */; };
+		7F9F77451D64E09500B9114B /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F77441D64E09500B9114B /* RestaurantViewController.swift */; };
+		7F9F774A1D664D2500B9114B /* RecommendedRestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F77491D664D2500B9114B /* RecommendedRestaurantTableViewCell.xib */; };
+		7F9F774C1D664D4B00B9114B /* RecommendedRestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F774B1D664D4B00B9114B /* RecommendedRestaurantTableViewCell.swift */; };
+		7F9F77521D6652F200B9114B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F77511D6652F200B9114B /* UIColorExtension.swift */; };
+		7F9F77561D6655B100B9114B /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F77551D6655B100B9114B /* UIFontExtension.swift */; };
+		7FA7F8901D60CEA70039792A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7F88F1D60CEA70039792A /* AppDelegate.swift */; };
+		7FA7F8951D60CEA70039792A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7F8931D60CEA70039792A /* Main.storyboard */; };
+		7FA7F8971D60CEA70039792A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7F8961D60CEA70039792A /* Assets.xcassets */; };
+		7FA7F89A1D60CEA70039792A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7F8981D60CEA70039792A /* LaunchScreen.storyboard */; };
+		7FEAA42F1D8356C100E4839C /* WatsonOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAA42E1D8356C100E4839C /* WatsonOverlay.swift */; };
+		7FEAA4311D835AB300E4839C /* WatsonOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FEAA4301D835AB300E4839C /* WatsonOverlay.xib */; };
+		972AB5611DA5E17900985506 /* BluemixConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972AB5601DA5E17900985506 /* BluemixConfiguration.swift */; };
+		972AB5631DA5E6F600985506 /* bluemix.plist in Resources */ = {isa = PBXBuildFile; fileRef = 972AB5621DA5E6F600985506 /* bluemix.plist */; };
+		973DD93A1DAF17E50047DF5B /* SimulatorLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 973DD9391DAF17E50047DF5B /* SimulatorLocation.gpx */; };
+		973DD93C1DAF191E0047DF5B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973DD93B1DAF191E0047DF5B /* CoreLocation.framework */; };
+		CE1456181DAE8CEB00A7E744 /* DecisionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1456161DAE8CEB00A7E744 /* DecisionsView.swift */; };
+		CE1456191DAE8CEB00A7E744 /* DecisionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1456171DAE8CEB00A7E744 /* DecisionsView.xib */; };
+		CE1C1B621D79C07D00F1C4D2 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C1B611D79C07D00F1C4D2 /* UIViewExtensions.swift */; };
+		CE1C1B6F1D79C5ED00F1C4D2 /* MoreIconBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C1B6E1D79C5ED00F1C4D2 /* MoreIconBarButtonItem.swift */; };
+		CE1C1B711D79C6C300F1C4D2 /* ProfileBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C1B701D79C6C300F1C4D2 /* ProfileBarButtonItem.swift */; };
+		CE1C1B721D79E40F00F1C4D2 /* SFNSDisplay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE1C1B601D79167900F1C4D2 /* SFNSDisplay.ttf */; };
+		CE1C1B761D79F48100F1C4D2 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C1B751D79F48100F1C4D2 /* UILabelExtensions.swift */; };
+		CE5818811D6B7703006D3D43 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5818801D6B7703006D3D43 /* RestaurantDetailViewController.swift */; };
+		CE5818831D6BA007006D3D43 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5818821D6BA007006D3D43 /* Utils.swift */; };
+		CE58188B1D74828D006D3D43 /* EntertainmentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58188A1D74828D006D3D43 /* EntertainmentOptionsViewController.swift */; };
+		CE60F2C81D78AC5000F8DBF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60F2C71D78AC5000F8DBF1 /* User.swift */; };
+		CE60F2CB1D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60F2C91D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.swift */; };
+		CE60F2CC1D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE60F2CA1D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.xib */; };
+		CE68A5BA1D89E57F00CC0E4E /* SFNSDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE68A5B91D89E57F00CC0E4E /* SFNSDisplay-Bold.ttf */; };
+		CE72A11E1DA2AF7700D6552E /* LasVegasReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = CE72A11D1DA2AF7700D6552E /* LasVegasReviews.json */; };
+		CE72A1201DA30C9200D6552E /* anniversary.json in Resources */ = {isa = PBXBuildFile; fileRef = CE72A11F1DA30C9200D6552E /* anniversary.json */; };
+		CE72A1221DA30C9900D6552E /* birthday.json in Resources */ = {isa = PBXBuildFile; fileRef = CE72A1211DA30C9900D6552E /* birthday.json */; };
+		CE72A1241DA30C9E00D6552E /* casual.json in Resources */ = {isa = PBXBuildFile; fileRef = CE72A1231DA30C9E00D6552E /* casual.json */; };
+		CE79F37D1D81161800550967 /* WhitePathIconBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79F37C1D81161800550967 /* WhitePathIconBarButtonItem.swift */; };
+		CE79F3831D8304DE00550967 /* Watson-blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE79F3821D8304DE00550967 /* Watson-blue.gif */; };
+		CEA4552F1D80691800F531C0 /* PathIconBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4552E1D80691800F531C0 /* PathIconBarButtonItem.swift */; };
+		CEC1B4C11DABD473004F211A /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B4C01DABD473004F211A /* MessagesViewModel.swift */; };
+		CED9E2A01D74BCF000AADF4D /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E29F1D74BCF000AADF4D /* EndpointManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7F9F77251D635FD900B9114B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7F9F77261D636ABA00B9114B /* Alamofire.framework in CopyFiles */,
+				7F9F77271D636ABA00B9114B /* AlchemyDataNewsV1.framework in CopyFiles */,
+				7F9F77281D636ABA00B9114B /* AlchemyLanguageV1.framework in CopyFiles */,
+				7F9F77291D636ABA00B9114B /* AlchemyVisionV1.framework in CopyFiles */,
+				7F9F772A1D636ABA00B9114B /* ConversationV1.framework in CopyFiles */,
+				7F9F772B1D636ABA00B9114B /* ConversationV1Experimental.framework in CopyFiles */,
+				7F9F772C1D636ABA00B9114B /* DialogV1.framework in CopyFiles */,
+				7F9F772D1D636ABA00B9114B /* DocumentConversionV1.framework in CopyFiles */,
+				7F9F772E1D636ABA00B9114B /* Freddy.framework in CopyFiles */,
+				7F9F772F1D636ABA00B9114B /* LanguageTranslatorV2.framework in CopyFiles */,
+				7F9F77301D636ABA00B9114B /* NaturalLanguageClassifierV1.framework in CopyFiles */,
+				7F9F77311D636ABA00B9114B /* PersonalityInsightsV2.framework in CopyFiles */,
+				7F9F77321D636ABA00B9114B /* RelationshipExtractionV1Beta.framework in CopyFiles */,
+				7F9F77331D636ABA00B9114B /* RestKit.framework in CopyFiles */,
+				7F9F77341D636ABA00B9114B /* RetrieveAndRankV1.framework in CopyFiles */,
+				7F9F77351D636ABA00B9114B /* SpeechToTextV1.framework in CopyFiles */,
+				7F9F77361D636ABA00B9114B /* Starscream.framework in CopyFiles */,
+				7F9F77371D636ABA00B9114B /* TextToSpeechV1.framework in CopyFiles */,
+				7F9F77381D636ABA00B9114B /* ToneAnalyzerV3.framework in CopyFiles */,
+				7F9F77391D636ABA00B9114B /* TradeoffAnalyticsV1.framework in CopyFiles */,
+				7F9F773A1D636ABA00B9114B /* VisualRecognitionV3.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		093B8C3845F89B67402347B1 /* Pods-CognitiveConcierge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitiveConcierge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CognitiveConcierge/Pods-CognitiveConcierge.debug.xcconfig"; sourceTree = "<group>"; };
+		7F4F5BBE1D6E1B4400CF0A13 /* CognitiveConcierge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CognitiveConcierge.plist; sourceTree = "<group>"; };
+		7F642A7D1D610919007A0F53 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		7F6FAE761D6A75F700BE7829 /* HorizontalOnePartStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizontalOnePartStackView.xib; sourceTree = "<group>"; };
+		7F6FAE781D6A760A00BE7829 /* HorizontalOnePartStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalOnePartStackView.swift; sourceTree = "<group>"; };
+		7F6FAE9B1D6B5E5800BE7829 /* RecommendedRestaurantDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedRestaurantDetailView.swift; sourceTree = "<group>"; };
+		7F6FAE9D1D6B5E6800BE7829 /* RecommendedRestaurantDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendedRestaurantDetailView.xib; sourceTree = "<group>"; };
+		7F8F98151D61036F0061E220 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		7F9F76FB1D635FC000B9114B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlchemyDataNewsV1.framework; path = Carthage/Build/iOS/AlchemyDataNewsV1.framework; sourceTree = "<group>"; };
+		7F9F76FD1D635FC000B9114B /* AlchemyLanguageV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlchemyLanguageV1.framework; path = Carthage/Build/iOS/AlchemyLanguageV1.framework; sourceTree = "<group>"; };
+		7F9F76FE1D635FC000B9114B /* AlchemyVisionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlchemyVisionV1.framework; path = Carthage/Build/iOS/AlchemyVisionV1.framework; sourceTree = "<group>"; };
+		7F9F76FF1D635FC000B9114B /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
+		7F9F77001D635FC000B9114B /* ConversationV1Experimental.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1Experimental.framework; path = Carthage/Build/iOS/ConversationV1Experimental.framework; sourceTree = "<group>"; };
+		7F9F77011D635FC000B9114B /* DialogV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DialogV1.framework; path = Carthage/Build/iOS/DialogV1.framework; sourceTree = "<group>"; };
+		7F9F77021D635FC000B9114B /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentConversionV1.framework; path = Carthage/Build/iOS/DocumentConversionV1.framework; sourceTree = "<group>"; };
+		7F9F77031D635FC000B9114B /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Freddy.framework; path = Carthage/Build/iOS/Freddy.framework; sourceTree = "<group>"; };
+		7F9F77041D635FC000B9114B /* LanguageTranslatorV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LanguageTranslatorV2.framework; path = Carthage/Build/iOS/LanguageTranslatorV2.framework; sourceTree = "<group>"; };
+		7F9F77051D635FC000B9114B /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NaturalLanguageClassifierV1.framework; path = Carthage/Build/iOS/NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
+		7F9F77061D635FC000B9114B /* PersonalityInsightsV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PersonalityInsightsV2.framework; path = Carthage/Build/iOS/PersonalityInsightsV2.framework; sourceTree = "<group>"; };
+		7F9F77071D635FC000B9114B /* RelationshipExtractionV1Beta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RelationshipExtractionV1Beta.framework; path = Carthage/Build/iOS/RelationshipExtractionV1Beta.framework; sourceTree = "<group>"; };
+		7F9F77081D635FC000B9114B /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
+		7F9F77091D635FC000B9114B /* RetrieveAndRankV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RetrieveAndRankV1.framework; path = Carthage/Build/iOS/RetrieveAndRankV1.framework; sourceTree = "<group>"; };
+		7F9F770A1D635FC000B9114B /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
+		7F9F770B1D635FC000B9114B /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		7F9F770C1D635FC000B9114B /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
+		7F9F770D1D635FC000B9114B /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToneAnalyzerV3.framework; path = Carthage/Build/iOS/ToneAnalyzerV3.framework; sourceTree = "<group>"; };
+		7F9F770E1D635FC000B9114B /* TradeoffAnalyticsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TradeoffAnalyticsV1.framework; path = Carthage/Build/iOS/TradeoffAnalyticsV1.framework; sourceTree = "<group>"; };
+		7F9F770F1D635FC000B9114B /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
+		7F9F773D1D649FA600B9114B /* restaurantReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurantReviews.json; sourceTree = "<group>"; };
+		7F9F773F1D64A3A500B9114B /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		7F9F77411D64B6AD00B9114B /* reviews.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = reviews.txt; sourceTree = "<group>"; };
+		7F9F77441D64E09500B9114B /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		7F9F77491D664D2500B9114B /* RecommendedRestaurantTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendedRestaurantTableViewCell.xib; sourceTree = "<group>"; };
+		7F9F774B1D664D4B00B9114B /* RecommendedRestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedRestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		7F9F77511D6652F200B9114B /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		7F9F77551D6655B100B9114B /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		7FA7F88C1D60CEA70039792A /* CognitiveConcierge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CognitiveConcierge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FA7F88F1D60CEA70039792A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FA7F8941D60CEA70039792A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FA7F8961D60CEA70039792A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FA7F8991D60CEA70039792A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7FA7F89B1D60CEA70039792A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FEAA42E1D8356C100E4839C /* WatsonOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatsonOverlay.swift; sourceTree = "<group>"; };
+		7FEAA4301D835AB300E4839C /* WatsonOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WatsonOverlay.xib; sourceTree = "<group>"; };
+		87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CognitiveConcierge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		972AB5601DA5E17900985506 /* BluemixConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluemixConfiguration.swift; sourceTree = "<group>"; };
+		972AB5621DA5E6F600985506 /* bluemix.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = bluemix.plist; path = Configuration/bluemix.plist; sourceTree = "<group>"; };
+		973DD9391DAF17E50047DF5B /* SimulatorLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SimulatorLocation.gpx; path = ../SimulatorLocation.gpx; sourceTree = "<group>"; };
+		973DD93B1DAF191E0047DF5B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		97C7BED51DA0ADA200C20230 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Pods/GooglePlaces/Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		CE1456161DAE8CEB00A7E744 /* DecisionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionsView.swift; sourceTree = "<group>"; };
+		CE1456171DAE8CEB00A7E744 /* DecisionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DecisionsView.xib; sourceTree = "<group>"; };
+		CE1C1B601D79167900F1C4D2 /* SFNSDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFNSDisplay.ttf; sourceTree = "<group>"; };
+		CE1C1B611D79C07D00F1C4D2 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		CE1C1B6E1D79C5ED00F1C4D2 /* MoreIconBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreIconBarButtonItem.swift; sourceTree = "<group>"; };
+		CE1C1B701D79C6C300F1C4D2 /* ProfileBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileBarButtonItem.swift; sourceTree = "<group>"; };
+		CE1C1B751D79F48100F1C4D2 /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
+		CE5818801D6B7703006D3D43 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		CE5818821D6BA007006D3D43 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CE58188A1D74828D006D3D43 /* EntertainmentOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntertainmentOptionsViewController.swift; sourceTree = "<group>"; };
+		CE60F2C71D78AC5000F8DBF1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE60F2C91D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntertainmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE60F2CA1D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EntertainmentCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE68A5B91D89E57F00CC0E4E /* SFNSDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFNSDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		CE72A11D1DA2AF7700D6552E /* LasVegasReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LasVegasReviews.json; sourceTree = "<group>"; };
+		CE72A11F1DA30C9200D6552E /* anniversary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = anniversary.json; sourceTree = "<group>"; };
+		CE72A1211DA30C9900D6552E /* birthday.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = birthday.json; sourceTree = "<group>"; };
+		CE72A1231DA30C9E00D6552E /* casual.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = casual.json; sourceTree = "<group>"; };
+		CE79F37C1D81161800550967 /* WhitePathIconBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhitePathIconBarButtonItem.swift; sourceTree = "<group>"; };
+		CE79F3821D8304DE00550967 /* Watson-blue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "Watson-blue.gif"; path = "../Watson-blue.gif"; sourceTree = "<group>"; };
+		CE79F3841D830E0E00550967 /* WatsonOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatsonOverlay.swift; sourceTree = "<group>"; };
+		CEA4552E1D80691800F531C0 /* PathIconBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathIconBarButtonItem.swift; sourceTree = "<group>"; };
+		CEC1B4C01DABD473004F211A /* MessagesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		CED9E29F1D74BCF000AADF4D /* EndpointManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointManager.swift; sourceTree = "<group>"; };
+		D208A19ADBFAA42F104EF383 /* Pods-CognitiveConcierge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitiveConcierge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CognitiveConcierge/Pods-CognitiveConcierge.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FA7F8891D60CEA70039792A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973DD93C1DAF191E0047DF5B /* CoreLocation.framework in Frameworks */,
+				7F9F77181D635FC000B9114B /* Freddy.framework in Frameworks */,
+				7F9F77211D635FC000B9114B /* TextToSpeechV1.framework in Frameworks */,
+				7F9F77231D635FC000B9114B /* TradeoffAnalyticsV1.framework in Frameworks */,
+				7F9F77171D635FC000B9114B /* DocumentConversionV1.framework in Frameworks */,
+				7F9F771E1D635FC000B9114B /* RetrieveAndRankV1.framework in Frameworks */,
+				7F9F771B1D635FC000B9114B /* PersonalityInsightsV2.framework in Frameworks */,
+				7F9F77121D635FC000B9114B /* AlchemyLanguageV1.framework in Frameworks */,
+				7F9F77191D635FC000B9114B /* LanguageTranslatorV2.framework in Frameworks */,
+				7F9F77131D635FC000B9114B /* AlchemyVisionV1.framework in Frameworks */,
+				7F9F77111D635FC000B9114B /* AlchemyDataNewsV1.framework in Frameworks */,
+				7F9F77141D635FC000B9114B /* ConversationV1.framework in Frameworks */,
+				7F9F771F1D635FC000B9114B /* SpeechToTextV1.framework in Frameworks */,
+				7F9F771A1D635FC000B9114B /* NaturalLanguageClassifierV1.framework in Frameworks */,
+				7F9F771C1D635FC000B9114B /* RelationshipExtractionV1Beta.framework in Frameworks */,
+				7F9F77201D635FC000B9114B /* Starscream.framework in Frameworks */,
+				7F9F771D1D635FC000B9114B /* RestKit.framework in Frameworks */,
+				7F9F77161D635FC000B9114B /* DialogV1.framework in Frameworks */,
+				7F9F77221D635FC000B9114B /* ToneAnalyzerV3.framework in Frameworks */,
+				7F9F77151D635FC000B9114B /* ConversationV1Experimental.framework in Frameworks */,
+				7F9F77101D635FC000B9114B /* Alamofire.framework in Frameworks */,
+				7F9F77241D635FC000B9114B /* VisualRecognitionV3.framework in Frameworks */,
+				39A907EB378D2C4DA13F61F7 /* Pods_CognitiveConcierge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49A1A28CFD61AC8AEF74DEE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				093B8C3845F89B67402347B1 /* Pods-CognitiveConcierge.debug.xcconfig */,
+				D208A19ADBFAA42F104EF383 /* Pods-CognitiveConcierge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7F6FAE7A1D6B4A0A00BE7829 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				973DD9391DAF17E50047DF5B /* SimulatorLocation.gpx */,
+				CE79F3821D8304DE00550967 /* Watson-blue.gif */,
+				7F6FAE7B1D6B4A1E00BE7829 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7F6FAE7B1D6B4A1E00BE7829 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7F6FAE7C1D6B4A2400BE7829 /* OpenSans */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		7F6FAE7C1D6B4A2400BE7829 /* OpenSans */ = {
+			isa = PBXGroup;
+			children = (
+				CE68A5B91D89E57F00CC0E4E /* SFNSDisplay-Bold.ttf */,
+				CE1C1B601D79167900F1C4D2 /* SFNSDisplay.ttf */,
+			);
+			name = OpenSans;
+			sourceTree = "<group>";
+		};
+		7F9F773B1D6381EE00B9114B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7F642A7D1D610919007A0F53 /* Conversation.swift */,
+				7F9F773F1D64A3A500B9114B /* Restaurant.swift */,
+				7F9F77411D64B6AD00B9114B /* reviews.txt */,
+				CE60F2C71D78AC5000F8DBF1 /* User.swift */,
+				CE79F3841D830E0E00550967 /* WatsonOverlay.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7F9F773C1D6381F900B9114B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CED91C401DAEB06A0026A4D7 /* MessagesViewController */,
+				7FA7F88F1D60CEA70039792A /* AppDelegate.swift */,
+				CE58188A1D74828D006D3D43 /* EntertainmentOptionsViewController.swift */,
+				7F9F77441D64E09500B9114B /* RestaurantViewController.swift */,
+				CE68A5B71D89E39E00CC0E4E /* RestaurantDetailViewController */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7F9F77481D664C8900B9114B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F6FAE781D6A760A00BE7829 /* HorizontalOnePartStackView.swift */,
+				7F6FAE761D6A75F700BE7829 /* HorizontalOnePartStackView.xib */,
+				7F9F774B1D664D4B00B9114B /* RecommendedRestaurantTableViewCell.swift */,
+				7F9F77491D664D2500B9114B /* RecommendedRestaurantTableViewCell.xib */,
+				7FA7F8931D60CEA70039792A /* Main.storyboard */,
+				7FEAA4301D835AB300E4839C /* WatsonOverlay.xib */,
+				7FEAA42E1D8356C100E4839C /* WatsonOverlay.swift */,
+				CE60F2C91D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.swift */,
+				CE60F2CA1D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7F9F77501D6652D600B9114B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C1B611D79C07D00F1C4D2 /* UIViewExtensions.swift */,
+				7F9F77511D6652F200B9114B /* UIColorExtension.swift */,
+				7F9F77551D6655B100B9114B /* UIFontExtension.swift */,
+				CE1C1B751D79F48100F1C4D2 /* UILabelExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		7FA7F8831D60CEA70039792A = {
+			isa = PBXGroup;
+			children = (
+				7FA7F88E1D60CEA70039792A /* CognitiveConcierge */,
+				7FA7F88D1D60CEA70039792A /* Products */,
+				49A1A28CFD61AC8AEF74DEE3 /* Pods */,
+				D58AA635FF82F295E566095A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7FA7F88D1D60CEA70039792A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FA7F88C1D60CEA70039792A /* CognitiveConcierge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FA7F88E1D60CEA70039792A /* CognitiveConcierge */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C1B671D79C45A00F1C4D2 /* Navigation */,
+				CE1C1B661D79C30700F1C4D2 /* Utils */,
+				CED9E29C1D749C5C00AADF4D /* DataManagers */,
+				7F9F773C1D6381F900B9114B /* Controllers */,
+				CE72A1251DA30CF100D6552E /* Mock Data */,
+				7F9F773B1D6381EE00B9114B /* Models */,
+				7F9F77481D664C8900B9114B /* Views */,
+				7F9F77501D6652D600B9114B /* Extensions */,
+				7F6FAE7A1D6B4A0A00BE7829 /* Resources */,
+				7FA7F8961D60CEA70039792A /* Assets.xcassets */,
+				7FA7F8981D60CEA70039792A /* LaunchScreen.storyboard */,
+				7FA7F89B1D60CEA70039792A /* Info.plist */,
+				972AB5621DA5E6F600985506 /* bluemix.plist */,
+				7F4F5BBE1D6E1B4400CF0A13 /* CognitiveConcierge.plist */,
+			);
+			path = CognitiveConcierge;
+			sourceTree = "<group>";
+		};
+		CE1C1B661D79C30700F1C4D2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CE5818821D6BA007006D3D43 /* Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		CE1C1B671D79C45A00F1C4D2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C1B6E1D79C5ED00F1C4D2 /* MoreIconBarButtonItem.swift */,
+				CEA4552E1D80691800F531C0 /* PathIconBarButtonItem.swift */,
+				CE79F37C1D81161800550967 /* WhitePathIconBarButtonItem.swift */,
+				CE1C1B701D79C6C300F1C4D2 /* ProfileBarButtonItem.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		CE68A5B71D89E39E00CC0E4E /* RestaurantDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE68A5B81D89E3AA00CC0E4E /* Subviews */,
+				CE5818801D6B7703006D3D43 /* RestaurantDetailViewController.swift */,
+			);
+			name = RestaurantDetailViewController;
+			sourceTree = "<group>";
+		};
+		CE68A5B81D89E3AA00CC0E4E /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				7F6FAE9D1D6B5E6800BE7829 /* RecommendedRestaurantDetailView.xib */,
+				7F6FAE9B1D6B5E5800BE7829 /* RecommendedRestaurantDetailView.swift */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
+		CE72A1251DA30CF100D6552E /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE72A11F1DA30C9200D6552E /* anniversary.json */,
+				CE72A1211DA30C9900D6552E /* birthday.json */,
+				CE72A1231DA30C9E00D6552E /* casual.json */,
+				CE72A11D1DA2AF7700D6552E /* LasVegasReviews.json */,
+				7F9F773D1D649FA600B9114B /* restaurantReviews.json */,
+			);
+			name = "Mock Data";
+			sourceTree = "<group>";
+		};
+		CED91C401DAEB06A0026A4D7 /* MessagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CED91C411DAEB0950026A4D7 /* Subviews */,
+				CEC1B4C01DABD473004F211A /* MessagesViewModel.swift */,
+				7F8F98151D61036F0061E220 /* MessagesViewController.swift */,
+			);
+			name = MessagesViewController;
+			sourceTree = "<group>";
+		};
+		CED91C411DAEB0950026A4D7 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				CE1456171DAE8CEB00A7E744 /* DecisionsView.xib */,
+				CE1456161DAE8CEB00A7E744 /* DecisionsView.swift */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
+		CED9E29C1D749C5C00AADF4D /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				CED9E29F1D74BCF000AADF4D /* EndpointManager.swift */,
+				972AB5601DA5E17900985506 /* BluemixConfiguration.swift */,
+			);
+			name = DataManagers;
+			sourceTree = "<group>";
+		};
+		D58AA635FF82F295E566095A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				973DD93B1DAF191E0047DF5B /* CoreLocation.framework */,
+				97C7BED51DA0ADA200C20230 /* GooglePlaces.framework */,
+				7F9F76FB1D635FC000B9114B /* Alamofire.framework */,
+				7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */,
+				7F9F76FD1D635FC000B9114B /* AlchemyLanguageV1.framework */,
+				7F9F76FE1D635FC000B9114B /* AlchemyVisionV1.framework */,
+				7F9F76FF1D635FC000B9114B /* ConversationV1.framework */,
+				7F9F77001D635FC000B9114B /* ConversationV1Experimental.framework */,
+				7F9F77011D635FC000B9114B /* DialogV1.framework */,
+				7F9F77021D635FC000B9114B /* DocumentConversionV1.framework */,
+				7F9F77031D635FC000B9114B /* Freddy.framework */,
+				7F9F77041D635FC000B9114B /* LanguageTranslatorV2.framework */,
+				7F9F77051D635FC000B9114B /* NaturalLanguageClassifierV1.framework */,
+				7F9F77061D635FC000B9114B /* PersonalityInsightsV2.framework */,
+				7F9F77071D635FC000B9114B /* RelationshipExtractionV1Beta.framework */,
+				7F9F77081D635FC000B9114B /* RestKit.framework */,
+				7F9F77091D635FC000B9114B /* RetrieveAndRankV1.framework */,
+				7F9F770A1D635FC000B9114B /* SpeechToTextV1.framework */,
+				7F9F770B1D635FC000B9114B /* Starscream.framework */,
+				7F9F770C1D635FC000B9114B /* TextToSpeechV1.framework */,
+				7F9F770D1D635FC000B9114B /* ToneAnalyzerV3.framework */,
+				7F9F770E1D635FC000B9114B /* TradeoffAnalyticsV1.framework */,
+				7F9F770F1D635FC000B9114B /* VisualRecognitionV3.framework */,
+				87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FA7F88B1D60CEA70039792A /* CognitiveConcierge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FA7F89E1D60CEA70039792A /* Build configuration list for PBXNativeTarget "CognitiveConcierge" */;
+			buildPhases = (
+				DCF64E1E0842AB98FA211060 /* [CP] Check Pods Manifest.lock */,
+				7FA7F8881D60CEA70039792A /* Sources */,
+				7FA7F8891D60CEA70039792A /* Frameworks */,
+				7FA7F88A1D60CEA70039792A /* Resources */,
+				AC602C9C2CC8488428B28876 /* [CP] Embed Pods Frameworks */,
+				AC03295D12905A521ECC3F5F /* [CP] Copy Pods Resources */,
+				7F9F77251D635FD900B9114B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CognitiveConcierge;
+			productName = WatsonRecommendations;
+			productReference = 7FA7F88C1D60CEA70039792A /* CognitiveConcierge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FA7F8841D60CEA70039792A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = IBM;
+				TargetAttributes = {
+					7FA7F88B1D60CEA70039792A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LLAEZU86QK;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 7FA7F8871D60CEA70039792A /* Build configuration list for PBXProject "CognitiveConcierge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FA7F8831D60CEA70039792A;
+			productRefGroup = 7FA7F88D1D60CEA70039792A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FA7F88B1D60CEA70039792A /* CognitiveConcierge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FA7F88A1D60CEA70039792A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE68A5BA1D89E57F00CC0E4E /* SFNSDisplay-Bold.ttf in Resources */,
+				CE72A1221DA30C9900D6552E /* birthday.json in Resources */,
+				CE79F3831D8304DE00550967 /* Watson-blue.gif in Resources */,
+				972AB5631DA5E6F600985506 /* bluemix.plist in Resources */,
+				7F9F77431D64CB5F00B9114B /* reviews.txt in Resources */,
+				CE1C1B721D79E40F00F1C4D2 /* SFNSDisplay.ttf in Resources */,
+				7F9F773E1D649FA600B9114B /* restaurantReviews.json in Resources */,
+				7F6FAE9E1D6B5E6800BE7829 /* RecommendedRestaurantDetailView.xib in Resources */,
+				7FA7F89A1D60CEA70039792A /* LaunchScreen.storyboard in Resources */,
+				7FA7F8971D60CEA70039792A /* Assets.xcassets in Resources */,
+				7FEAA4311D835AB300E4839C /* WatsonOverlay.xib in Resources */,
+				973DD93A1DAF17E50047DF5B /* SimulatorLocation.gpx in Resources */,
+				7F9F774A1D664D2500B9114B /* RecommendedRestaurantTableViewCell.xib in Resources */,
+				CE72A1241DA30C9E00D6552E /* casual.json in Resources */,
+				CE72A11E1DA2AF7700D6552E /* LasVegasReviews.json in Resources */,
+				CE72A1201DA30C9200D6552E /* anniversary.json in Resources */,
+				7FA7F8951D60CEA70039792A /* Main.storyboard in Resources */,
+				CE1456191DAE8CEB00A7E744 /* DecisionsView.xib in Resources */,
+				7F4F5BBF1D6E1B4400CF0A13 /* CognitiveConcierge.plist in Resources */,
+				7F6FAE771D6A75F700BE7829 /* HorizontalOnePartStackView.xib in Resources */,
+				CE60F2CC1D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC03295D12905A521ECC3F5F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CognitiveConcierge/Pods-CognitiveConcierge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC602C9C2CC8488428B28876 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CognitiveConcierge/Pods-CognitiveConcierge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCF64E1E0842AB98FA211060 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FA7F8881D60CEA70039792A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1C1B6F1D79C5ED00F1C4D2 /* MoreIconBarButtonItem.swift in Sources */,
+				972AB5611DA5E17900985506 /* BluemixConfiguration.swift in Sources */,
+				CE79F37D1D81161800550967 /* WhitePathIconBarButtonItem.swift in Sources */,
+				CE1C1B621D79C07D00F1C4D2 /* UIViewExtensions.swift in Sources */,
+				7F9F77401D64A3A500B9114B /* Restaurant.swift in Sources */,
+				7F9F77451D64E09500B9114B /* RestaurantViewController.swift in Sources */,
+				7F642A7E1D610919007A0F53 /* Conversation.swift in Sources */,
+				CE5818831D6BA007006D3D43 /* Utils.swift in Sources */,
+				CE1C1B761D79F48100F1C4D2 /* UILabelExtensions.swift in Sources */,
+				7F8F98161D61036F0061E220 /* MessagesViewController.swift in Sources */,
+				7FEAA42F1D8356C100E4839C /* WatsonOverlay.swift in Sources */,
+				7F6FAE9C1D6B5E5800BE7829 /* RecommendedRestaurantDetailView.swift in Sources */,
+				7F6FAE791D6A760A00BE7829 /* HorizontalOnePartStackView.swift in Sources */,
+				CE60F2CB1D78BEC800F8DBF1 /* EntertainmentCollectionViewCell.swift in Sources */,
+				CEA4552F1D80691800F531C0 /* PathIconBarButtonItem.swift in Sources */,
+				7F9F77521D6652F200B9114B /* UIColorExtension.swift in Sources */,
+				CEC1B4C11DABD473004F211A /* MessagesViewModel.swift in Sources */,
+				CE5818811D6B7703006D3D43 /* RestaurantDetailViewController.swift in Sources */,
+				7FA7F8901D60CEA70039792A /* AppDelegate.swift in Sources */,
+				CED9E2A01D74BCF000AADF4D /* EndpointManager.swift in Sources */,
+				CE58188B1D74828D006D3D43 /* EntertainmentOptionsViewController.swift in Sources */,
+				7F9F774C1D664D4B00B9114B /* RecommendedRestaurantTableViewCell.swift in Sources */,
+				CE1C1B711D79C6C300F1C4D2 /* ProfileBarButtonItem.swift in Sources */,
+				7F9F77561D6655B100B9114B /* UIFontExtension.swift in Sources */,
+				CE60F2C81D78AC5000F8DBF1 /* User.swift in Sources */,
+				CE1456181DAE8CEB00A7E744 /* DecisionsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7FA7F8931D60CEA70039792A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FA7F8941D60CEA70039792A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FA7F8981D60CEA70039792A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FA7F8991D60CEA70039792A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FA7F89C1D60CEA70039792A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FA7F89D1D60CEA70039792A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FA7F89F1D60CEA70039792A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 093B8C3845F89B67402347B1 /* Pods-CognitiveConcierge.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LLAEZU86QK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Pods/GooglePlaces/Frameworks/**",
+				);
+				INFOPLIST_FILE = CognitiveConcierge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.CognitiveConcierge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FA7F8A01D60CEA70039792A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D208A19ADBFAA42F104EF383 /* Pods-CognitiveConcierge.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LLAEZU86QK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Pods/GooglePlaces/Frameworks",
+				);
+				INFOPLIST_FILE = CognitiveConcierge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.CognitiveConcierge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FA7F8871D60CEA70039792A /* Build configuration list for PBXProject "CognitiveConcierge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FA7F89C1D60CEA70039792A /* Debug */,
+				7FA7F89D1D60CEA70039792A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FA7F89E1D60CEA70039792A /* Build configuration list for PBXNativeTarget "CognitiveConcierge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FA7F89F1D60CEA70039792A /* Debug */,
+				7FA7F8A01D60CEA70039792A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FA7F8841D60CEA70039792A /* Project object */;
+}

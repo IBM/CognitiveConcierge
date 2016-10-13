@@ -1,0 +1,177 @@
+{
+"restaurants":[
+{
+"googleID":"-1",
+"name":"Sage",
+"image":"sage",
+"rating":4,
+"expense":4,
+"address":"3732 S Las Vegas Blvd, Las Vegas, NV",
+"website":"https://www.aria.com/en/restaurants/sage.html",
+"openingTimeNow":["1800", "2230"],
+"reviews":[
+         "This place was exquisite - perfect for any foodie lovers. The service was wonderful and the menu was unique and tasteful.",
+         "Came here to eat with my boyfriend to celebrate my anniversary. It was a night to remember forever. The foie gras was wonderful and to die for. I had to control myself not to scarf it down because the crazy combination of flavors was mindblowing.",
+         "Heavenly dining experience. Went here for a fancy dinner to celebrate my parent's 60th anniversary. The lighting was romantic, the restaurant was elegant and classy, the service was exquisite. Every single course was flavorful and perfectly fit the setting.",
+         "Crazy expensive, but the food was wonderful. Endless amount of courses. Great dining experience and would recommend to go again.",
+         "Classy restaurant that definitely has the price tag. Setting was too posh for me, but I guess some people prefer the high class, fancy schmancy appeal. If you like giving away everything inside your wallet for food, this is the place for you!"
+       ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "fancy schmancy appeal",
+        "great dining experience",
+        "foie gras",
+        "fancy dinner",
+        "Classy restaurant",
+        "high class",
+        "price tag",
+        "service",
+        "place",
+        "boyfriend",
+        "anniversary"
+      ],
+"negativeSentiment": [
+        "flavors"
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Gangnam Asian BBQ Dining",
+"image":"gangnam",
+"rating":4.5,
+"expense":2,
+"address":"4480 Paradise Rd, Las Vegas, NV",
+"website":"https://www.facebook.com/Gangnam-Asian-BBQ-436685389747944/",
+"openingTimeNow":["1130", "0200"],
+"reviews":[
+      "Gangnam has the best Korean food I've ever tasted before. The meat practically melts in your mouth and is so fresh. The taste is just exquisite. Would definitely come back again and recommend to my friends.",
+      "If you've never tried kalbi beef before, this is the place to try it. The meat is so juicy and wonderful, it's like I was right back in Korea eating their bbq.",
+      "Wonderful appetizers and dishes. The tofu in the tofu soup was so tender, its taste soaked up all the soup. LOVE THIS PLACE.",
+      "I took my boyfriend here on our date for lunch, and we had to wait for hours. But the food was well worth the wait. Boyfriend and I loved it."
+       ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "best Korean food",
+        "tofu soup",
+        "kalbi beef",
+        "taste",
+        "meat",
+        "place",
+        "dishes",
+        "Gangnam",
+        "friends",
+        "boyfriend"
+      ],
+"negativeSentiment": [
+        ""
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Mon Ami Gabi",
+"image":"mon-ami",
+"rating":4,
+"expense":3,
+"address":"3655 S Las Vegas Blvd, Las Vegas, NV",
+"website":"http://www.monamigabi.com/home/?loc=vegas",
+"openingTimeNow":["0700", "2300"],
+"reviews":[
+         "We had the best brunch ever! The porch offers a great view of the Bellagio fountain. So admire away while munching on some wonderful, top notch French food.",
+         "My husband and I definitely recommend the filet with butter, steak with peppercorn sauce. Top it off with a vanilla creme brulee and you're in for a perfect meal.",
+         "Come here for morning breakfast! It's simply wonderful. The service is great, the view is fantastic, and the food is just great. We ordered Eggs Benedict Hash browns and enjoyed coffee while relaxing in front of the Bellagio. Would come here again."
+       ],
+"reviewScore": 0,
+"positiveSentiment": [
+        "vanilla creme brulee",
+        "French food",
+        "Bellagio fountain",
+        "best brunch",
+        "peppercorn sauce",
+        "morning breakfast",
+        "perfect meal",
+        "great view",
+        "filet",
+        "steak",
+        "porch",
+        "butter",
+        "husband",
+        "eggs",
+        "service"
+      ],
+"negativeSentiment": [
+        ""
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Raku",
+"image":"raku",
+"rating":4.5,
+"expense":3,
+"address":"5030 Spring Mountain Rd, Las Vegas, NV 89146",
+"website":"http://raku-grill.com/",
+"openingTimeNow":["1800", "0300"],
+"reviews":[
+        "Classy, wonderful ambiance. Perfect to celebrate my wife and my anniversary of 10 years. The staff was friendly, and we loved their Onsen egg, uni and ikura. Very different textures from what we are accustomed to, but well worth the change.",
+        "My wife and I had a wonderful meal. I recommend ordering their tasty bluefin tuna, huge langoustines, delicious grilled saba, and extremely good Kurobata pork belly.",
+        "I never expected to find such a fine dining restaurant experience in the middle of Chinatown. It was a great surprise to happen upon. The cold noodles and custard were simply amazing. I'm definitely visiting again.",
+        "The wait is really long, so reserve a spot. But coming in here is worth it. Visit if you can!"
+      ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "tasty bluefin tuna",
+        "extremely good Kurobata",
+        "wonderful ambiance",
+        "Onsen egg",
+        "cold noodles",
+        "pork belly",
+        "huge langoustines",
+        "custard",
+        "Chinatown",
+        "anniversary",
+        "textures",
+        "staff",
+        "wonderful meal",
+        "great surprise"
+      ],
+"negativeSentiment": [
+        ""
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Grand Lux Cafe",
+"image":"grand",
+"rating":4,
+"expense":2,
+"address":"3355 S Las Vegas Blvd, Las Vegas, NV",
+"website":"http://locations.grandluxcafe.com/nv/las-vegas/1/?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+"openingTimeNow":["OPEN 24 HOURS"],
+"reviews":[
+         "Grand Lux Cafe is the perfect American restaurant.  We ordered all of our favorites - chicken strips, a burger and some shrimp scampi!",
+         "We took our kids to Grand Lux Cafe and enjoyed the family friendly atmosphere.  It's very casual, but the food was on point.",
+         "Definitely take your family here tonight!  We left Grand Lux Cafe stuffed, very satisfied and ready to continue my vacation in Las Vegas.",
+         "Too long of a wait. My husband and kids got impatient and didn't want to wait any longer so we didn't get to eat here."
+       ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "perfect American restaurant",
+        "Grand Lux Cafe",
+        "shrimp scampi",
+        "kids",
+        "burger",
+        "favorites",
+        "vacation"
+      ],
+"negativeSentiment": [
+        "impatient",
+        "husband"
+      ],
+"openNow": true
+}
+  ]
+}

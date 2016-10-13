@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="SFNSDisplay-Bold.ttf">
+            <string>.HelveticaNeueDeskInterface-Bold</string>
+        </array>
+        <array key="SFNSDisplay.ttf">
+            <string>.HelveticaNeueDeskInterface-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurant" rowHeight="104" id="qhZ-BD-ovi" customClass="RecommendedRestaurantTableViewCell" customModule="CognitiveConcierge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qhZ-BD-ovi" id="uou-Ix-6vQ">
+                <frame key="frameInset" width="355" height="107.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="German Restaurant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="4rV-TR-3em">
+                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="10"/>
+                        <color key="textColor" red="0.59607843137254901" green="0.64313725490196072" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paf-Ce-LrV">
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                        <color key="textColor" red="0.19607843459999999" green="0.19607843459999999" blue="0.19607843459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-jz-Yxn">
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-Cf-cHj"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="3pj-eD-syb"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="nsn-SA-wIX"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="0VG-C1-JNo"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="Dh6-9j-ZAM"/>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Ristorante La Tettoia Steak House" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmM-vv-B3A">
+                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="16"/>
+                        <color key="textColor" red="0.11372549019607843" green="0.24313725490196078" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmN-da-9P3">
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="rmN-da-9P3" secondAttribute="height" multiplier="1:1" id="agg-qr-GWz"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews from Google" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="YAE-HW-B7P">
+                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="10"/>
+                        <color key="textColor" red="0.59607843137254901" green="0.64313725490196072" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="JmM-vv-B3A" firstAttribute="leading" secondItem="rmN-da-9P3" secondAttribute="trailing" constant="11" id="EIw-7j-we3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="fPs-jz-Yxn" secondAttribute="bottom" constant="7" id="EPW-nG-n3p"/>
+                    <constraint firstItem="fPs-jz-Yxn" firstAttribute="leading" secondItem="uou-Ix-6vQ" secondAttribute="leadingMargin" constant="101" id="Fhv-Cp-NQs"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rmN-da-9P3" secondAttribute="bottom" constant="-1" id="Fr3-6m-Lq9"/>
+                    <constraint firstItem="YAE-HW-B7P" firstAttribute="leading" secondItem="uou-Ix-6vQ" secondAttribute="leadingMargin" constant="171" id="H4e-o2-Jov"/>
+                    <constraint firstItem="4rV-TR-3em" firstAttribute="top" secondItem="JmM-vv-B3A" secondAttribute="bottom" constant="1" id="Srb-j0-9yF"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="paf-Ce-LrV" secondAttribute="trailing" constant="5" id="aFf-Ef-DOU"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="rmN-da-9P3" secondAttribute="leading" id="abx-Bn-aOD"/>
+                    <constraint firstItem="rmN-da-9P3" firstAttribute="top" secondItem="uou-Ix-6vQ" secondAttribute="topMargin" constant="2" id="fpG-bZ-stS"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="JmM-vv-B3A" secondAttribute="trailing" constant="39" id="jaf-Qe-ZF0"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="YAE-HW-B7P" secondAttribute="bottom" constant="6" id="jc4-2B-LEy"/>
+                    <constraint firstItem="JmM-vv-B3A" firstAttribute="top" secondItem="uou-Ix-6vQ" secondAttribute="topMargin" constant="1" id="lBP-JL-tZ1"/>
+                    <constraint firstItem="4rV-TR-3em" firstAttribute="leading" secondItem="uou-Ix-6vQ" secondAttribute="leadingMargin" constant="101" id="ooz-ZK-gTG"/>
+                    <constraint firstItem="JmM-vv-B3A" firstAttribute="leading" secondItem="uou-Ix-6vQ" secondAttribute="leadingMargin" constant="101" id="xWy-ro-Jkm"/>
+                    <constraint firstItem="paf-Ce-LrV" firstAttribute="top" secondItem="uou-Ix-6vQ" secondAttribute="topMargin" constant="1" id="yia-uZ-J9c"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                        <real key="value" value="4"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="expensiveLabel" destination="paf-Ce-LrV" id="QuG-Gm-0CD"/>
+                <outlet property="restaurantImageView" destination="rmN-da-9P3" id="gFJ-Jt-O6X"/>
+                <outlet property="reviewsFromLabel" destination="YAE-HW-B7P" id="y6n-aB-Vr9"/>
+                <outlet property="starImageView1" destination="z0h-Cf-cHj" id="apP-A0-daH"/>
+                <outlet property="starImageView2" destination="3pj-eD-syb" id="6pE-L9-Kb4"/>
+                <outlet property="starImageView3" destination="nsn-SA-wIX" id="vY8-2x-hzx"/>
+                <outlet property="starImageView4" destination="0VG-C1-JNo" id="aGS-xw-uQ1"/>
+                <outlet property="starImageView5" destination="Dh6-9j-ZAM" id="Ho6-CE-DDD"/>
+                <outlet property="starStackView" destination="fPs-jz-Yxn" id="QQk-ep-mWB"/>
+                <outlet property="subTitleLabel" destination="4rV-TR-3em" id="Swq-65-ZdN"/>
+                <outlet property="titleLabel" destination="JmM-vv-B3A" id="YrP-kz-7Wd"/>
+            </connections>
+            <point key="canvasLocation" x="433.5" y="344"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Star" width="8" height="8"/>
+    </resources>
+</document>

@@ -1,0 +1,122 @@
+{
+"restaurants":[
+{
+"id":0,
+"type":"Mexican",
+"name":"Torchy's Tacos",
+"image":"torchys",
+"rating":4,
+"expense":1,
+"address":"1801 E 51st St, Austin, TX",
+"reviews":[
+         "Torchy's is an Austin staple.  If you're looking for the perfect taco, look no further.",
+         "The Trailer Park Taco is to die for.  I love going to Torchy's with friends from out of town.  It totally revolutionizes the way they see tacos.",
+         "Just your typical food truck style tacos.",
+         "Perfect for a quick bite with you and your family.",
+         "We love taking the whole family out to Torchy's.  There's plenty of seating, and a very casual and relaxed atmosphere in which to order your tacos.  It's also not too expensive."
+         ]
+},
+{
+"id":1,
+"type": "American",
+"name":"Eastside Cafe",
+"image":"eastside",
+"rating":5,
+"expense":3,
+"address":"2113 Manor Rd, Austin, TX",
+"reviews":[
+         "Eastside cafe serves amazing American food in a bungalow converted to a home.  It's such a romantic and cute experience, as if you're literally dining in someone's home!",
+         "They grow the vegetables for many of their dishes right out back in the garden.  If you're looking for fresh, look no further!  This is perfect for a date, but you will need reservations."
+         ]
+},
+{
+"id":2,
+"type": "American",
+"name":"Lenoir Restaurant",
+"image":"lenoir",
+"rating":4,
+"expense":2,
+"address":"807 S 1st St, Austin, TX",
+"reviews":[
+         "Like many restaurants in Austin, Lenoir is locally sourced and sustainable.  It's intimate space is perfect for a date night.",
+         "Definitely go for the Prix-Fixe menu.",
+         "You'll need reservations for Lenoir, as cozy and intimate means it won't seat many people.  Keep in mind that you might be sat at a communal table."
+         ]
+},
+{
+"id":3,
+"type": "French",
+"name":"Justine's",
+"image":"justines",
+"rating":4.5,
+"expense":3,
+"address":"4710 E 5th St, Austin, TX",
+"reviews":[
+         "Justine's is a perfect french bistro.  We ordered all of our favorites - cheese board, french onion soup, and creme brulee!",
+         "We took our kids to Justine's and enjoyed the family friendly atmosphere.  It's very casual, but the food was on point.",
+         "Definitely take your family here tonight!  It's lively, quirky, casual, and amazing French food!"
+         ]
+},
+{
+"id":4,
+"type": "Japanese",
+"name":"Ramen Tatsu-Ya",
+"image":"ramen",
+"rating":4.5,
+"expense":3,
+"address":"8557 Research Blvd #126, Austin, TX",
+"reviews":[
+         "This is one of the best restaurants in Austin if you're looking for simply amazing food.  I love the creamy broth for most of the Ramen's served here.  My personal favorite is the miso ramen, but the Tonkotsu is also great!",
+         "We went to Ramen for Mother's Day, and my mom loved it!  She's usually not a very adventurous eater, but the tonkotsu was incredible, and she loved it.  We had a blast trying a bunch of different appetizers as well -- I'd defintiely recommend it for your next family outing.",
+         "The wait times for Tatsu-Ya can be really long, if you go at the wrong time.  Other than that, the food here is incredible.  It's fairly casual as you have to order at the counter, and then find a seat, but as long as you're going for a casual night, it works out perfectly!"
+         ]
+},
+{
+"id":5,
+"type": "Indian",
+"name":"Swad Indian Vegetarian Restaurant",
+"image":"swad",
+"rating":4,
+"expense":1,
+"address":"9515 N Lamar Blvd, Austin, TX",
+"reviews":[
+        "The dosas are humongous",
+        "This is a perfect place to go if you're looking for a casual lunch out with your work colleagues.  The dosas are huge, the thali is varied and delicious, and pretty much everything can't be beat.",
+        "Even if you're not vegetarian, I highly suggest giving Swad a try.  You'll get to order some new and unique food, especially if you order the Thali plate which comes with a number of different curries and dips to try.",
+        "Perfect for takeout.",
+        "The dosas are huge!  I definitely recommend ordering the Dosas here!"
+        ]
+},
+{
+"id":6,
+"type": "Argentinian",
+"name":"Buenos Aires Cafe",
+"image":"buenosaires",
+"rating":5,
+"expense":3,
+"address":"1201 E 6th St, Austin, TX",
+"reviews":[
+        "Looking for excellent Argentinian food?  Look no further.  Empanadas, steaks, and more are on offer at this fine dining affair.",
+        "The restaurant was very cozy and intimate, and simply perfect for a romantic date night.  We really enjoyed ourselves, and had a great time!",
+        "Definitely romantic.",
+        "My wife and I went on a date here just last week, and we really enjoyed ourselves.  We ordered the Churrasco, Empanadas, and the soup of the day.  Of those, the Empanadas were certainly the best, but ultimately we were a bit dissapointed with the price of the bill.  The sangria, however, was the best I've ever had.",
+        "The service here was excellent, and it was a perfect date spot as long as you have a reservation.  We really enjoyed the empanadas."
+        ]
+},
+{
+"id":7,
+"type":"American",
+"name":"Kerbey Lane Cafe",
+"image":"kerbey",
+"rating":4,
+"expense":2,
+"address":"3704 Kerbey Lane, Austin, TX",
+"reviews":[
+        "All day pancakes.  Need I say more?  This place is perfect for my family of picky eaters, as they all love pancakes.",
+        "Breakfast for dinner. We always go here with the kids and LOVE it.  It's perfect for our family of four, and usually you get sat right away.",
+        "Kerbey Lane has amazing breakfast options, and is one of my favorite places to eat in Austin.  It's an Austin classic!  You've got to order the pancakes with the swirl - the kids will love it!  Definitely go to the original Kerbey Lane on Kerbey Lane.",
+        "We love the outdoor seating options at Kerbey Lane!  We're able to enjoy Austin's great weather and some amazing breakfast in a weird and eclecitc setting."
+        ]
+}
+  ]
+}

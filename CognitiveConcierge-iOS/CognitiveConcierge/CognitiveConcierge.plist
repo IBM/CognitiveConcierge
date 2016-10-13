@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>googlePlacesAPIKey</key>
+	<string>INSERT_API_KEY</string>
+	<key>ConversationWorkspaceID</key>
+	<string>INSERT_WORKSPACE_ID</string>
+	<key>ConversationUsername</key>
+	<string>INSERT_USERNAME</string>
+	<key>ConversationPassword</key>
+	<string>INSERT_PASSWORD</string>
+	<key>ConversationVersion</key>
+	<string>2016-08-17</string>
+	<key>TextToSpeechUsername</key>
+	<string>INSERT_USERNAME</string>
+	<key>TextToSpeechPassword</key>
+	<string>INSERT_PASSWORD</string>
+	<key>SpeechToTextUsername</key>
+	<string>INSERT_USERNAME</string>
+	<key>SpeechToTextPassword</key>
+	<string>INSERT_PASSWORD</string>
+</dict>
+</plist>

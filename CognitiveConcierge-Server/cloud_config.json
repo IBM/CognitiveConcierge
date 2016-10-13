@@ -1,0 +1,111 @@
+{
+  "vcap" : {
+    "services" : {
+      "text_to_speech" : [
+        {
+          "tags" : [
+            "watson",
+            "ibm_created",
+            "ibm_dedicated_public"
+          ],
+          "provider" : null,
+          "credentials" : {
+            "url" : "https://stream.watsonplatform.net/text-to-speech/api",
+            "username" : "1524f0ad-e062-4f56-ac1d-999ce8e68989",
+            "password" : "diw6RR6OKToV"
+          },
+          "plan" : "standard",
+          "label" : "text_to_speech",
+          "name" : "CognitiveConcierge-Text-To-Speech",
+          "syslog_drain_url" : null
+        }
+      ],
+      "speech_to_text" : [
+        {
+          "tags" : [
+            "watson",
+            "ibm_created",
+            "ibm_dedicated_public"
+          ],
+          "provider" : null,
+          "credentials" : {
+            "url" : "https://stream.watsonplatform.net/speech-to-text/api",
+            "username" : "a2fb0810-f794-4369-afdc-7cf5b6712e8a",
+            "password" : "BkTmmB03wIek"
+          },
+          "plan" : "standard",
+          "label" : "speech_to_text",
+          "name" : "CognitiveConcierge-Speech-To-Text",
+          "syslog_drain_url" : null
+        }
+      ],
+      "conversation" : [
+        {
+          "tags" : [
+            "watson",
+            "ibm_created",
+            "ibm_dedicated_public"
+          ],
+          "provider" : null,
+          "credentials" : {
+            "url" : "https://gateway.watsonplatform.net/conversation/api",
+            "username" : "a107aaf2-82c7-4825-8b14-1d1ecd97c369",
+            "password" : "gfVodkOkJFMD"
+          },
+          "plan" : "free",
+          "label" : "conversation",
+          "name" : "CognitiveConcierge-Conversation",
+          "syslog_drain_url" : null
+        }
+      ],
+      "alchemy_api" : [
+        {
+          "tags" : [
+            "watson",
+            "ibm_created",
+            "ibm_dedicated_public"
+          ],
+          "provider" : null,
+          "credentials" : {
+            "url" : "https://gateway-a.watsonplatform.net/calls",
+            "apikey" : "c401b35b7659a0e21e8e52770b90c75d4a575418",
+            "note" : "It may take up to 5 minutes for this key to become active"
+          },
+          "plan" : "free",
+          "label" : "alchemy_api",
+          "name" : "CognitiveConcierge-Alchemy",
+          "syslog_drain_url" : null
+        }
+      ]
+    },
+    "application" : {
+      "started_at_timestamp" : "n/a",
+      "port" : "8090",
+      "instance_index" : "n/a",
+      "users" : null,
+      "started_at" : "n/a",
+      "space_name" : "dev",
+      "start" : "n/a",
+      "application_name" : "cctest1latest1",
+      "space_id" : "5abfc66b-9f2b-4ba9-94cc-e5e9b32ecd3b",
+      "instance_id" : "n/a",
+      "name" : "cctest1latest1",
+      "application_id" : "32e1762c-cb20-42ef-b239-89545b2cbfad",
+      "version" : "50b5c05c-ec19-4c29-b6fe-1cd8f397702d",
+      "application_uris" : [
+        "cctest1latest1.mybluemix.net"
+      ],
+      "state_timestamp" : "n/a",
+      "limits" : {
+        "fds" : 16384,
+        "mem" : 512,
+        "disk" : 1024
+      },
+      "application_version" : "50b5c05c-ec19-4c29-b6fe-1cd8f397702d",
+      "host" : "0.0.0.0",
+      "uris" : [
+        "cctest1latest1.mybluemix.net"
+      ]
+    }
+  }
+}

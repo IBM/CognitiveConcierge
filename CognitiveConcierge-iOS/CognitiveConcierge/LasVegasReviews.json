@@ -1,0 +1,264 @@
+{
+"restaurants":[
+{
+"googleID":"-1",
+"name":"Sage",
+"image":"sage",
+"rating":4,
+"expense":4,
+"address":"3732 S Las Vegas Blvd, Las Vegas, NV",
+"reviews":[
+         "This place was exquisite - perfect for any foodie lovers. The service was wonderful and the menu was unique and tasteful.",
+         "Came here to eat with my boyfriend to celebrate my anniversary. It was a night to remember forever. The foie gras was wonderful and to die for. I had to control myself not to scarf it down because the crazy combination of flavors was mindblowing.",
+         "Heavenly dining experience. Went here for a fancy dinner to celebrate my parent's 60th anniversary. The lighting was romantic, the restaurant was elegant and classy, the service was exquisite. Every single course was flavorful and perfectly fit the setting.",
+         "Crazy expensive, but the food was wonderful. Endless amount of courses. Great dining experience and would recommend to go again.",
+         "Classy restaurant that definitely has the price tag. Setting was too posh for me, but I guess some people prefer the high class, fancy schmancy appeal. If you like giving away everything inside your wallet for food, this is the place for you!"
+       ],
+"reviewScore": 7,
+"positiveSentiments": [
+        "fancy schmancy appeal",
+        "great dining experience",
+        "foie gras",
+        "fancy dinner",
+        "Classy restaurant",
+        "high class",
+        "price tag",
+        "service",
+        "place",
+        "boyfriend",
+        "anniversary"
+      ],
+"negativeSentiments": [
+        "flavors"
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Gangnam Asian BBQ Dining",
+"image":"gangnam",
+"rating":4.5,
+"expense":2,
+"address":"4480 Paradise Rd, Las Vegas, NV",
+"reviews":[
+      "Gangnam has the best Korean food I've ever tasted before. The meat practically melts in your mouth and is so fresh. The taste is just exquisite. Would definitely come back again and recommend to my friends.",
+      "If you've never tried kalbi beef before, this is the place to try it. The meat is so juicy and wonderful, it's like I was right back in Korea eating their bbq.",
+      "Wonderful appetizers and dishes. The tofu in the tofu soup was so tender, its taste soaked up all the soup. LOVE THIS PLACE.",
+      "I took my boyfriend here on our date for lunch, and we had to wait for hours. But the food was well worth the wait. Boyfriend and I loved it."
+       ],
+"reviewScore": 7,
+"positiveSentiments": [
+        "best Korean food",
+        "tofu soup",
+        "kalbi beef",
+        "taste",
+        "meat",
+        "place",
+        "dishes",
+        "Gangnam",
+        "friends",
+        "boyfriend"
+      ],
+"negativeSentiments": [
+        ""
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Rollin Smoke Barbeque",
+"image":"rollin",
+"rating":4.5,
+"expense":2,
+"address":"3185 S Highland Dr, Las Vegas, NV",
+"reviews":[
+         "Best barbecue in all of Las Vegas. The service is wonderful and the food is great.",
+         "Their banana pudding is so good - the creamy consistency is absolutely divine.",
+         "The amount of food they give here would feed an entire army. We got their pulled pork, pork ribs, hot links and it came with Mac n Cheese, creamed corn nuggets, collared greens, cornbread, and it was all so delicious. THE FOOD HERE IS THE BEST.",
+         "Brought my hungry family here and we simply loved the amount of food they gave us.",
+         "Terribly overpriced, most expensive barbecue I've ever had. This restaurant is totally exploiting Las Vegas tourists."
+       ],
+"reviewScore": 7,
+"positiveSentiments": [
+        "creamy consistency",
+        "Best barbecue",
+        "absolutely divine.",
+        "Las Vegas",
+        "hungry family",
+        "entire army",
+        "Mac n Cheese",
+        "hot links",
+        "cornbread",
+        "greens"
+      ],
+"negativeSentiments": [
+        "price"
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Grand Lux Cafe",
+"image":"grand",
+"rating":4,
+"expense":2,
+"address":"3355 S Las Vegas Blvd, Las Vegas, NV",
+"reviews":[
+         "Grand Lux Cafe is the perfect American restaurant.  We ordered all of our favorites - chicken strips, a burger and some shrimp scampi!",
+         "We took our kids to Grand Lux Cafe and enjoyed the family friendly atmosphere.  It's very casual, but the food was on point.",
+         "Definitely take your family here tonight!  We left Grand Lux Cafe stuffed, very satisfied and ready to continue my vacation in Las Vegas.",
+         "Too long of a wait. My husband and kids got impatient and didn't want to wait any longer so we didn't get to eat here."
+       ],
+"reviewScore": 7,
+"positiveSentiments": [
+        "perfect American restaurant",
+        "Grand Lux Cafe",
+        "shrimp scampi",
+        "kids",
+        "burger",
+        "favorites",
+        "vacation"
+      ],
+"negativeSentiments": [
+        "impatient",
+        "husband"
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Mon Ami Gabi",
+"image":"mon-ami",
+"rating":4,
+"expense":3,
+"address":"3655 S Las Vegas Blvd, Las Vegas, NV",
+"reviews":[
+         "We had the best brunch ever! The porch offers a great view of the Bellagio fountain. So admire away while munching on some wonderful, top notch French food.",
+         "My husband and I definitely recommend the filet with butter, steak with peppercorn sauce. Top it off with a vanilla creme brulee and you're in for a perfect meal.",
+         "Come here for morning breakfast! It's simply wonderful. The service is great, the view is fantastic, and the food is just great. We ordered Eggs Benedict Hash browns and enjoyed coffee while relaxing in front of the Bellagio. Would come here again."
+       ],
+"reviewScore": 0,
+"positiveSentiments": [
+        "vanilla creme brulee",
+        "French food",
+        "Bellagio fountain",
+        "best brunch",
+        "peppercorn sauce",
+        "morning breakfast",
+        "perfect meal",
+        "great view",
+        "filet",
+        "steak",
+        "porch",
+        "butter",
+        "husband",
+        "eggs",
+        "service"
+      ],
+"negativeSentiments": [
+        ""
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Mount Everest India’s Cuisine",
+"image":"mount-yelp",
+"rating":4.5,
+"expense":2,
+"address":"3641 W Sahara Ave, Las Vegas, NV",
+"reviews":[
+        "The price is great for its wonderful buffet styled Indian food.",
+        "This is the prefect place if you're looking to try out all different types of Indian food. The Chicken Tikka Masala is great if you don't like spicy. The Tandoori Chicken is marinated with just the right amount of seasoning and spices. The Palak Paneer should whet any vegetarian's appetitie, and there are so many more dishes! You simply have to taste a bite of each.",
+        "This is a perfect place to go if you're looking for a casual lunch out with your work colleagues.  You can load your plate with buckets of food, the curry is varied and delicious, and pretty much everything can't be beat.",
+        "Even if you're not vegetarian, I highly suggest giving Mount Everest a try.  You'll get to eat some new and unique food.",
+        "Perfect for takeout.",
+      ],
+"reviewScore": 7,
+"positiveSentiments": [
+        "Chicken Tikka Masala",
+        "wonderful buffet",
+        "perfect place",
+        "different types",
+        "casual lunch",
+        "work colleagues",
+        "Indian food.",
+        "unique food",
+        "spicy",
+        "seasoning",
+        "curry",
+        "spices",
+        "price"
+      ],
+"negativeSentiments": [
+        "bite"
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Raku",
+"image":"raku",
+"rating":4.5,
+"expense":3,
+"address":"5030 Spring Mountain Rd, Las Vegas, NV 89146",
+"reviews":[
+        "Classy, wonderful ambiance. Perfect to celebrate my wife and my anniversary of 10 years. The staff was friendly, and we loved their Onsen egg, uni and ikura. Very different textures from what we are accustomed to, but well worth the change.",
+        "My wife and I had a wonderful meal. I recommend ordering their tasty bluefin tuna, huge langoustines, delicious grilled saba, and extremely good Kurobata pork belly.",
+        "I never expected to find such a fine dining restaurant experience in the middle of Chinatown. It was a great surprise to happen upon. The cold noodles and custard were simply amazing. I'm definitely visiting again.",
+        "The wait is really long, so reserve a spot. But coming in here is worth it. Visit if you can!"
+      ],
+"reviewScore": 7,
+"positiveSentiments": [
+        "tasty bluefin tuna",
+        "extremely good Kurobata",
+        "wonderful ambiance",
+        "Onsen egg",
+        "cold noodles",
+        "pork belly",
+        "huge langoustines",
+        "custard",
+        "Chinatown",
+        "anniversary",
+        "textures",
+        "staff",
+        "wonderful meal",
+        "great surprise"
+      ],
+"negativeSentiments": [
+        ""
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Rainforest Cafe",
+"image":"rainforest-yelp",
+"rating":3,
+"expense":2,
+"address":"3717 S Las Vegas Blvd, Las Vegas, NV 89109",
+"reviews":[
+        "This place is perfect for my family of picky eaters, as the food is always consistent. The drinks are a bit pricy, but the new location has a good view of the strip.",
+        "We always go here with the kids and LOVE it.  It's perfect for our family of four.",
+        "I definitely recommend this place for the view and the food. A lot of really good seafood options.",
+        "We love the outdoor seating options!  We're able to enjoy Las Vegas's views while eating some good food and drinks."
+      ],
+"reviewScore": 7,
+"positiveSentiments": [
+        "outdoor seating options",
+        "good seafood",
+        "new location",
+        "good view",
+        "good food",
+        "drinks",
+        "family",
+        "kids",
+        "strip"
+      ],
+"negativeSentiments": [
+        "bit pricy"
+      ],
+"openNow": true
+}
+  ]
+}

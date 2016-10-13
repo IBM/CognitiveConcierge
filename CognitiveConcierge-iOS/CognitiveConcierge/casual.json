@@ -1,0 +1,171 @@
+{
+"restaurants":[
+{
+"googleID":"-1",
+"name":"Gangnam Asian BBQ Dining",
+"image":"gangnam",
+"rating":4.5,
+"expense":2,
+"address":"4480 Paradise Rd, Las Vegas, NV",
+"website":"https://www.facebook.com/Gangnam-Asian-BBQ-436685389747944/",
+"openingTimeNow":"11:30 AM - 2:00 AM",
+"reviews":[
+      "Gangnam has the best Korean food I've ever tasted before. The meat practically melts in your mouth and is so fresh. The taste is just exquisite. Would definitely come back again and recommend to my friends.",
+      "If you've never tried kalbi beef before, this is the place to try it. The meat is so juicy and wonderful, it's like I was right back in Korea eating their bbq.",
+      "Wonderful appetizers and dishes. The tofu in the tofu soup was so tender, its taste soaked up all the soup. LOVE THIS PLACE.",
+      "I took my boyfriend here on our date for lunch, and we had to wait for hours. But the food was well worth the wait. Boyfriend and I loved it."
+       ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "best Korean food",
+        "tofu soup",
+        "kalbi beef",
+        "taste",
+        "meat",
+        "place",
+        "dishes",
+        "Gangnam",
+        "friends",
+        "boyfriend"
+      ],
+"negativeSentiment": [
+        ""
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Rollin Smoke Barbeque",
+"image":"rollin",
+"rating":4.5,
+"expense":2,
+"address":"3185 S Highland Dr, Las Vegas, NV",
+"website":"http://rollinsmokebarbeque.com/",
+"openingTimeNow":["1000", "2000"],
+"reviews":[
+         "Best barbecue in all of Las Vegas. The service is wonderful and the food is great.",
+         "Their banana pudding is so good - the creamy consistency is absolutely divine.",
+         "The amount of food they give here would feed an entire army. We got their pulled pork, pork ribs, hot links and it came with Mac n Cheese, creamed corn nuggets, collared greens, cornbread, and it was all so delicious. THE FOOD HERE IS THE BEST.",
+         "Brought my hungry family here and we simply loved the amount of food they gave us.",
+         "Terribly overpriced, most expensive barbecue I've ever had. This restaurant is totally exploiting Las Vegas tourists."
+       ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "creamy consistency",
+        "Best barbecue",
+        "absolutely divine.",
+        "Las Vegas",
+        "hungry family",
+        "entire army",
+        "Mac n Cheese",
+        "hot links",
+        "cornbread",
+        "greens"
+      ],
+"negativeSentiment": [
+        "price"
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Grand Lux Cafe",
+"image":"grand",
+"rating":4,
+"expense":2,
+"address":"3355 S Las Vegas Blvd, Las Vegas, NV",
+"website":"http://locations.grandluxcafe.com/nv/las-vegas/1/?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+"openingTimeNow":["OPEN 24 HOURS"],
+"reviews":[
+         "Grand Lux Cafe is the perfect American restaurant.  We ordered all of our favorites - chicken strips, a burger and some shrimp scampi!",
+         "We took our kids to Grand Lux Cafe and enjoyed the family friendly atmosphere.  It's very casual, but the food was on point.",
+         "Definitely take your family here tonight!  We left Grand Lux Cafe stuffed, very satisfied and ready to continue my vacation in Las Vegas.",
+         "Too long of a wait. My husband and kids got impatient and didn't want to wait any longer so we didn't get to eat here."
+       ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "perfect American restaurant",
+        "Grand Lux Cafe",
+        "shrimp scampi",
+        "kids",
+        "burger",
+        "favorites",
+        "vacation"
+      ],
+"negativeSentiment": [
+        "impatient",
+        "husband"
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Mount Everest India’s Cuisine",
+"image":"mount-yelp",
+"rating":4.5,
+"expense":2,
+"address":"3641 W Sahara Ave, Las Vegas, NV",
+"website":"http://www.everestcuisine.net/",
+"openingTimeNow":["1100", "1500", "1700", "2200"],
+"reviews":[
+        "The price is great for its wonderful buffet styled Indian food.",
+        "This is the prefect place if you're looking to try out all different types of Indian food. The Chicken Tikka Masala is great if you don't like spicy. The Tandoori Chicken is marinated with just the right amount of seasoning and spices. The Palak Paneer should whet any vegetarian's appetitie, and there are so many more dishes! You simply have to taste a bite of each.",
+        "This is a perfect place to go if you're looking for a casual lunch out with your work colleagues.  You can load your plate with buckets of food, the curry is varied and delicious, and pretty much everything can't be beat.",
+        "Even if you're not vegetarian, I highly suggest giving Mount Everest a try.  You'll get to eat some new and unique food.",
+        "Perfect for takeout.",
+      ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "Chicken Tikka Masala",
+        "wonderful buffet",
+        "perfect place",
+        "different types",
+        "casual lunch",
+        "work colleagues",
+        "Indian food.",
+        "unique food",
+        "spicy",
+        "seasoning",
+        "curry",
+        "spices",
+        "price"
+      ],
+"negativeSentiment": [
+        "bite"
+      ],
+"openNow": true
+},
+{
+"googleID":"-1",
+"name":"Rainforest Cafe",
+"image":"rainforest-yelp",
+"rating":3,
+"expense":2,
+"address":"3717 S Las Vegas Blvd, Las Vegas, NV 89109",
+"website":"http://www.rainforestcafe.com/",
+"openingTimeNow":["1100", "2300"],
+"reviews":[
+        "This place is perfect for my family of picky eaters, as the food is always consistent. The drinks are a bit pricy, but the new location has a good view of the strip.",
+        "We always go here with the kids and LOVE it.  It's perfect for our family of four.",
+        "I definitely recommend this place for the view and the food. A lot of really good seafood options.",
+        "We love the outdoor seating options!  We're able to enjoy Las Vegas's views while eating some good food and drinks."
+      ],
+"reviewScore": 7,
+"positiveSentiment": [
+        "outdoor seating options",
+        "good seafood",
+        "new location",
+        "good view",
+        "good food",
+        "drinks",
+        "family",
+        "kids",
+        "strip"
+      ],
+"negativeSentiment": [
+        "bit pricy"
+      ],
+"openNow": true
+}
+  ]
+}
