@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>googlePlacesAPIKey</key>
-	<string>AIzaSyBFbewMpizCGNVEhzHAPBjUoZ5J-uCIsXY</string>
+	<string>INSERT_API_KEY</string>
 	<key>ConversationWorkspaceID</key>
-	<string>5be741fb-ec76-48bc-9112-ea2e9b8f8667</string>
+	<string>INSERT_WORKSPACE_ID</string>
 	<key>ConversationUsername</key>
-	<string>454c24d5-a830-46a6-82d7-d07c994545f1</string>
+	<string>INSERT_USERNAME</string>
 	<key>ConversationPassword</key>
-	<string>HTgWnxQW8WI4</string>
+	<string>INSERT_PASSWORD</string>
 	<key>ConversationVersion</key>
 	<string>2016-08-17</string>
 	<key>TextToSpeechUsername</key>
-	<string>3e313dca-1e4b-4df9-aefe-da15330137db</string>
+	<string>INSERT_USERNAME</string>
 	<key>TextToSpeechPassword</key>
-	<string>8aszwU5eHUPg</string>
+	<string>INSERT_PASSWORD</string>
 	<key>SpeechToTextUsername</key>
-	<string>28be3857-28a8-42ae-9fb2-3d6b0a457987</string>
+	<string>INSERT_USERNAME</string>
 	<key>SpeechToTextPassword</key>
-	<string>mOkqsRGzutxC</string>
+	<string>INSERT_PASSWORD</string>
 </dict>
 </plist>
