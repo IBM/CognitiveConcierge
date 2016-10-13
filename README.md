@@ -1,3 +1,6 @@
+# License
+Please see our license file in License.txt
+
 # CognitiveConcierge
 An end-to-end swift application sample with an iOS frontend and a Kitura web framework backend.  This application also demonstrates how to pull in a number of different Watson services to your swift client and server side apps via the Watson Developer Cloud's iOS SDKs, including Conversation, Text to Speech, Speech to Text, and the Alchemy Language APIs.
 
