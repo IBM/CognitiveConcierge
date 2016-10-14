@@ -23,11 +23,37 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
 
 ### Update Conversation Service
 1. Once ICT is finished provisioning your Cloud Runtime, you should have a Conversation Service instance in your Bluemix dashboard.  This Service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, we've provided the conversation for this application in the Resources folder at the top level of the project.
-2. Go to the Bluemix dashboard and select the Conversation service.
-3. Select Launch Tool.
-4. Select Import, and upload your .JSON file (Resources/conversationWorkspace.json) representing the conversation for this application.
+2. Click on the Bluemix icon in cloud runtime to go to your app's Bluemix dashboard.
+
+    <img src="http://i.imgur.com/YU8qIPv.png" width="500">
+
+3. Select the Conversation service when the page loads. Make sure to use Firefox if you are running into any problems loading the webpage.
+
+    <img src="http://i.imgur.com/3EA7dSS.png" width="500">
+
+3. Scroll down and select 'Launch Tool'.
+
+    <img src="http://i.imgur.com/oaPQlY2.png" width="500">
+
+4. Log into Watson Converation with your IBM ID and you will be brought to the 'Create Workspace' page. Select Import, and upload your .JSON file (Resources/conversationWorkspace.json) representing the conversation for this application.
+
+    <img src="http://i.imgur.com/7qq9EMy.png" width="500">
+
 5. Once the Conversation is created, select the More Options icon, and click View Details.  Note the Workspace ID for use in your iOS application.
-6. Note: Watson may take a few minutes to train based on the conversation workspace that you just uploaded.  You can see if Watson is finished training by clicking the conversation workspace, then Dialog, and then the chat icon in the upper right hand corner.  This is also how you can Try out the conversation and test your bot.
+
+    <img src="http://i.imgur.com/5wivVUB.png" width="500">
+
+6. Copy the WorkspaceID into CognitiveConcierge.plist within CognitiveConcierge-iOS's CognitiveConcierge.plist
+
+    <img src="http://i.imgur.com/jJyeXoD.png" width="500">
+
+7. Note: Watson may take a few minutes to train the conversation workspace uploaded.  Check if Watson is finished training by clicking the conversation workspace, then Dialog, and then the chat icon in the upper right hand corner.  
+
+    <img src="http://i.imgur.com/uoKXz3G.png" width="500">
+
+This is also how you can 'Try out the conversation and test your bot'.
+
+    <img src="http://i.imgur.com/9682joc.png" width="500">
 
 ### Run the iOS Application
 1. Install Cocoapods Dependency Manager in Terminal with the command `sudo gem install cocoapods`
@@ -40,6 +66,5 @@ carthage update
 pod install
 ```
 5. Open the CognitiveConcierge.xcworkspace file in Xcode 8 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
-6. When you deployed the server application to Bluemix using ICT, some services were provisioned for you on Bluemix, including Conversation, Text to Speech, and Speech to Text.  Each of these services has some credentials that are required for the iOS application to be identified by your services on Bluemix.  Put each of the required credentials into the CognitiveConcierge.plist file.
-7. You can find the credentials for each service by selecting the application deployed for you on your Bluemix dashboard, under applications.  Next, select Environment Variables on the left hand menu.  Within the VCAP_SERVICES, you'll see credentials for each service.
-6. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
+6. Enter your credentials for the services required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist. You can find all the credentials you need in the file provisioned by ICT: CognitiveConcierge/CognitiveConcierge-Server/cloud_config.json.
+7. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
