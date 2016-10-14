@@ -69,5 +69,5 @@ carthage update
 pod install
 ```
 5. Open the CognitiveConcierge.xcworkspace file in Xcode 8 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
-6. Enter your credentials for the services required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist. You can find all the credentials you need in the file provisioned by ICT: CognitiveConcierge/CognitiveConcierge-Server/cloud_config.json.
+6. Enter your credentials for the services required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. You can find all the credentials you need in the file provisioned by ICT: `CognitiveConcierge/CognitiveConcierge-Server/cloud_config.json`.
 7. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
