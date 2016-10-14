@@ -51,9 +51,12 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
 
     <img src="http://i.imgur.com/uoKXz3G.png" width="500">
 
-This is also how you can 'Try out the conversation and test your bot'.
+
+    This is also how you can 'Try out the conversation and test your bot.'
+
 
     <img src="http://i.imgur.com/9682joc.png" width="500">
+
 
 ### Run the iOS Application
 1. Install Cocoapods Dependency Manager in Terminal with the command `sudo gem install cocoapods`
