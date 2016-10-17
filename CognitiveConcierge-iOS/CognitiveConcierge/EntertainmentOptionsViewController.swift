@@ -47,6 +47,8 @@ class EntertainmentOptionsViewController: UIViewController {
     private let kInternetAlertMessage = "Make sure your device is connected to the internet."
     private let kCredentialsAlertTitle = "Conversation Service Unavailable"
     private let kCredentialsAlertMessage = "Please make sure you entered your Conversation service credentials correctly."
+    private let kRestaurantsAlertTitle = "Please Note"
+    private let kRestaurantsAlertMessage = "This is currently a demo app for only Restaurants. Feel free to pull and add the functionality for other tiles."
     
     override func viewDidLoad() {
         // Get Watson configuration values
@@ -226,10 +228,10 @@ extension EntertainmentOptionsViewController: UICollectionViewDataSource {
                 collectionCellPressed()
             case 1:
                 // Vacations clicked
-                collectionCellPressed()
+                alertUserWithMessage(kRestaurantsAlertTitle, message: kRestaurantsAlertMessage)
             case 2:
                 // Shows clicked
-                collectionCellPressed()
+                alertUserWithMessage(kRestaurantsAlertTitle, message: kRestaurantsAlertMessage)
             default:
                 break
             }
