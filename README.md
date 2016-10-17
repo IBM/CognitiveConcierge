@@ -74,7 +74,7 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
 
         <img src="http://i.imgur.com/WdCcsuD.png" width="500">
 
-    2. Select 'All Items' on the Console Screen and click on the name of your application listed under Cloud Foundry Applications. (The route/URL provided next to the name will only take you to page hosted by your app; not the page we're looking for.) This should bring you to the Bluemix page you saw previously in finding the Conversation service.
+    2. Select 'All Items' on the Console Screen and click on the name of your application listed under Cloud Foundry Applications. The route/URL provided next to the name will only take you to page hosted by your app; not the page we're looking for. This should bring you to the Bluemix page you saw previously in finding the Conversation service.
 
     3. Click on 'Runtime' then 'Environment Variables' to access every services' credentials within VCAP_Services to add into the `CognitiveConcierge.plist` file.
 

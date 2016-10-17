@@ -48,7 +48,7 @@ class EntertainmentOptionsViewController: UIViewController {
     private let kCredentialsAlertTitle = "Conversation Service Unavailable"
     private let kCredentialsAlertMessage = "Please make sure you entered your Conversation service credentials correctly."
     private let kRestaurantsAlertTitle = "Please Note"
-    private let kRestaurantsAlertMessage = "This is currently a demo app for only Restaurants. Feel free to pull and add the functionality for other tiles."
+    private let kRestaurantsAlertMessage = "This is a demo application for restaurant suggestions only. Feel free to pull and add the functionality for other tiles."
     
     override func viewDidLoad() {
         // Get Watson configuration values
