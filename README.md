@@ -69,15 +69,15 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
   pod install
   ```
 5. Open the CognitiveConcierge.xcworkspace file in Xcode 8 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
-6. Enter your credentials for each service required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. You can find each credential by returning to your application details page which you can access by clicking on the Bluemix icon within ICT's Cloud Runtime, or following:
+6. Enter your credentials for each service required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. Find each credential by returning to your application details page which you can access by clicking on the Bluemix icon within ICT's Cloud Runtime or following these steps:
     1. Go to [Bluemix](https://new-console.ng.bluemix.net/#overview) and make sure you're on the 'Console' screen:
 
         <img src="http://i.imgur.com/WdCcsuD.png" width="500">
 
     2. Select 'All Items' on the Console Screen and click on the name of your application listed under Cloud Foundry Applications. (The route/URL provided next to the name will only take you to page hosted by your app; not the page we're looking for.) This should bring you to the Bluemix page you saw previously in finding the Conversation service.
 
-    3. Click on 'Runtime', then 'Environment Variables' to access every services' credentials within VCAP_Services to add into the `CognitiveConcierge.plist` file.
+    3. Click on 'Runtime' then 'Environment Variables' to access every services' credentials within VCAP_Services to add into the `CognitiveConcierge.plist` file.
 
-      <img src="http://i.imgur.com/aZP7phy.png" width="500">
+      <img src="http://i.imgur.com/G3CE9rY.png" width="500">
 
 7. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
