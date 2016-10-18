@@ -2,11 +2,11 @@
 Please see our license file in License.txt
 
 # CognitiveConcierge
-An end-to-end swift application sample with an iOS frontend and a Kitura web framework backend.  This application also demonstrates how to pull in a number of different Watson services to your swift client and server side apps via the Watson Developer Cloud's iOS SDKs, including Conversation, Text to Speech, Speech to Text, and the Alchemy Language APIs.
+An end-to-end Swift application sample with an iOS front end and a Kitura web framework back end.  This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's iOS SDKs, including Conversation, Text to Speech, Speech to Text, and the Alchemy Language APIs.
 
 ## IBM Cloud Tools for Swift Instructions
 ### Obtain a Google Places API Key for Web
-1. For this project, you'll need an API Key from google places, so that app can have access to review text which will be sent to the Alchemy API service for analysis.  Instructions for obtaining a key can be found [here](https://developers.google.com/places/web-service/get-api-key).
+1. For this project, you'll need an API Key from Google Places, so that app can have access to review text which will be sent to the Alchemy API service for analysis.  Instructions for obtaining a key can be found [here](https://developers.google.com/places/web-service/get-api-key).
 2. Once you have an API Key, make note of it for later use in your server and iOS applications.
 
 ### Deploy the Server Application to Bluemix using ICT.
@@ -35,7 +35,7 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
 
     <img src="http://i.imgur.com/oaPQlY2.png" width="500">
 
-4. Log into Watson Converation with your IBM ID and you will be brought to the 'Create Workspace' page. Select Import, and upload your .JSON file (Resources/conversationWorkspace.json) representing the conversation for this application.
+4. Log into Watson Conversation with your IBM ID and you will be brought to the 'Create Workspace' page. Select Import, and upload your .JSON file (Resources/conversationWorkspace.json) representing the conversation for this application.
 
     <img src="http://i.imgur.com/7qq9EMy.png" width="500">
 
