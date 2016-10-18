@@ -23,7 +23,7 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
 
 ### Update Conversation Service
 1. Once ICT is finished provisioning your Cloud Runtime, you should have a Conversation Service instance in your Bluemix dashboard.  This Service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, we've provided the conversation for this application in the Resources folder at the top level of the project.
-2. Click on the Bluemix icon in cloud runtime to go to your app's Bluemix dashboard.
+2. Click on the Bluemix icon in cloud runtime to go to your 'Application Details' page on Bluemix.
 
     <img src="http://i.imgur.com/YU8qIPv.png" width="500">
 
@@ -64,10 +64,20 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
 2. Install Carthage Dependency Manager.  Either download and run the .pkg file for their latest release https://github.com/Carthage/Carthage/releases or simply run `brew update` followed by `brew install carthage`
 3. From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder.
 4. Run the following commands to install the necessary dependencies:
-```
-carthage update
-pod install
-```
+  ```
+  carthage update
+  pod install
+  ```
 5. Open the CognitiveConcierge.xcworkspace file in Xcode 8 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
-6. Enter your credentials for the services required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. You can find all the credentials you need in the file provisioned by ICT: `CognitiveConcierge/CognitiveConcierge-Server/cloud_config.json`.
+6. Enter your credentials for each service required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. Find each credential by returning to your application details page which you can access by clicking on the Bluemix icon within ICT's Cloud Runtime or following these steps:
+    1. Go to [Bluemix](https://new-console.ng.bluemix.net/#overview) and make sure you're on the 'Console' screen:
+
+        <img src="http://i.imgur.com/WdCcsuD.png" width="500">
+
+    2. Select 'All Items' on the Console Screen and click on the name of your application listed under Cloud Foundry Applications. The route/URL provided next to the name will only take you to page hosted by your app; not the page we're looking for. This should bring you to the Bluemix page you saw previously in finding the Conversation service.
+
+    3. Click on 'Runtime' then 'Environment Variables' to access every services' credentials within VCAP_Services to add into the `CognitiveConcierge.plist` file.
+
+      <img src="http://i.imgur.com/G3CE9rY.png" width="500">
+
 7. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
