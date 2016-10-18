@@ -39,7 +39,7 @@ class RestaurantViewController: UIViewController {
     private let endpointManager = EndpointManager.sharedInstance
     private let kNavigationBarTitle = "Restaurants"
     private let kBackButtonTitle = "CHAT"
-    private let kLocationText = "AUSTIN, TX"
+    private let kLocationText = "LAS VEGAS, NV"
     private let kHeightForHeaderInSection:CGFloat = 10
     private let kEstimatedHeightForRowAtIndexPath:CGFloat = 104.0
     private let kNumberOfRowsInTableViewSection = 1

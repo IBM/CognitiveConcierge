@@ -21,7 +21,7 @@ import CloudFoundryEnv
 
 struct Constants {
     static var googleAPIKey = "INSERT_GOOGLE_API_KEY_HERE"
-    static var location = "30.27,-97.74"
+    static var location = "36.11,-115.17"
 }
 
 struct ConfigurationError : LocalizedError {
