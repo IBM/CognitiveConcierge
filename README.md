@@ -2,19 +2,19 @@
 Please see our license file in License.txt
 
 # CognitiveConcierge
-An end-to-end Swift application sample with an iOS front end and a Kitura web framework back end.  This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's iOS SDKs, including Conversation, Text to Speech, Speech to Text, and the Alchemy Language APIs.
+CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end. This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's iOS SDKs, including Conversation, Text to Speech, Speech to Text, and the Alchemy Language APIs.
 
-## IBM Cloud Tools for Swift Instructions
+## IBM Cloud Tools for Swift (ICT) Instructions
 ### Obtain a Google Places API Key for Web
 1. For this project, you'll need an API Key from Google Places, so that app can have access to review text which will be sent to the Alchemy API service for analysis.  Instructions for obtaining a key can be found [here](https://developers.google.com/places/web-service/get-api-key).
 2. Once you have an API Key, make note of it for later use in your server and iOS applications.
 
 ### Deploy the Server Application to Bluemix using ICT.
-1. Install the [IBM Cloud Tools for Swift] (http://cloudtools.bluemix.net/) for MacOS.
+1. Install [IBM Cloud Tools for Swift] (http://cloudtools.bluemix.net/) for MacOS.
 2. Once you've installed the application, you can open it to get started.
 3. Click the Create (+) button to set up a new project, and then select the Cognitive Concierge Application.
 5. Click Save Files to Local Computer to clone the project.
-6. Once the project is cloned, open up the xcodeproject that was created for you, and edit the Configuration.swift file's Constants struct with your own Google API Key for Web.
+6. Once the project is cloned, open up the xcodeproject that was created for you, and edit the Sources/restaurant-recommendations/Configuration.swift file's Constants struct with your own Google API Key for Web.
 7. Finally, you can use ICT to deploy the server on Bluemix.  Click Provision and Deploy Sample Server on Bluemix under Cloud Runtimes.
 8. Give your Cloud Runtime a unique name, and click Next.
 
@@ -22,8 +22,8 @@ An end-to-end Swift application sample with an iOS front end and a Kitura web fr
 1. In ICT, ensure that the Connected to: field in the Client application is pointed to your server instance running on Bluemix.  You can also point to your localhost for local testing, but you need to be running a local instance of the server application for this to work.
 
 ### Update Conversation Service
-1. Once ICT is finished provisioning your Cloud Runtime, you should have a Conversation Service instance in your Bluemix dashboard.  This Service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, we've provided the conversation for this application in the Resources folder at the top level of the project.
-2. Click on the Bluemix icon in cloud runtime to go to your 'Application Details' page on Bluemix.
+1. Once ICT has provisioned your Cloud Runtime, you should have a Conversation Service instance in your Bluemix dashboard.  This Service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, we've provided the conversation for this application in the Resources folder at the top level of the project.
+2. Click on the Bluemix icon in Cloud Runtime to go to your 'Application Details' page on Bluemix.
 
     <img src="http://i.imgur.com/YU8qIPv.png" width="500">
 
@@ -47,12 +47,12 @@ An end-to-end Swift application sample with an iOS front end and a Kitura web fr
 
     <img src="http://i.imgur.com/jJyeXoD.png" width="500">
 
-7. Note: Watson may take a few minutes to train the conversation workspace uploaded.  Check if Watson is finished training by clicking the conversation workspace, then Dialog, and then the chat icon in the upper right hand corner.  
+7. Note: Watson may take a few minutes to train based on the conversation workspace you uploaded.  Check if Watson is finished training by clicking the conversation workspace, then Dialog, and then the chat icon in the upper right hand corner.  
 
     <img src="http://i.imgur.com/uoKXz3G.png" width="500">
 
 
-    This is also how you can 'Try out the conversation and test your bot.'
+    This is also how you can try out the conversation and test your bot.
 
 
     <img src="http://i.imgur.com/9682joc.png" width="500">
