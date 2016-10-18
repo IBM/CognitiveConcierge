@@ -65,7 +65,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 3. From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder.
 4. Run the following commands to install the necessary dependencies:
   ```
-  carthage update
+  carthage update --platform iOS
   pod install
   ```
 5. Open the CognitiveConcierge.xcworkspace file in Xcode 8 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
