@@ -25,38 +25,35 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
 1. Once ICT is finished provisioning your Cloud Runtime, you should have a Conversation Service instance in your Bluemix dashboard.  This Service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, we've provided the conversation for this application in the Resources folder at the top level of the project.
 2. Click on the Bluemix icon in cloud runtime to go to your 'Application Details' page on Bluemix.
 
-    <img src="http://i.imgur.com/YU8qIPv.png" width="500">
+	<img src="images/cloud_runtime.png" width="500">
 
 3. Select the Conversation service when the page loads. Make sure to use Firefox if you are running into any problems loading the webpage.
 
-    <img src="http://i.imgur.com/3EA7dSS.png" width="500">
+	<img src="images/conversation_service.png" width="500">
 
 3. Scroll down and select 'Launch Tool'.
 
-    <img src="http://i.imgur.com/oaPQlY2.png" width="500">
-
+	<img src="images/launch_tool.png" width="500">
+	
 4. Log into Watson Converation with your IBM ID and you will be brought to the 'Create Workspace' page. Select Import, and upload your .JSON file (Resources/conversationWorkspace.json) representing the conversation for this application.
 
-    <img src="http://i.imgur.com/7qq9EMy.png" width="500">
+	<img src="images/create_workspace.png" width="500">
 
 5. Once the Conversation is created, select the More Options icon, and click View Details.  Note the Workspace ID for use in your iOS application.
 
-    <img src="http://i.imgur.com/5wivVUB.png" width="500">
+	<img src="images/more_options.png" width="500">
 
 6. Copy the WorkspaceID into CognitiveConcierge.plist within CognitiveConcierge-iOS's CognitiveConcierge.plist
 
-    <img src="http://i.imgur.com/jJyeXoD.png" width="500">
+	<img src="images/plist.png" width="500">
 
 7. Note: Watson may take a few minutes to train the conversation workspace uploaded.  Check if Watson is finished training by clicking the conversation workspace, then Dialog, and then the chat icon in the upper right hand corner.  
 
-    <img src="http://i.imgur.com/uoKXz3G.png" width="500">
-
+	<img src="images/conversation_dialog.png" width="500">
 
     This is also how you can 'Try out the conversation and test your bot.'
-
-
-    <img src="http://i.imgur.com/9682joc.png" width="500">
-
+	
+	<img src="images/conversation_testing.png" width="500">
 
 ### Run the iOS Application
 1. Install Cocoapods Dependency Manager in Terminal with the command `sudo gem install cocoapods`
@@ -72,12 +69,12 @@ An end-to-end swift application sample with an iOS frontend and a Kitura web fra
 6. Enter your credentials for each service required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. Find each credential by returning to your application details page which you can access by clicking on the Bluemix icon within ICT's Cloud Runtime or following these steps:
     1. Go to [Bluemix](https://new-console.ng.bluemix.net/#overview) and make sure you're on the 'Console' screen:
 
-        <img src="http://i.imgur.com/WdCcsuD.png" width="500">
+        <img src="images/console.png" width="500">
 
     2. Select 'All Items' on the Console Screen and click on the name of your application listed under Cloud Foundry Applications. The route/URL provided next to the name will only take you to page hosted by your app; not the page we're looking for. This should bring you to the Bluemix page you saw previously in finding the Conversation service.
 
     3. Click on 'Runtime' then 'Environment Variables' to access every services' credentials within VCAP_Services to add into the `CognitiveConcierge.plist` file.
 
-      <img src="http://i.imgur.com/G3CE9rY.png" width="500">
+      <img src="images/envmt_variables.png" width="500">
 
 7. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
