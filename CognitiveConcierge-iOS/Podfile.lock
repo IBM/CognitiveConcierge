@@ -12,7 +12,7 @@ DEPENDENCIES:
   - Alamofire (= 3.5.0)
   - Freddy (= 2.1.0)
   - GooglePlaces (= 2.0.1)
-  - JSQMessagesViewController
+  - JSQMessagesViewController (= 7.3.4)
 
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
@@ -22,6 +22,6 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
 
-PODFILE CHECKSUM: 1cdf6de76c9e28330bae919e650e232d7cf6386a
+PODFILE CHECKSUM: b13f57b29f1050dc1753db299220d40f667c4dbc
 
 COCOAPODS: 1.0.1

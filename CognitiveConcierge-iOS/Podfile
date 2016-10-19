@@ -4,7 +4,7 @@
  use_frameworks!
 
 target 'CognitiveConcierge' do
-pod 'JSQMessagesViewController'
+pod 'JSQMessagesViewController','7.3.4'
 
 pod 'Alamofire', '3.5.0'
 pod 'Freddy', '2.1.0'
