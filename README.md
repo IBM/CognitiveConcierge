@@ -35,23 +35,24 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
 	<img src="images/cloud_runtime.png" width="500">
 
-3. Scroll down and select 'Launch Tool'.
+3. Select the CognitiveConcierge-Conversation Service under Connections.
 
 	<img src="images/conversation_service.png" width="500">
 
-4. Log into Watson Conversation with your IBM ID and you will be brought to the 'Create Workspace' page. Select Import, and upload your .JSON file (Resources/conversationWorkspace.json) representing the conversation for this application.
+4. Scroll down and select 'Launch Tool'.
+5. Log into Watson Conversation with your IBM ID and you will be brought to the 'Create Workspace' page. Select Import, and upload your .JSON file (Resources/conversationWorkspace.json) representing the conversation for this application.
 
 	<img src="images/create_workspace.png" width="500">
 
-5. Once the Conversation is created, select the More Options icon, and click View Details.  Note the Workspace ID for use in your iOS application.
+6. Once the Conversation is created, select the More Options icon, and click View Details.  Note the Workspace ID for use in your iOS application.
 
 	<img src="images/more_options.png" width="500">
 
-6. Copy the WorkspaceID into CognitiveConcierge.plist within CognitiveConcierge-iOS's CognitiveConcierge.plist
+7. Copy the WorkspaceID into CognitiveConcierge.plist within CognitiveConcierge-iOS's CognitiveConcierge.plist
 
 	<img src="images/plist.png" width="500">
 
-7. Note: Watson may take a few minutes to train based on the conversation workspace you uploaded.  Check if Watson is finished training by clicking the conversation workspace, then Dialog, and then the chat icon in the upper right hand corner.  
+8. Note: Watson may take a few minutes to train based on the conversation workspace you uploaded.  Check if Watson is finished training by clicking the conversation workspace, then Dialog, and then the chat icon in the upper right hand corner.  
 
 	<img src="images/conversation_dialog.png" width="500">
 
