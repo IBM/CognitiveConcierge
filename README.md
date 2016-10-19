@@ -31,7 +31,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
 ### Update Conversation Service
 1. Once ICT has provisioned your Cloud Runtime, you should have a Conversation Service instance in your Bluemix dashboard.  This Service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, we've provided the conversation for this application in the Resources folder at the top level of the project.
-2. Click on the Bluemix icon in Cloud Runtime to go to your 'Application Details' page on Bluemix.
+2. In ICT, Click on the Bluemix icon in Cloud Runtime to go to your 'Application Details' page on Bluemix.
 
 	<img src="images/cloud_runtime.png" width="500">
 
