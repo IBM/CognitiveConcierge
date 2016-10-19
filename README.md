@@ -3,6 +3,7 @@
 
 # CognitiveConcierge
 CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end. This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's iOS SDKs, including Conversation, Text to Speech, Speech to Text, and the Alchemy Language APIs.
+<img src="images/CC1.png" width="200"><img src="images/CC2.png" width="200"><img src="images/CC7.png" width="200">
 
 ## IBM Cloud Tools for Swift (ICT) Instructions
 ### Obtain a Google Places API Key for Web
