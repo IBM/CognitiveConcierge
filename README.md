@@ -17,7 +17,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 6. Once the project is cloned, open up the .xcodeproj file that was created for you either from ICT or in Finder at CognitiveConcierge-Server/restaurant-recommendations.xcodeproj. Edit the Sources/restaurant-recommendations/Configuration.swift file's Constants struct with your own Google API Key for Web.
 <img src="images/xcodeproj.png" width="500">
 7. Finally, you can use ICT to deploy the server on Bluemix.  Click Provision and Deploy Sample Server on Bluemix under Cloud Runtimes.
-8. Give your Cloud Runtime a unique name, and click Next.
+8. Give your Cloud Runtime a unique name, and click Next.  This deployment to Bluemix may take a few minutes.
 
 ### Point iOS Application to Server Application
 1. In ICT, ensure that the Connected to: field in the Client application is pointed to your server instance running on Bluemix.  You can also point to your localhost for local testing, but you need to be running a local instance of the server application for this to work.
