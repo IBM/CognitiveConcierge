@@ -79,11 +79,11 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
     2. Select 'All Items' on the Console Screen and click on the name of your application listed under Cloud Foundry Applications. The route/URL provided next to the name will only take you to page hosted by your app; not the page we're looking for. This should bring you to the Bluemix page you saw previously in finding the Conversation service.
 
-    3. Click on 'Runtime' then 'Environment Variables' to access every services' credentials within VCAP_Services to add into the `CognitiveConcierge.plist` file.
+7. Click on 'Runtime' then 'Environment Variables' to access every services' credentials within VCAP_Services to add into the `CognitiveConcierge.plist` file.
 
       <img src="images/envmt_variables.png" width="500">
 
-7. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
+8. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
 
 ## Privacy Notice
 This Swift application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service on each deployment:
