@@ -48,7 +48,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
 	<img src="images/more_options.png" width="500">
 
-7. Copy the WorkspaceID into CognitiveConcierge.plist within CognitiveConcierge-iOS's CognitiveConcierge.plist
+7. Open the CognitiveConcierge.xcworkspace file from ICT. Copy the WorkspaceID into CognitiveConcierge.plist file.
 
 	<img src="images/plist.png" width="500">
 
