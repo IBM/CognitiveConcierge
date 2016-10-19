@@ -22,7 +22,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
 7. Finally, you can use ICT to deploy the server on Bluemix.  Click Provision and Deploy Sample Server on Bluemix under Cloud Runtimes.
 
-<img src="images/provisionanddeploy.png" width="500">
+<img src="images/provision.png" width="500">
 
 8. Give your Cloud Runtime a unique name, and click Next.  This deployment to Bluemix may take a few minutes.
 
