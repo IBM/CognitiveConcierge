@@ -229,9 +229,11 @@ extension EntertainmentOptionsViewController: UICollectionViewDataSource {
             case 1:
                 // Vacations clicked
                 alertUserWithMessage(kRestaurantsAlertTitle, message: kRestaurantsAlertMessage)
+                gestureRecognizer.enabled = true;
             case 2:
                 // Shows clicked
                 alertUserWithMessage(kRestaurantsAlertTitle, message: kRestaurantsAlertMessage)
+                gestureRecognizer.enabled = true;
             default:
                 break
             }
