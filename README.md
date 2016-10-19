@@ -7,14 +7,14 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 ## IBM Cloud Tools for Swift (ICT) Instructions
 ### Obtain a Google Places API Key for Web
 1. For this project, you'll need an API Key from Google Places, so that app can have access to review text which will be sent to the Alchemy API service for analysis.  Instructions for obtaining a key can be found [here](https://developers.google.com/places/web-service/get-api-key).
-2. Once you have an API Key, make note of it for later use in your server and iOS applications.
+2. Once you have an API Key, go to the Google Developer's Console, and enable the Google Places API for iOS as well.  Make note of the API key for later use in your server and iOS applications.
 
 ### Deploy the Server Application to Bluemix using ICT.
 1. Install [IBM Cloud Tools for Swift] (http://cloudtools.bluemix.net/) for MacOS.
 2. Once you've installed the application, you can open it to get started.
 3. Click the Create (+) button to set up a new project, and then select the Cognitive Concierge Application.
 5. Click Save Files to Local Computer to clone the project.
-6. Once the project is cloned, open up the xcodeproject that was created for you, and edit the Sources/restaurant-recommendations/Configuration.swift file's Constants struct with your own Google API Key for Web.
+6. Once the project is cloned, open up the .xcodeproj file that was created for you either from ICT or in Finder at CognitiveConcierge-Server/restaurant-recommendations.xcodeproj. Edit the Sources/restaurant-recommendations/Configuration.swift file's Constants struct with your own Google API Key for Web.
 7. Finally, you can use ICT to deploy the server on Bluemix.  Click Provision and Deploy Sample Server on Bluemix under Cloud Runtimes.
 8. Give your Cloud Runtime a unique name, and click Next.
 
