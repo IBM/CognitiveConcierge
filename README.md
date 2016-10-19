@@ -1,5 +1,5 @@
-# License
-Please see our license file in License.txt
+[![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
+![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/67b642ca1d123d4a204f24e4d0c390d5/badge.svg)
 
 # CognitiveConcierge
 CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end. This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's iOS SDKs, including Conversation, Text to Speech, Speech to Text, and the Alchemy Language APIs.
