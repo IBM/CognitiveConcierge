@@ -116,6 +116,6 @@ router.get("/api/v1/restaurants") { request, response, next in
 
 let (ip, port) = parseAddress()
 
-CloudFoundryDeploymentTracker(repositoryURL: "https://github.ibm.com/MIL/CognitiveConcierge", codeVersion: nil).track()
+CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/CognitiveConcierge", codeVersion: nil).track()
 Kitura.addHTTPServer(onPort: port, with: router)
 Kitura.run()
