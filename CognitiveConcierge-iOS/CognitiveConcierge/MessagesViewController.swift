@@ -90,8 +90,6 @@ class MessagesViewController: JSQMessagesViewController {
         //instantiate watson Speech to Text
         instantiateSTT()
         
-        setupLocationServices()
-        
         subscribeToDecisionButtonNotifications()
         
         setupDecisionsView()
@@ -105,7 +103,7 @@ class MessagesViewController: JSQMessagesViewController {
         self.navigationController?.navigationBar.translucent = false
         Utils.setNavigationItems(self, rightButtons: [], leftButtons: [PathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
         Utils.setupNavigationTitleLabel(self, title: Utils.kNavigationBarTitle, spacing: 2.9, titleFontSize: 11, color: UIColor.blackColor())
-        setupLocationServices()
+        //setupLocationServices()
         //Subscribe to when keyboard appears and hides
         subscribeToKeyboardNotifications()
         
@@ -115,7 +113,7 @@ class MessagesViewController: JSQMessagesViewController {
         self.navigationController?.navigationBarHidden = true
         self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
         self.navigationController?.navigationBar.shadowImage = nil
-        locationManager.stopUpdatingLocation()
+        //locationManager.stopUpdatingLocation()
         removeKeyboardNotifications()
     }
     

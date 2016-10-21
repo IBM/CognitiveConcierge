@@ -55,12 +55,6 @@ class RecommendedRestaurantTableViewCell: UITableViewCell {
        
         expensiveLabel.textColor = UIColor.customRestaurantViewDarkBlueColor()
         expensiveLabel.font = UIFont.regularSFNSDisplay(size: 16)
-        guard let configurationPath = NSBundle.mainBundle().pathForResource("CognitiveConcierge", ofType: "plist") else {
-            print("problem loading configuration file CognitiveConcierge.plist")
-            return
-        }
-        let configuration = NSDictionary(contentsOfFile: configurationPath)
-        GMSPlacesClient.provideAPIKey(configuration?["googlePlacesAPIKey"] as! String)
     }
     
     
@@ -112,7 +106,7 @@ class RecommendedRestaurantTableViewCell: UITableViewCell {
         if let imageName = image {
             restaurantImageView.image = UIImage(named: imageName)
         } else {
-            print ("not using mock data")
+            //print ("not using mock data")
         }
 
     }

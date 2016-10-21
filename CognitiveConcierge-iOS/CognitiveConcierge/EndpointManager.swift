@@ -39,7 +39,6 @@ class EndpointManager: NSObject {
         Alamofire.request(.GET, request, encoding:.JSON).responseJSON {
             response in switch response.result {
             case .Success(let theJSON):
-                print("Success with JSON: \(theJSON)")
                 let jsonResponse = theJSON as! NSArray
                 success(jsonResponse)
 

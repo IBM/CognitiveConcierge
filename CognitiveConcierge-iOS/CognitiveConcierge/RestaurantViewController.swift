@@ -17,6 +17,7 @@
 import Foundation
 import UIKit
 import Freddy
+import GooglePlaces
 
 class RestaurantViewController: UIViewController {
 
@@ -101,6 +102,13 @@ class RestaurantViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        guard let configurationPath = NSBundle.mainBundle().pathForResource("CognitiveConcierge", ofType: "plist") else {
+            print("problem loading configuration file CognitiveConcierge.plist")
+            return
+        }
+        let configuration = NSDictionary(contentsOfFile: configurationPath)
+        GMSPlacesClient.provideAPIKey(configuration?["googlePlacesAPIKey"] as! String)
+
 
         registerNibWithTableView("restaurant", nibName: "RecommendedRestaurantTableViewCell", tableView: self.tableView)
 
