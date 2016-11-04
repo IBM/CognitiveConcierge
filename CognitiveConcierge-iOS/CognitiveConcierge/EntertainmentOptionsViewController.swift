@@ -238,7 +238,7 @@ extension EntertainmentOptionsViewController: UICollectionViewDataSource {
                 break
             }
         } else {
-            print("Could not find index path")
+            //print("Could not find index path")
         }
     }
 }

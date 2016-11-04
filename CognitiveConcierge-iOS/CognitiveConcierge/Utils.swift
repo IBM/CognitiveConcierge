@@ -97,8 +97,6 @@ class Utils {
             border.frame = CGRectMake(0, 0, thickness, textView.frame.size.height)
             break
         case UIRectEdge.Right:
-            print (textView.frame.size.width)
-            print (textView.widthAnchor)
             border.frame = CGRectMake(CGFloat(textView.widthAnchor.hashValue), 0, thickness, textView.frame.size.height)
             break
         default:
