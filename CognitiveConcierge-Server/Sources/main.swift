@@ -27,6 +27,24 @@ HeliumLogger.use()
 let configFile = "cloud_config.json"
 let alchemyServiceName = "CognitiveConcierge-Alchemy"
 
+func initServices() -> String {
+    var key = ""
+    do {
+        let service = try getConfiguration(configFile: configFile,
+                                           serviceName: alchemyServiceName)
+        if let credentials = service.credentials {
+            key = credentials["apikey"].stringValue
+        } else {
+            Log.error("No credentials available for " + alchemyServiceName)
+            //no credentials for the service
+        }
+    } catch {
+        Log.error("No configuration file with credentials")
+    }
+    return key
+}
+let watsonAPIKey = initServices()
+
 let router = Router()
 //router.all("/static", middleware: StaticFileServer())
 
@@ -40,8 +58,8 @@ router.get("/places") {
     request, response, next in
 
     guard let occasion = request.queryParameters["occasion"] else {
-        //response.status(HTTPStatusCode.badRequest)
-        //Log.error("Request does not contain occasion")
+        response.status(HTTPStatusCode.badRequest)
+        Log.error("Request does not contain occasion")
         return
     }
     response.headers["Content-Type"] = "text/plain; charset=utf-8"
@@ -50,13 +68,13 @@ router.get("/places") {
 // Get restaurant reviews
 router.get("/api/v1/restaurants") { request, response, next in
     guard let occasion = request.queryParameters["occasion"] else {
-        //response.status(HTTPStatusCode.badRequest)
-        //Log.error("Request does not contain occasion")
+        response.status(HTTPStatusCode.badRequest)
+        Log.error("Request does not contain occasion")
         return
     }
     response.headers["Content-Type"] = "text/plain; charset=utf-8"
     Log.verbose("getting restaurant reviews")
-    getClosest20Restaurants(occasion) { restaurants in
+    getClosestRestaurants(occasion) { restaurants in
 
         var restaurantDetails = [JSON]()
         var theRestaurants = [Restaurant]()
@@ -64,23 +82,20 @@ router.get("/api/v1/restaurants") { request, response, next in
             let restaurantID = restaurant["place_id"].stringValue
 
             getRestaurantDetails(restaurantID) { details in
-                var theReviews = [String]()
-                var isOpenNow: Bool
+                Log.verbose("Restaurant details returned")
                 //if no expense, set to 0
                 let expense = restaurant["price_level"].int ?? 0
                 let name = restaurant["name"].string ?? ""
                 let isOpenNowInt = restaurant["opening_hours"]["open_now"].int ?? 0
-                if isOpenNowInt == 0 {
-                    isOpenNow = false
-                } else {
-                    isOpenNow = true
-                }
-
+                let isOpenNow = isOpenNowInt == 0 ? false : true
                 let periods = details["opening_hours"]["periods"].array ?? [""]
                 let rating = restaurant["rating"].double ?? 0
                 let address = details["formatted_address"].string ?? ""
-                let reviews = details["reviews"].array ?? ["text"]
                 let website = details["website"].string ?? ""
+
+                let reviews = details["reviews"].array ?? ["text"]
+                var theReviews = [String]()
+                Log.verbose("Replacing special characters in reviews")
                 for review in reviews {
                     var reviewText = review["text"].string ?? ""
                     reviewText = reviewText.replacingOccurrences(of: "\"", with: " \\\"")
@@ -98,7 +113,7 @@ router.get("/api/v1/restaurants") { request, response, next in
                         do {
                             try response.status(.failedDependency).send(json: JSON(error)).end()
                         } catch {
-                            print( "error")
+                            Log.error(error.localizedDescription)
                         }
                     })
                 restaurantDetails.append(details)
@@ -106,13 +121,12 @@ router.get("/api/v1/restaurants") { request, response, next in
         }
         let matches = bestMatches(theRestaurants, occasion: occasion)
         do {
-            try response.status(.OK).send(JSON(matches).rawString()!).end()
+            try response.status(.OK).send(JSON(matches).rawString() ?? "").end()
         } catch {
-            print("error")
+            Log.error("Error responding with restaurant matches")
         }
     }
 }
-
 
 let (ip, port) = parseAddress()
 

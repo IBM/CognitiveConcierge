@@ -19,11 +19,11 @@ import Foundation
 
 class OccasionGenerator {
 
-    var occasionsKeywords : [String: [String]]
-    var birthday : [String]
-    var date : [String]
-    var anniversary : [String]
-    var family : [String]
+    var occasionsKeywords: [String: [String]]
+    var birthday: [String]
+    var date: [String]
+    var anniversary: [String]
+    var family: [String]
 
     init() {
 
@@ -98,8 +98,8 @@ class OccasionGenerator {
         occasionsKeywords["family"] = family
     }
 
-    func getOccasionKeywords(_ theOccasion:String) -> [String] {
-        return occasionsKeywords[theOccasion]!
+    func getOccasionKeywords(_ theOccasion: String) -> [String] {
+        return occasionsKeywords[theOccasion] ?? []
     }
 
 }
