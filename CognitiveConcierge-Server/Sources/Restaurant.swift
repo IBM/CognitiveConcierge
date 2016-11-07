@@ -36,8 +36,8 @@ class Restaurant {
 
     var negativeSentiments: Array<String>
     var positiveSentiments: Array<String>
-
-    //MARK: Initializer
+    
+    // MARK: Initializer
     init(googleID: String, isOpenNow: Bool, openingTimeNow: Array<String>, name: String, rating: Double, expense: Int, address: String, reviews: Array<String>, website: String) {
         self.googleID = googleID
         self.isOpenNow = isOpenNow
@@ -55,32 +55,22 @@ class Restaurant {
         self.website = website
     }
 
+    /// Append reviews from restaurant into a string to pass to watson
+    ///
+    /// - parameter completion: Completion closure invoked on success
+    /// - parameter failure:    Failure closure invoked on error
     func populateWatsonKeywords(_ completion: @escaping ( Array<String>)->(), failure: @escaping (String) -> Void) {
-        //append reviews from restaurant into a string to pass to watson
-        var reviewStrings = ""
+                var reviewStrings = ""
         for review in self.reviews {
             reviewStrings.append(review)
             reviewStrings.append(" ")
         }
         let path = "/calls/text/TextGetRankedKeywords"
-        var requestOptions:[ClientRequest.Options] = []
+        var requestOptions: [ClientRequest.Options] = []
         requestOptions.append(.method("POST"))
         requestOptions.append(.schema("https://"))
         requestOptions.append(.hostname("gateway-a.watsonplatform.net"))
         requestOptions.append(.path(path))
-        var watsonAPIKey = ""
-        
-        do {
-            let service = try getConfiguration(configFile: configFile,
-                                               serviceName: alchemyServiceName)
-            if let credentials = service.credentials {
-                watsonAPIKey = credentials["apikey"].stringValue
-            } else {
-                //no credentials for the service
-            }
-        } catch {
-            //no configuration file.
-        }
 
         let req = HTTP.request(requestOptions) { resp in
             if let resp = resp, resp.statusCode == HTTPStatusCode.OK {
@@ -103,7 +93,7 @@ class Restaurant {
                                 self.keywords.append(word)
                             }
                         } else {
-                            print ("key: text does not exist in review. Skipping review: \(response["keywords"])")
+                            Log.error ("key: text does not exist in review. Skipping review: \(response["keywords"])")
                             break
                         }
                     }
@@ -115,7 +105,7 @@ class Restaurant {
             } else {
                 if let resp = resp {
                     //request failed
-                    print (resp.statusCode)
+                    Log.error("Request failed with status code: \(resp.statusCode)")
                 }
             }
         }
