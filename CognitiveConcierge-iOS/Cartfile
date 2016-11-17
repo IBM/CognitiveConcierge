@@ -1,2 +1,1 @@
-# cartfile contents
-github "watson-developer-cloud/ios-sdk"
+github "watson-developer-cloud/ios-sdk" "v0.9.1"

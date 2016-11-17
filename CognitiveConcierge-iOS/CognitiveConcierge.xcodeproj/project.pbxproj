@@ -15,48 +15,6 @@
 		7F6FAE9C1D6B5E5800BE7829 /* RecommendedRestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FAE9B1D6B5E5800BE7829 /* RecommendedRestaurantDetailView.swift */; };
 		7F6FAE9E1D6B5E6800BE7829 /* RecommendedRestaurantDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FAE9D1D6B5E6800BE7829 /* RecommendedRestaurantDetailView.xib */; };
 		7F8F98161D61036F0061E220 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8F98151D61036F0061E220 /* MessagesViewController.swift */; };
-		7F9F77101D635FC000B9114B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FB1D635FC000B9114B /* Alamofire.framework */; };
-		7F9F77111D635FC000B9114B /* AlchemyDataNewsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */; };
-		7F9F77121D635FC000B9114B /* AlchemyLanguageV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FD1D635FC000B9114B /* AlchemyLanguageV1.framework */; };
-		7F9F77131D635FC000B9114B /* AlchemyVisionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FE1D635FC000B9114B /* AlchemyVisionV1.framework */; };
-		7F9F77141D635FC000B9114B /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F76FF1D635FC000B9114B /* ConversationV1.framework */; };
-		7F9F77151D635FC000B9114B /* ConversationV1Experimental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77001D635FC000B9114B /* ConversationV1Experimental.framework */; };
-		7F9F77161D635FC000B9114B /* DialogV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77011D635FC000B9114B /* DialogV1.framework */; };
-		7F9F77171D635FC000B9114B /* DocumentConversionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77021D635FC000B9114B /* DocumentConversionV1.framework */; };
-		7F9F77181D635FC000B9114B /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77031D635FC000B9114B /* Freddy.framework */; };
-		7F9F77191D635FC000B9114B /* LanguageTranslatorV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77041D635FC000B9114B /* LanguageTranslatorV2.framework */; };
-		7F9F771A1D635FC000B9114B /* NaturalLanguageClassifierV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77051D635FC000B9114B /* NaturalLanguageClassifierV1.framework */; };
-		7F9F771B1D635FC000B9114B /* PersonalityInsightsV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77061D635FC000B9114B /* PersonalityInsightsV2.framework */; };
-		7F9F771C1D635FC000B9114B /* RelationshipExtractionV1Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77071D635FC000B9114B /* RelationshipExtractionV1Beta.framework */; };
-		7F9F771D1D635FC000B9114B /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77081D635FC000B9114B /* RestKit.framework */; };
-		7F9F771E1D635FC000B9114B /* RetrieveAndRankV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F77091D635FC000B9114B /* RetrieveAndRankV1.framework */; };
-		7F9F771F1D635FC000B9114B /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770A1D635FC000B9114B /* SpeechToTextV1.framework */; };
-		7F9F77201D635FC000B9114B /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770B1D635FC000B9114B /* Starscream.framework */; };
-		7F9F77211D635FC000B9114B /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770C1D635FC000B9114B /* TextToSpeechV1.framework */; };
-		7F9F77221D635FC000B9114B /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770D1D635FC000B9114B /* ToneAnalyzerV3.framework */; };
-		7F9F77231D635FC000B9114B /* TradeoffAnalyticsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770E1D635FC000B9114B /* TradeoffAnalyticsV1.framework */; };
-		7F9F77241D635FC000B9114B /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F770F1D635FC000B9114B /* VisualRecognitionV3.framework */; };
-		7F9F77261D636ABA00B9114B /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FB1D635FC000B9114B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77271D636ABA00B9114B /* AlchemyDataNewsV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77281D636ABA00B9114B /* AlchemyLanguageV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FD1D635FC000B9114B /* AlchemyLanguageV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77291D636ABA00B9114B /* AlchemyVisionV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FE1D635FC000B9114B /* AlchemyVisionV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F772A1D636ABA00B9114B /* ConversationV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F76FF1D635FC000B9114B /* ConversationV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F772B1D636ABA00B9114B /* ConversationV1Experimental.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77001D635FC000B9114B /* ConversationV1Experimental.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F772C1D636ABA00B9114B /* DialogV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77011D635FC000B9114B /* DialogV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F772D1D636ABA00B9114B /* DocumentConversionV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77021D635FC000B9114B /* DocumentConversionV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F772E1D636ABA00B9114B /* Freddy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77031D635FC000B9114B /* Freddy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F772F1D636ABA00B9114B /* LanguageTranslatorV2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77041D635FC000B9114B /* LanguageTranslatorV2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77301D636ABA00B9114B /* NaturalLanguageClassifierV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77051D635FC000B9114B /* NaturalLanguageClassifierV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77311D636ABA00B9114B /* PersonalityInsightsV2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77061D635FC000B9114B /* PersonalityInsightsV2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77321D636ABA00B9114B /* RelationshipExtractionV1Beta.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77071D635FC000B9114B /* RelationshipExtractionV1Beta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77331D636ABA00B9114B /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77081D635FC000B9114B /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77341D636ABA00B9114B /* RetrieveAndRankV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F77091D635FC000B9114B /* RetrieveAndRankV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77351D636ABA00B9114B /* SpeechToTextV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770A1D635FC000B9114B /* SpeechToTextV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77361D636ABA00B9114B /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770B1D635FC000B9114B /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77371D636ABA00B9114B /* TextToSpeechV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770C1D635FC000B9114B /* TextToSpeechV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77381D636ABA00B9114B /* ToneAnalyzerV3.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770D1D635FC000B9114B /* ToneAnalyzerV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F77391D636ABA00B9114B /* TradeoffAnalyticsV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770E1D635FC000B9114B /* TradeoffAnalyticsV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F9F773A1D636ABA00B9114B /* VisualRecognitionV3.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F9F770F1D635FC000B9114B /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7F9F773E1D649FA600B9114B /* restaurantReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F773D1D649FA600B9114B /* restaurantReviews.json */; };
 		7F9F77401D64A3A500B9114B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F773F1D64A3A500B9114B /* Restaurant.swift */; };
 		7F9F77431D64CB5F00B9114B /* reviews.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F77411D64B6AD00B9114B /* reviews.txt */; };
@@ -98,39 +56,6 @@
 		CED9E2A01D74BCF000AADF4D /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E29F1D74BCF000AADF4D /* EndpointManager.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		7F9F77251D635FD900B9114B /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7F9F77261D636ABA00B9114B /* Alamofire.framework in CopyFiles */,
-				7F9F77271D636ABA00B9114B /* AlchemyDataNewsV1.framework in CopyFiles */,
-				7F9F77281D636ABA00B9114B /* AlchemyLanguageV1.framework in CopyFiles */,
-				7F9F77291D636ABA00B9114B /* AlchemyVisionV1.framework in CopyFiles */,
-				7F9F772A1D636ABA00B9114B /* ConversationV1.framework in CopyFiles */,
-				7F9F772B1D636ABA00B9114B /* ConversationV1Experimental.framework in CopyFiles */,
-				7F9F772C1D636ABA00B9114B /* DialogV1.framework in CopyFiles */,
-				7F9F772D1D636ABA00B9114B /* DocumentConversionV1.framework in CopyFiles */,
-				7F9F772E1D636ABA00B9114B /* Freddy.framework in CopyFiles */,
-				7F9F772F1D636ABA00B9114B /* LanguageTranslatorV2.framework in CopyFiles */,
-				7F9F77301D636ABA00B9114B /* NaturalLanguageClassifierV1.framework in CopyFiles */,
-				7F9F77311D636ABA00B9114B /* PersonalityInsightsV2.framework in CopyFiles */,
-				7F9F77321D636ABA00B9114B /* RelationshipExtractionV1Beta.framework in CopyFiles */,
-				7F9F77331D636ABA00B9114B /* RestKit.framework in CopyFiles */,
-				7F9F77341D636ABA00B9114B /* RetrieveAndRankV1.framework in CopyFiles */,
-				7F9F77351D636ABA00B9114B /* SpeechToTextV1.framework in CopyFiles */,
-				7F9F77361D636ABA00B9114B /* Starscream.framework in CopyFiles */,
-				7F9F77371D636ABA00B9114B /* TextToSpeechV1.framework in CopyFiles */,
-				7F9F77381D636ABA00B9114B /* ToneAnalyzerV3.framework in CopyFiles */,
-				7F9F77391D636ABA00B9114B /* TradeoffAnalyticsV1.framework in CopyFiles */,
-				7F9F773A1D636ABA00B9114B /* VisualRecognitionV3.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		093B8C3845F89B67402347B1 /* Pods-CognitiveConcierge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitiveConcierge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CognitiveConcierge/Pods-CognitiveConcierge.debug.xcconfig"; sourceTree = "<group>"; };
 		7F4F5BBE1D6E1B4400CF0A13 /* CognitiveConcierge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CognitiveConcierge.plist; sourceTree = "<group>"; };
@@ -140,27 +65,6 @@
 		7F6FAE9B1D6B5E5800BE7829 /* RecommendedRestaurantDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedRestaurantDetailView.swift; sourceTree = "<group>"; };
 		7F6FAE9D1D6B5E6800BE7829 /* RecommendedRestaurantDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendedRestaurantDetailView.xib; sourceTree = "<group>"; };
 		7F8F98151D61036F0061E220 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		7F9F76FB1D635FC000B9114B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlchemyDataNewsV1.framework; path = Carthage/Build/iOS/AlchemyDataNewsV1.framework; sourceTree = "<group>"; };
-		7F9F76FD1D635FC000B9114B /* AlchemyLanguageV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlchemyLanguageV1.framework; path = Carthage/Build/iOS/AlchemyLanguageV1.framework; sourceTree = "<group>"; };
-		7F9F76FE1D635FC000B9114B /* AlchemyVisionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlchemyVisionV1.framework; path = Carthage/Build/iOS/AlchemyVisionV1.framework; sourceTree = "<group>"; };
-		7F9F76FF1D635FC000B9114B /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
-		7F9F77001D635FC000B9114B /* ConversationV1Experimental.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1Experimental.framework; path = Carthage/Build/iOS/ConversationV1Experimental.framework; sourceTree = "<group>"; };
-		7F9F77011D635FC000B9114B /* DialogV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DialogV1.framework; path = Carthage/Build/iOS/DialogV1.framework; sourceTree = "<group>"; };
-		7F9F77021D635FC000B9114B /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentConversionV1.framework; path = Carthage/Build/iOS/DocumentConversionV1.framework; sourceTree = "<group>"; };
-		7F9F77031D635FC000B9114B /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Freddy.framework; path = Carthage/Build/iOS/Freddy.framework; sourceTree = "<group>"; };
-		7F9F77041D635FC000B9114B /* LanguageTranslatorV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LanguageTranslatorV2.framework; path = Carthage/Build/iOS/LanguageTranslatorV2.framework; sourceTree = "<group>"; };
-		7F9F77051D635FC000B9114B /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NaturalLanguageClassifierV1.framework; path = Carthage/Build/iOS/NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
-		7F9F77061D635FC000B9114B /* PersonalityInsightsV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PersonalityInsightsV2.framework; path = Carthage/Build/iOS/PersonalityInsightsV2.framework; sourceTree = "<group>"; };
-		7F9F77071D635FC000B9114B /* RelationshipExtractionV1Beta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RelationshipExtractionV1Beta.framework; path = Carthage/Build/iOS/RelationshipExtractionV1Beta.framework; sourceTree = "<group>"; };
-		7F9F77081D635FC000B9114B /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
-		7F9F77091D635FC000B9114B /* RetrieveAndRankV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RetrieveAndRankV1.framework; path = Carthage/Build/iOS/RetrieveAndRankV1.framework; sourceTree = "<group>"; };
-		7F9F770A1D635FC000B9114B /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
-		7F9F770B1D635FC000B9114B /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
-		7F9F770C1D635FC000B9114B /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
-		7F9F770D1D635FC000B9114B /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToneAnalyzerV3.framework; path = Carthage/Build/iOS/ToneAnalyzerV3.framework; sourceTree = "<group>"; };
-		7F9F770E1D635FC000B9114B /* TradeoffAnalyticsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TradeoffAnalyticsV1.framework; path = Carthage/Build/iOS/TradeoffAnalyticsV1.framework; sourceTree = "<group>"; };
-		7F9F770F1D635FC000B9114B /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
 		7F9F773D1D649FA600B9114B /* restaurantReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurantReviews.json; sourceTree = "<group>"; };
 		7F9F773F1D64A3A500B9114B /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		7F9F77411D64B6AD00B9114B /* reviews.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = reviews.txt; sourceTree = "<group>"; };
@@ -180,7 +84,6 @@
 		87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CognitiveConcierge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		972AB5601DA5E17900985506 /* BluemixConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluemixConfiguration.swift; sourceTree = "<group>"; };
 		972AB5621DA5E6F600985506 /* bluemix.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = bluemix.plist; path = Configuration/bluemix.plist; sourceTree = "<group>"; };
-		97C7BED51DA0ADA200C20230 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Pods/GooglePlaces/Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		CE1456161DAE8CEB00A7E744 /* DecisionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionsView.swift; sourceTree = "<group>"; };
 		CE1456171DAE8CEB00A7E744 /* DecisionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DecisionsView.xib; sourceTree = "<group>"; };
 		CE1C1B601D79167900F1C4D2 /* SFNSDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFNSDisplay.ttf; sourceTree = "<group>"; };
@@ -213,27 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F9F77181D635FC000B9114B /* Freddy.framework in Frameworks */,
-				7F9F77211D635FC000B9114B /* TextToSpeechV1.framework in Frameworks */,
-				7F9F77231D635FC000B9114B /* TradeoffAnalyticsV1.framework in Frameworks */,
-				7F9F77171D635FC000B9114B /* DocumentConversionV1.framework in Frameworks */,
-				7F9F771E1D635FC000B9114B /* RetrieveAndRankV1.framework in Frameworks */,
-				7F9F771B1D635FC000B9114B /* PersonalityInsightsV2.framework in Frameworks */,
-				7F9F77121D635FC000B9114B /* AlchemyLanguageV1.framework in Frameworks */,
-				7F9F77191D635FC000B9114B /* LanguageTranslatorV2.framework in Frameworks */,
-				7F9F77131D635FC000B9114B /* AlchemyVisionV1.framework in Frameworks */,
-				7F9F77111D635FC000B9114B /* AlchemyDataNewsV1.framework in Frameworks */,
-				7F9F77141D635FC000B9114B /* ConversationV1.framework in Frameworks */,
-				7F9F771F1D635FC000B9114B /* SpeechToTextV1.framework in Frameworks */,
-				7F9F771A1D635FC000B9114B /* NaturalLanguageClassifierV1.framework in Frameworks */,
-				7F9F771C1D635FC000B9114B /* RelationshipExtractionV1Beta.framework in Frameworks */,
-				7F9F77201D635FC000B9114B /* Starscream.framework in Frameworks */,
-				7F9F771D1D635FC000B9114B /* RestKit.framework in Frameworks */,
-				7F9F77161D635FC000B9114B /* DialogV1.framework in Frameworks */,
-				7F9F77221D635FC000B9114B /* ToneAnalyzerV3.framework in Frameworks */,
-				7F9F77151D635FC000B9114B /* ConversationV1Experimental.framework in Frameworks */,
-				7F9F77101D635FC000B9114B /* Alamofire.framework in Frameworks */,
-				7F9F77241D635FC000B9114B /* VisualRecognitionV3.framework in Frameworks */,
 				39A907EB378D2C4DA13F61F7 /* Pods_CognitiveConcierge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,28 +328,6 @@
 		D58AA635FF82F295E566095A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97C7BED51DA0ADA200C20230 /* GooglePlaces.framework */,
-				7F9F76FB1D635FC000B9114B /* Alamofire.framework */,
-				7F9F76FC1D635FC000B9114B /* AlchemyDataNewsV1.framework */,
-				7F9F76FD1D635FC000B9114B /* AlchemyLanguageV1.framework */,
-				7F9F76FE1D635FC000B9114B /* AlchemyVisionV1.framework */,
-				7F9F76FF1D635FC000B9114B /* ConversationV1.framework */,
-				7F9F77001D635FC000B9114B /* ConversationV1Experimental.framework */,
-				7F9F77011D635FC000B9114B /* DialogV1.framework */,
-				7F9F77021D635FC000B9114B /* DocumentConversionV1.framework */,
-				7F9F77031D635FC000B9114B /* Freddy.framework */,
-				7F9F77041D635FC000B9114B /* LanguageTranslatorV2.framework */,
-				7F9F77051D635FC000B9114B /* NaturalLanguageClassifierV1.framework */,
-				7F9F77061D635FC000B9114B /* PersonalityInsightsV2.framework */,
-				7F9F77071D635FC000B9114B /* RelationshipExtractionV1Beta.framework */,
-				7F9F77081D635FC000B9114B /* RestKit.framework */,
-				7F9F77091D635FC000B9114B /* RetrieveAndRankV1.framework */,
-				7F9F770A1D635FC000B9114B /* SpeechToTextV1.framework */,
-				7F9F770B1D635FC000B9114B /* Starscream.framework */,
-				7F9F770C1D635FC000B9114B /* TextToSpeechV1.framework */,
-				7F9F770D1D635FC000B9114B /* ToneAnalyzerV3.framework */,
-				7F9F770E1D635FC000B9114B /* TradeoffAnalyticsV1.framework */,
-				7F9F770F1D635FC000B9114B /* VisualRecognitionV3.framework */,
 				87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */,
 			);
 			name = Frameworks;
@@ -486,7 +346,6 @@
 				7FA7F88A1D60CEA70039792A /* Resources */,
 				AC602C9C2CC8488428B28876 /* [CP] Embed Pods Frameworks */,
 				AC03295D12905A521ECC3F5F /* [CP] Copy Pods Resources */,
-				7F9F77251D635FD900B9114B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -509,7 +368,6 @@
 				TargetAttributes = {
 					7FA7F88B1D60CEA70039792A = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LLAEZU86QK;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -605,7 +463,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -762,22 +620,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 093B8C3845F89B67402347B1 /* Pods-CognitiveConcierge.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LLAEZU86QK;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Pods/GooglePlaces/Frameworks/**",
 				);
 				INFOPLIST_FILE = CognitiveConcierge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.CognitiveConcierge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -786,22 +645,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D208A19ADBFAA42F104EF383 /* Pods-CognitiveConcierge.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LLAEZU86QK;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Pods/GooglePlaces/Frameworks",
 				);
 				INFOPLIST_FILE = CognitiveConcierge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.CognitiveConcierge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

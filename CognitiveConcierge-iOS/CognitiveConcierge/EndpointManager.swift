@@ -16,7 +16,6 @@
 
 import UIKit
 import Alamofire
-import Freddy
 import GooglePlaces
 
 class EndpointManager: NSObject {
