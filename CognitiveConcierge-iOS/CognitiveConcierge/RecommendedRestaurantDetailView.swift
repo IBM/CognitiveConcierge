@@ -54,7 +54,7 @@ class RecommendedRestaurantDetailView: UIView {
     - returns: RecommendedRestaurantDetailView
     */
     class func instanceFromNib() -> RecommendedRestaurantDetailView {
-        return UINib(nibName: "RecommendedRestaurantDetailView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! RecommendedRestaurantDetailView
+        return UINib(nibName: "RecommendedRestaurantDetailView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! RecommendedRestaurantDetailView
     }
     
     /**
@@ -76,7 +76,7 @@ class RecommendedRestaurantDetailView: UIView {
         locationHeaderLabel.textColor = UIColor.customRestaurantLabelColor()
         locationHeaderLabel.font = UIFont.regularSFNSDisplay(size: 10)
         locationHeaderLabel.text = "LOCATION"
-        locationHeaderLabel.addTextSpacing(0.7)
+        locationHeaderLabel.addTextSpacing(spacing: 0.7)
         
         hoursTodayLabel.textColor = UIColor.customRestaurantLabelColor()
         hoursTodayLabel.font = UIFont.regularSFNSDisplay(size: 10)
@@ -91,7 +91,7 @@ class RecommendedRestaurantDetailView: UIView {
         
         reviewsFromGoogleLabel.textColor = UIColor.customRestaurantLabelColor()
         reviewsFromGoogleLabel.text = "Reviews from Google"
-        reviewsFromGoogleLabel.addTextSpacing(0.7)
+        reviewsFromGoogleLabel.addTextSpacing(spacing: 0.7)
         
         addressLabel.textColor = UIColor.customDarkBlueColor()
         addressLabel.font = UIFont.regularSFNSDisplay(size: 16)
@@ -99,25 +99,25 @@ class RecommendedRestaurantDetailView: UIView {
         visitWebsiteLabel.textColor = UIColor.customDarkBlueColor()
         visitWebsiteLabel.font = UIFont.regularSFNSDisplay(size: 16)
         visitWebsiteLabel.text = "Visit Website"
-        visitWebsiteLabel.addTextSpacing(1.1)
+        visitWebsiteLabel.addTextSpacing(spacing: 1.1)
                 
         reviewPositiveHighlightHeaderLabel.textColor = UIColor.customDarkBlueColor()
         reviewPositiveHighlightHeaderLabel.font = UIFont.regularSFNSDisplay(size: 10)
         reviewPositiveHighlightLabel.text = "POSITIVE SENTIMENTS"
-        reviewPositiveHighlightHeaderLabel.addTextSpacing(0.7)
+        reviewPositiveHighlightHeaderLabel.addTextSpacing(spacing: 0.7)
         
         reviewPositiveHighlightLabel.textColor = UIColor.customDarkBlueColor()
         reviewPositiveHighlightLabel.font = UIFont.regularSFNSDisplay(size: 13)
-        reviewPositiveHighlightLabel.addTextSpacing(0.9)
+        reviewPositiveHighlightLabel.addTextSpacing(spacing: 0.9)
         
         reviewNegativeHighlightHeaderLabel.textColor = UIColor.customRestaurantLabelColor()
         reviewNegativeHighlightHeaderLabel.font = UIFont.regularSFNSDisplay(size: 10)
         reviewNegativeHighlightHeaderLabel.text = "NEGATIVE SENTIMENTS"
-        reviewNegativeHighlightHeaderLabel.addTextSpacing(0.7)
+        reviewNegativeHighlightHeaderLabel.addTextSpacing(spacing: 0.7)
         
         reviewNegativeHighlightLabel.textColor = UIColor.customRestaurantLabelColor()
         reviewNegativeHighlightLabel.font = UIFont.regularSFNSDisplay(size: 13)
-        reviewNegativeHighlightLabel.addTextSpacing(0.9)
+        reviewNegativeHighlightLabel.addTextSpacing(spacing: 0.9)
         
     }
     
@@ -144,42 +144,42 @@ class RecommendedRestaurantDetailView: UIView {
                 openLabel.text = "CLOSED"
                 openLabel.textColor = UIColor.customClosedRedColor()
             }
-            openLabel.addTextSpacing(0.7)
+            openLabel.addTextSpacing(spacing: 0.7)
         }
         
         let openingTime = openingTimeNow ?? [""]
-        hoursLabel.text = Utils.convertMilitaryTime(openingTime)
-        hoursLabel.addTextSpacing(0.7)
+        hoursLabel.text = Utils.convertMilitaryTime(timeArray: openingTime)
+        hoursLabel.addTextSpacing(spacing: 0.7)
         
         locationNameLabel.text = locationName ?? ""
-        locationNameLabel.addTextSpacing(0.7)
+        locationNameLabel.addTextSpacing(spacing: 0.7)
         
         let locAddress = locationAddress ?? ""
         let locCity = city ?? ""
         
-        addressLabel.text = "\(locAddress)\(locCity)" ?? ""
-        addressLabel.addTextSpacing(1.1)
+        addressLabel.text = "\(locAddress)\(locCity)" 
+        addressLabel.addTextSpacing(spacing: 1.1)
         
         setupMap()
         
         let p_Level = priceLevel ?? 0
-        priceRangeLabel.text = Utils.generateExpensiveString(Int(p_Level))
-        priceRangeLabel.addTextSpacing(1.1)
+        priceRangeLabel.text = Utils.generateExpensiveString(number: Int(p_Level))
+        priceRangeLabel.addTextSpacing(spacing: 1.1)
         
         let r = rating ?? 0.0
-        Utils.setUpStarStackView(r, starStackView: starStackView)
+        Utils.setUpStarStackView(numberOfStars: r, starStackView: starStackView)
         
         /// Set the positive highlights reviews.
         let reviewerPositiveHighlightString = reviewPositiveHighlight ?? ""
         
         reviewPositiveHighlightLabel.text = reviewerPositiveHighlightString
-        reviewPositiveHighlightLabel.addTextSpacing(1.1)
+        reviewPositiveHighlightLabel.addTextSpacing(spacing: 1.1)
         
         /// Set the positive highlights reviews.
         let reviewerNegativeHighlightString = reviewNegativeHighlight ?? ""
         
         reviewNegativeHighlightLabel.text = reviewerNegativeHighlightString
-        reviewNegativeHighlightLabel.addTextSpacing(1.1)
+        reviewNegativeHighlightLabel.addTextSpacing(spacing: 1.1)
 
     }
     

@@ -34,7 +34,7 @@ class BluemixConfiguration: NSObject {
     let remoteBaseRequestURL: String
     
     override init() {
-        if let path = NSBundle.mainBundle().pathForResource(kBluemixKeysPlistName, ofType: "plist"),
+        if let path = Bundle.main.path(forResource: kBluemixKeysPlistName, ofType: "plist"),
             let plist = NSDictionary(contentsOfFile: path),
             let isLocal              = plist[kIsLocalKey] as? Bool,
             let appGUID              = plist[kBluemixAppGUIDKey] as? String,

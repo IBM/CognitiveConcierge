@@ -35,11 +35,11 @@ class EntertainmentOptionsViewController: UIViewController {
     private var workspaceID: String?
     
     private let kNavigationBarTitle = "Watson Recommendations"
-    private let kCellCount = 3
+    fileprivate let kCellCount = 3
     private let kLabelText = "WHAT CAN I HELP YOU FIND?"
-    private let kRestaurantLabelText = "RESTAURANTS"
-    private let kVacationsLabelText = "VACATIONS"
-    private let kShowsLabelText = "SHOWS"
+    fileprivate let kRestaurantLabelText = "RESTAURANTS"
+    fileprivate let kVacationsLabelText = "VACATIONS"
+    fileprivate let kShowsLabelText = "SHOWS"
     private let kConversationErrorCode = -6004
     private let kInternetErrorCode = -10049
 
@@ -47,12 +47,12 @@ class EntertainmentOptionsViewController: UIViewController {
     private let kInternetAlertMessage = "Make sure your device is connected to the internet."
     private let kCredentialsAlertTitle = "Conversation Service Unavailable"
     private let kCredentialsAlertMessage = "Please make sure you entered your Conversation service credentials correctly."
-    private let kRestaurantsAlertTitle = "Please Note"
-    private let kRestaurantsAlertMessage = "This is a demo application for restaurant suggestions only. Feel free to pull and add the functionality for other tiles."
+    fileprivate let kRestaurantsAlertTitle = "Please Note"
+    fileprivate let kRestaurantsAlertMessage = "This is a demo application for restaurant suggestions only. Feel free to pull and add the functionality for other tiles."
     
     override func viewDidLoad() {
         // Get Watson configuration values
-        guard let configurationPath = NSBundle.mainBundle().pathForResource("CognitiveConcierge", ofType: "plist") else {
+        guard let configurationPath = Bundle.main.path(forResource: "CognitiveConcierge", ofType: "plist") else {
             print("problem loading configuration file CognitiveConcierge.plist")
             return
         }
@@ -72,32 +72,32 @@ class EntertainmentOptionsViewController: UIViewController {
 
         /// Identify which nib to use for the collectionView
         let nib = UINib(nibName: "EntertainmentCollectionViewCell", bundle: nil)
-        self.entertainmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "entertainmentCell")
+        self.entertainmentCollectionView.register(nib, forCellWithReuseIdentifier: "entertainmentCell")
         
         // Set the label text and spacing
         label.text = kLabelText
         label.font = UIFont.boldSFNSDisplay(size: 15)
-        label.addTextSpacing(3.7)
+        label.addTextSpacing(spacing: 3.7)
         
         // Set up the navigation bar and buttons.
-        Utils.setupDarkNavBar(self, title: kNavigationBarTitle)
-        Utils.setNavigationItems(self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [ProfileBarButtonItem()])
+        Utils.setupDarkNavBar(viewController: self, title: kNavigationBarTitle)
+        Utils.setNavigationItems(viewController: self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [ProfileBarButtonItem()])
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         /// Re-enable gesture recognizer to allow users to choose tiles again.
-        gestureRecognizer.enabled = true
+        gestureRecognizer.isEnabled = true
         
         // Set up nvaigation bar and buttons
-        Utils.setupDarkNavBar(self, title: kNavigationBarTitle)
-        self.navigationController?.navigationBarHidden = false
-        Utils.setNavigationItems(self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [ProfileBarButtonItem()])
-        Utils.setupNavigationTitleLabel(self, title: kNavigationBarTitle, spacing: 1.0, titleFontSize: 17, color: UIColor.whiteColor())
+        Utils.setupDarkNavBar(viewController: self, title: kNavigationBarTitle)
+        self.navigationController?.isNavigationBarHidden = false
+        Utils.setNavigationItems(viewController: self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [ProfileBarButtonItem()])
+        Utils.setupNavigationTitleLabel(viewController: self, title: kNavigationBarTitle, spacing: 1.0, titleFontSize: 17, color: UIColor.white)
 
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     /** When a collection cell item is pressed, call the Watson Conversation services to begin
@@ -106,51 +106,48 @@ class EntertainmentOptionsViewController: UIViewController {
 
         guard let id = workspaceID else {
             NSLog ("no id or context found")
-            gestureRecognizer.enabled = true
+            gestureRecognizer.isEnabled = true
             return
         }
         
         // Call conversation service for Watson to initiate conversation.
-        self.convoService.message(id, text: "Hi", context: nil, failure: { error in
+        let request = MessageRequest(text: "Hi")
+        let failure = { (error: Error) in
             // Alert user to connect to internet
-            if error.code == self.kConversationErrorCode {
-                self.alertUserWithMessage(self.kCredentialsAlertTitle, message: self.kCredentialsAlertMessage)
-            } else if error.code == self.kInternetErrorCode {
-                self.alertUserWithMessage(self.kInternetAlertTitle, message: self.kInternetAlertMessage)
-            } else {
-                self.alertUserWithMessage("Error", message: "\(error)")
-            }
-            self.gestureRecognizer.enabled = true
-
+            self.alertUserWithMessage(title: "Error", message: "\(error)")
+            self.gestureRecognizer.isEnabled = true
+            
             NSLog ("error generated when sending message to service: \(error)")
-            }, success: { dataResponse in
-                // Save the Watson's greeting response.
-                self.greeting = dataResponse.output.text[0]
-                
-                // Save the conversation context to pass to MessagesVC
-                self.convoContext = dataResponse.context
-                
-                // Perform segue once necessary information is grabbed.
-                self.performSegueWithIdentifier("toHello", sender: nil)
-
-        })
+        }
+        convoService.message(withWorkspace: id, request: request, failure: failure) { dataResponse in
+            // Save the Watson's greeting response.
+            self.greeting = dataResponse.output.text[0]
+            
+            // Save the conversation context to pass to MessagesVC
+            self.convoContext = dataResponse.context
+            
+            // Perform segue once necessary information is grabbed.
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "toHello", sender: nil)
+            }
+        }
     }
     
     // Show alert to connect device to internet.
     func alertUserWithMessage(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(defaultAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // MARK: - Navigation
     
     // Pass the key words from watson to restaurants view controller.
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let messagesVC = segue.destinationViewController as? MessagesViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let messagesVC = segue.destination as? MessagesViewController {
             
             // Make sure we have the necessary conversation instantiation variables
             guard let id = self.workspaceID else {
@@ -172,68 +169,69 @@ class EntertainmentOptionsViewController: UIViewController {
             messagesVC.viewModel.tts = self.tts
             messagesVC.viewModel.convoService = self.convoService
             // Call to JSQMessage to display Watson's greeting in a text bubble.
-            messagesVC.viewModel.storeWatsonReply(NSDate(), output: greeting)
-            messagesVC.viewModel.synthesizeText(greeting)
+            messagesVC.viewModel.storeWatsonReply(date: Date(), output: greeting)
+            messagesVC.viewModel.synthesizeText(text: greeting)
         }
     }
 }
 
 // MARK: CollectionView for Entertainment Options
 extension EntertainmentOptionsViewController: UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return kCellCount
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("entertainmentCell", forIndexPath: indexPath) as! EntertainmentCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "entertainmentCell", for: indexPath) as! EntertainmentCollectionViewCell
         cell.entertainmentNameLabel.font = UIFont.boldSFNSDisplay(size: 12)
 
         switch indexPath.item {
         case 0:
             cell.entertainmentImage.image = UIImage(named:"restaurants")
             cell.entertainmentNameLabel.text = kRestaurantLabelText
-            cell.entertainmentNameLabel.addTextSpacing(3.2)
+            cell.entertainmentNameLabel.addTextSpacing(spacing: 3.2)
         case 1:
             cell.entertainmentImage.image = UIImage(named:"vacation")
             cell.entertainmentNameLabel.text = kVacationsLabelText
-            cell.entertainmentNameLabel.addTextSpacing(3.2)
+            cell.entertainmentNameLabel.addTextSpacing(spacing: 3.2)
         case 2:
             cell.entertainmentImage.image = UIImage(named:"shows")
             cell.entertainmentNameLabel.text = kShowsLabelText
-            cell.entertainmentNameLabel.addTextSpacing(3.2)
+            cell.entertainmentNameLabel.addTextSpacing(spacing: 3.2)
         default:
             break
         }
         return cell
     }
     
-    @IBAction func handleGestureRecognizer(sender: AnyObject) {
-        if gestureRecognizer.state != UIGestureRecognizerState.Ended {
+    @IBAction func handleGestureRecognizer(_ sender: AnyObject) {
+        if gestureRecognizer.state != UIGestureRecognizerState.ended {
             return
         }
         
-        let p = gestureRecognizer.locationInView(entertainmentCollectionView)
-        let indexPath = entertainmentCollectionView.indexPathForItemAtPoint(p)
+        let p = gestureRecognizer.location(in: entertainmentCollectionView)
+        let indexPath = entertainmentCollectionView.indexPathForItem(at: p)
         
         if let index = indexPath {
             // Disable other clicks
-            gestureRecognizer.enabled = false
+            gestureRecognizer.isEnabled = false
             switch index.row {
             case 0:
                 // Restaurants clicked
                 collectionCellPressed()
             case 1:
                 // Vacations clicked
-                alertUserWithMessage(kRestaurantsAlertTitle, message: kRestaurantsAlertMessage)
-                gestureRecognizer.enabled = true;
+                alertUserWithMessage(title: kRestaurantsAlertTitle, message: kRestaurantsAlertMessage)
+                gestureRecognizer.isEnabled = true;
             case 2:
                 // Shows clicked
-                alertUserWithMessage(kRestaurantsAlertTitle, message: kRestaurantsAlertMessage)
-                gestureRecognizer.enabled = true;
+                alertUserWithMessage(title: kRestaurantsAlertTitle, message: kRestaurantsAlertMessage)
+                gestureRecognizer.isEnabled = true;
             default:
                 break
             }
@@ -243,13 +241,13 @@ extension EntertainmentOptionsViewController: UICollectionViewDataSource {
     }
 }
 
-extension EntertainmentOptionsViewController: UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+extension EntertainmentOptionsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = collectionView.frame.size.width
 
         let cellSpacing = (collectionView.frame.size.height * (25/451))/2
         let cellHeight = (collectionView.frame.size.height - (2 * cellSpacing))/3
 
-        return CGSizeMake(cellWidth, cellHeight)
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 }

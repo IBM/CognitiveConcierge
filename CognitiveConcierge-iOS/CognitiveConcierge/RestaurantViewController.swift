@@ -26,55 +26,55 @@ class RestaurantViewController: UIViewController {
     
     var theRestaurants: [Restaurant] = []
     var chosenRestaurant: Restaurant?
-    var keyWords = [:]
+    var keyWords = [String: String]()
     var timeInput: String?
     
-    private var occasion: String?
+    fileprivate var occasion: String?
     private var loadingView : HorizontalOnePartStackView?
-    private var onePartStackView : HorizontalOnePartStackView?
+    fileprivate var onePartStackView : HorizontalOnePartStackView?
     private var mySubview : UIView?
-    private var watsonOverlay: WatsonOverlay?
+    fileprivate var watsonOverlay: WatsonOverlay?
     
     //// Endpoint manager to make API calls.
     private let endpointManager = EndpointManager.sharedInstance
     private let kNavigationBarTitle = "Restaurants"
     private let kBackButtonTitle = "CHAT"
-    private let kLocationText = "LAS VEGAS, NV"
-    private let kHeightForHeaderInSection:CGFloat = 10
-    private let kEstimatedHeightForRowAtIndexPath:CGFloat = 104.0
-    private let kNumberOfRowsInTableViewSection = 1
+    fileprivate let kLocationText = "LAS VEGAS, NV"
+    fileprivate let kHeightForHeaderInSection:CGFloat = 10
+    fileprivate let kEstimatedHeightForRowAtIndexPath:CGFloat = 104.0
+    fileprivate let kNumberOfRowsInTableViewSection = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadKeyWords()
 
         self.onePartStackView = HorizontalOnePartStackView.instanceFromNib()
-        self.setupStackView(true)
-        getRestaurantRecommendations(self.occasion!)
+        self.setupStackView(isLoading: true)
+        getRestaurantRecommendations(occasion: self.occasion!)
         
         // Set up the navigation bar
-        Utils.setupDarkNavBar(self, title: kNavigationBarTitle)
+        Utils.setupDarkNavBar(viewController: self, title: kNavigationBarTitle)
         
         // set up navigation items.
-        Utils.setNavigationItems(self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [WhitePathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
+        Utils.setNavigationItems(viewController: self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [WhitePathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
         
-        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = false
 
     }
     
-    override func viewWillAppear(animated: Bool) {
-        Utils.setupDarkNavBar(self, title: kNavigationBarTitle)
-        self.navigationController?.navigationBarHidden = false
-        Utils.setupBackButton(backButton, title: kBackButtonTitle, textColor: UIColor.whiteColor())
+    override func viewWillAppear(_ animated: Bool) {
+        Utils.setupDarkNavBar(viewController: self, title: kNavigationBarTitle)
+        self.navigationController?.isNavigationBarHidden = false
+        Utils.setupBackButton(button: backButton, title: kBackButtonTitle, textColor: UIColor.white)
         
         // set up navigation items.
-        Utils.setNavigationItems(self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [WhitePathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
+        Utils.setNavigationItems(viewController: self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [WhitePathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
         
-        Utils.setupNavigationTitleLabel(self, title: kNavigationBarTitle, spacing: 1.0, titleFontSize: 17, color: UIColor.whiteColor())
+        Utils.setupNavigationTitleLabel(viewController: self, title: kNavigationBarTitle, spacing: 1.0, titleFontSize: 17, color: UIColor.white)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     /** call to Restaurant API to receive recommendations.
@@ -82,16 +82,19 @@ class RestaurantViewController: UIViewController {
     */
     func getRestaurantRecommendations(occasion: String) {
         
-        endpointManager.requestRestaurantRecommendations(occasion,
-                                                         failure: { mockData in
-            self.theRestaurants = mockData
-            self.setUpTableView()
-            self.setupStackView(false)
-        }) { recommendations in
-            self.theRestaurants = Utils.parseRecommendationsJSON(recommendations)
-            self.setUpTableView()
-            self.setupStackView(false)
-        }
+        endpointManager.requestRestaurantRecommendations(
+            endpoint: occasion,
+            failure: { mockData in
+                self.theRestaurants = mockData
+                self.setUpTableView()
+                self.setupStackView(isLoading: false)
+            },
+            success: { recommendations in
+                self.theRestaurants = Utils.parseRecommendationsJSON(recommendations: recommendations as! [[String : Any]])
+                self.setUpTableView()
+                self.setupStackView(isLoading: false)
+            }
+        )
     }
     
     /**
@@ -101,7 +104,7 @@ class RestaurantViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        guard let configurationPath = NSBundle.mainBundle().pathForResource("CognitiveConcierge", ofType: "plist") else {
+        guard let configurationPath = Bundle.main.path(forResource: "CognitiveConcierge", ofType: "plist") else {
             print("problem loading configuration file CognitiveConcierge.plist")
             return
         }
@@ -109,7 +112,7 @@ class RestaurantViewController: UIViewController {
         GMSPlacesClient.provideAPIKey(configuration?["googlePlacesAPIKey"] as! String)
 
 
-        registerNibWithTableView("restaurant", nibName: "RecommendedRestaurantTableViewCell", tableView: self.tableView)
+        registerNibWithTableView(identifier: "restaurant", nibName: "RecommendedRestaurantTableViewCell", tableView: self.tableView)
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = kEstimatedHeightForRowAtIndexPath
@@ -120,8 +123,8 @@ class RestaurantViewController: UIViewController {
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension
     }
     
-    @IBAction func didPressBackButton(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func didPressBackButton(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
     /**
@@ -132,13 +135,13 @@ class RestaurantViewController: UIViewController {
      - parameter tableView:  UITableView
      */
     func registerNibWithTableView(identifier: String, nibName: String, tableView: UITableView){
-        tableView.registerNib(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: identifier)
+        tableView.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: identifier)
     }
     
     // MARK - Navigation
     // Pass the key words from watson to restaurants view controller.
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let recommendationsVC = segue.destinationViewController as? RestaurantDetailViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let recommendationsVC = segue.destination as? RestaurantDetailViewController {
             if let restaurant = chosenRestaurant {
                 recommendationsVC.chosenRestaurant = restaurant
             } else {
@@ -154,18 +157,54 @@ class RestaurantViewController: UIViewController {
 
  */
 extension RestaurantViewController: UITableViewDelegate {
+    
     /**
      Method that defines the action that is taken when a cell of the table view is  selected, in this case we segue to the recommendation detail view controller if the cell selected is at indexPath.row 0
 
      - parameter tableView: UITableView
      - parameter indexPath: NSIndexPath
      */
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
         chosenRestaurant = self.theRestaurants[indexPath.section]
-        performSegueWithIdentifier("toRecommendationDetail", sender: self)
+        performSegue(withIdentifier: "toRecommendationDetail", sender: self)
     }
-
+    
+    /**
+     Method that sets up the cell right before its about to be displayed. In this case we remove the 15 pt separator inset
+     
+     - parameter tableView: UITableView
+     - parameter cell:      UITableViewCell
+     - parameter indexPath: NSIndexPath
+     */
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //remove 15 pt separator inset so it goes all the way across width of tableview
+        tableView.separatorInset = .zero
+        tableView.layoutMargins = .zero
+        tableView.preservesSuperviewLayoutMargins = false
+        
+        UIView.performWithoutAnimation { () -> Void in
+            cell.layoutIfNeeded()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return kEstimatedHeightForRowAtIndexPath
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return kHeightForHeaderInSection
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.customPaleGrayColor()
+        return headerView
+    }
 }
 
 /**
@@ -182,7 +221,7 @@ extension RestaurantViewController: UITableViewDataSource {
 
      - returns: Int
      */
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return theRestaurants.count
     }
 
@@ -195,33 +234,8 @@ extension RestaurantViewController: UITableViewDataSource {
 
      - returns: Int
      */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return kNumberOfRowsInTableViewSection
-    }
-
-
-    /**
-     Method that sets up the cell right before its about to be displayed. In this case we remove the 15 pt separator inset
-
-     - parameter tableView: UITableView
-     - parameter cell:      UITableViewCell
-     - parameter indexPath: NSIndexPath
-     */
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        //remove 15 pt separator inset so it goes all the way across width of tableview
-        if cell.respondsToSelector(Selector("setSeparatorInset:")) {
-            cell.separatorInset = UIEdgeInsetsZero
-        }
-        if cell.respondsToSelector(Selector("setLayoutMargins:")) {
-            cell.layoutMargins = UIEdgeInsetsZero
-        }
-        if cell.respondsToSelector(Selector("setPreservesSuperviewLayoutMargins:")) {
-            cell.preservesSuperviewLayoutMargins = false
-        }
-        
-        UIView.performWithoutAnimation { () -> Void in
-            cell.layoutIfNeeded()
-        }
     }
 
 
@@ -233,58 +247,44 @@ extension RestaurantViewController: UITableViewDataSource {
 
      - returns: UITableViewCell
      */
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return setUpTableViewCell(indexPath, tableView: tableView)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return setUpTableViewCell(indexPath: indexPath, tableView: tableView)
     }
     
-    // space between cells.
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return kHeightForHeaderInSection
-    }
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.customPaleGrayColor()
-        return headerView
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            return UITableViewAutomaticDimension
-        }
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            return kEstimatedHeightForRowAtIndexPath
-        }
+}
 
+extension RestaurantViewController {
+    
     /**
      Method that sets up the tableViewCell at the indexPath parameter depending on the type of recommendation type the recommendation is at indexPath
-
+     
      - parameter indexPath: NSIndexPath
      - parameter tableView: UITableView
-
+     
      - returns: UITableViewCell
      */
-    func setUpTableViewCell(indexPath : NSIndexPath, tableView: UITableView) -> UITableViewCell{
+    func setUpTableViewCell(indexPath: IndexPath, tableView: UITableView) -> UITableViewCell{
         let myRestaurant = self.theRestaurants[indexPath.section]
         var cell : UITableViewCell = UITableViewCell()
-        cell = setupRestaurantRecommendationTableViewCell(indexPath, tableView: tableView, restaurant: myRestaurant)
+        cell = setupRestaurantRecommendationTableViewCell(indexPath: indexPath, tableView: tableView, restaurant: myRestaurant)
         return cell
     }
-
+    
     /**
      Method sets up the tableViewCell at indexPath as a RecommendedRestaurantTableViewCell
-
+     
      - parameter indexPath:      NSIndexPath
      - parameter tableView:      UITableView
      - parameter recommendation: Event
-
+     
      - returns: UITableViewCell
      */
-    private func setupRestaurantRecommendationTableViewCell(indexPath : NSIndexPath, tableView : UITableView, restaurant : Restaurant) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCellWithIdentifier("restaurant", forIndexPath: indexPath) as! RecommendedRestaurantTableViewCell
-
+    func setupRestaurantRecommendationTableViewCell(indexPath : IndexPath, tableView : UITableView, restaurant : Restaurant) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurant", for: indexPath) as! RecommendedRestaurantTableViewCell
+        
         cell.setUpData(
-            restaurant.getName(),
+            restaurantTitle: restaurant.getName(),
             openNowStatus: restaurant.getOpenNowStatus(),
             matchScorePercentage : restaurant.getMatchPercentage(),
             rating: restaurant.getRating(),
@@ -292,7 +292,7 @@ extension RestaurantViewController: UITableViewDataSource {
             googleID: restaurant.getGoogleID(),
             image: restaurant.getImage()
         )
-
+        
         return cell
     }
     
@@ -306,18 +306,19 @@ extension RestaurantViewController: UITableViewDataSource {
             }
             let occasionInput = occasion ?? ""
             let time = timeInput ?? ""
-            stackView.setUpData(occasionInput.uppercaseString, location: kLocationText, time: time.uppercaseString)
-            stackView.frame = CGRectMake(0, 0, self.view.frame.width, bannerView.frame.height)
+            stackView.setUpData(occasion: occasionInput.uppercased(), location: kLocationText, time: time.uppercased())
+            stackView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: bannerView.frame.height)
             bannerView.addSubview(stackView)
             doneLoading()
         }
     }
+    
     func setupLoadingWatsonView() {
-        watsonOverlay = WatsonOverlay.instanceFromNib(self.view)
+        watsonOverlay = WatsonOverlay.instanceFromNib(view: self.view)
         guard let overlay = watsonOverlay else {
             return
         }
-        overlay.showWatsonOverlay(self.view)
+        overlay.showWatsonOverlay(view: self.view)
     }
     
     func doneLoading () {
@@ -331,9 +332,7 @@ extension RestaurantViewController: UITableViewDataSource {
      * Currently looks only for "occasions" and "time".
      */
     func loadKeyWords() {
-        occasion = keyWords["occasions"] as? String ?? "None"
+        occasion = keyWords["occasions"] ?? "None"
         timeInput = timeInput ?? "Any Time"
     }
-    
-    
 }

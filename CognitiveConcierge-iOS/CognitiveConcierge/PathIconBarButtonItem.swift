@@ -33,15 +33,14 @@ class PathIconBarButtonItem: UIBarButtonItem {
     
     func goToPath() {
         if let currentVC = Utils.getCurrentViewController() {
-            currentVC.navigationController?.popViewControllerAnimated(true)
+            _ = currentVC.navigationController?.popViewController(animated: true)
         }
     }
     
     private func getPathIconButton() -> UIButton {
-        morePathButton.setImage(UIImage(named: "path"), forState: .Normal)
-        morePathButton.addTarget(self, action: #selector(PathIconBarButtonItem.goToPath), forControlEvents: .TouchUpInside)
-        morePathButton.addTarget(self, action: nil, forControlEvents: .TouchUpInside)
-        morePathButton.frame = CGRectMake(11.8, 33.5, 6, 12.2)
+        morePathButton.setImage(UIImage(named: "path"), for: .normal)
+        morePathButton.addTarget(self, action: #selector(PathIconBarButtonItem.goToPath), for: .touchUpInside)
+        morePathButton.frame = CGRect(x: 11.8, y: 33.5, width: 6, height: 12.2)
 
         // Set opacity
         morePathButton.alpha = 0.45

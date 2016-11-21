@@ -41,10 +41,10 @@ extension UIView {
     
     @IBInspectable var borderColor: UIColor? {
         get {
-            return UIColor(CGColor: self.layer.borderColor!)
+            return UIColor(cgColor: self.layer.borderColor!)
         }
         set {
-            self.layer.borderColor = newValue?.CGColor
+            self.layer.borderColor = newValue?.cgColor
         }
     }
     
@@ -57,10 +57,12 @@ extension UIView {
         }
     }
     
-    func fadeIn(duration: NSTimeInterval = 1.0, completion: ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
-        UIView.animateWithDuration(duration, animations: { () -> Void in
-            self.alpha = 1
-        }, completion: completion)
+    func fadeIn(duration: TimeInterval = 1.0, completion: ((Bool) -> Void)? = nil) {
+        UIView.animate(
+            withDuration: duration,
+            animations: { self.alpha = 1 },
+            completion: completion
+        )
     }
 
 }

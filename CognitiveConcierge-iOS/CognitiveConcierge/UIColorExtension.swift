@@ -64,15 +64,15 @@ extension UIColor {
         
         if hex.hasPrefix("#") {
             let nsHex = hex as NSString
-            hexString = nsHex.substringFromIndex(1)
+            hexString = nsHex.substring(from: 1)
             
         } else {
             hexString = hex
         }
         
-        let scanner = NSScanner(string: hexString)
+        let scanner = Scanner(string: hexString)
         var hexValue: CUnsignedLongLong = 0
-        if scanner.scanHexLongLong(&hexValue) {
+        if scanner.scanHexInt64(&hexValue) {
             switch (hexString.characters.count) {
             case 3:
                 red = CGFloat((hexValue & 0xF00) >> 8)       / 15.0

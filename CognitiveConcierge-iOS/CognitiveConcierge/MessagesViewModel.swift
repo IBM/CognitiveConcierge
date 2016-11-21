@@ -34,39 +34,38 @@ class MessagesViewModel {
     var reachedEndOfConversation = false
     var messages: [JSQMessage] = []
     
-    func parseConversationResponse(text: String, date: NSDate, senderId: String, senderDisplayName: String, completion: ((data: (Bool, String))-> Void)) {
+    func parseConversationResponse(text: String, date: Date, senderId: String, senderDisplayName: String, completion: @escaping (Bool, String) -> Void) {
         guard let convoService = convoService else {
             print ("No conversation service")
             return
         }
 
-        convoService.message(workspaceID, text: text, context: watsonContext, failure: { error in
-            print ("error was generated when sending a message to service: \(error)")
-            }, success: { dataResponse in
-                
-                // Check if time question has been answered to grab input
-                if self.timeFlag {
-                    self.timeInput = dataResponse.input.text ?? ""
-                    self.timeFlag = false
+        let request = MessageRequest(text: text, context: watsonContext)
+        let failure = { (error: Error) in print("error was generated when sending a message to service: \(error)") }
+        convoService.message(withWorkspace: workspaceID, request: request, failure: failure) { dataResponse in
+            // Check if time question has been answered to grab input
+            if self.timeFlag {
+                self.timeInput = dataResponse.input?.text ?? ""
+                self.timeFlag = false
+            }
+            // Get watson's reply to the user
+            let output = dataResponse.output.text[0]
+            // Check if time question was asked
+            for o in dataResponse.output.text {
+                if o == "time" {
+                    self.timeFlag = true
                 }
-                // Get watson's reply to the user
-                let output = dataResponse.output.text[0]
-                // Check if time question was asked
-                for o in dataResponse.output.text {
-                    if o == "time" {
-                        self.timeFlag = true
-                    }
-                }
-                // Save watson's conversation context to continue using to keep conversation going.
-                self.watsonContext = dataResponse.context
-                // Store watson reply as JSQMessage.
-                self.storeWatsonReply(date, output: output)
-                // Store entities and user input
-                self.storeEntities(dataResponse.entities)
-                // Check what point watson has reached in the conversation
-                self.reachedEndOfConversation = self.checkProgress(dataResponse.context)
-                completion(data: (self.reachedEndOfConversation, output))
-        })
+            }
+            // Save watson's conversation context to continue using to keep conversation going.
+            self.watsonContext = dataResponse.context
+            // Store watson reply as JSQMessage.
+            self.storeWatsonReply(date: date, output: output)
+            // Store entities and user input
+            self.storeEntities(entities: dataResponse.entities)
+            // Check what point watson has reached in the conversation
+            self.reachedEndOfConversation = self.checkProgress(convoContext: dataResponse.context)
+            completion(self.reachedEndOfConversation, output)
+        }
     }
     
     /**
@@ -84,9 +83,8 @@ class MessagesViewModel {
     func storeEntities(entities: [Entity]) {
         if !entities.isEmpty {
             for e in entities {
-                guard let key = e.entity, let val = e.value else {
-                    break
-                }
+                let key = e.entity
+                let val = e.value
                 watsonEntities[key] = val
             }
         }
@@ -97,22 +95,23 @@ class MessagesViewModel {
      - paramater date: NSDate of today and time.
      - paramater output: Watson's response to the user's input.
      */
-    func storeWatsonReply(date: NSDate, output: String) {
+    func storeWatsonReply(date: Date, output: String) {
         let reply = JSQMessage(senderId: User.Watson.rawValue, senderDisplayName: "Watson", date: date, text: output)
-        self.messages.append(reply)
+        self.messages.append(reply!)
     }
     
     func checkProgress(convoContext: Context) -> Bool {
         var displaySuggestions = false
-        guard let node = convoContext.system?.dialogStack[0] else {
+        guard convoContext.system.dialogStack.count > 0 else {
             return displaySuggestions
         }
+        let node = convoContext.system.dialogStack[0]
         // Check if watson has reached the end of the conversation.
-        if node.rangeOfString("root") != nil {
+        if node.range(of: "root") != nil {
             displaySuggestions = true
         }
         // Check if the conversation has restarted to the first node or the "anything else" node.
-        if (node.rangeOfString("node_1_") != nil) || (node.rangeOfString("node_3_") != nil) {
+        if (node.range(of: "node_1_") != nil) || (node.range(of: "node_3_") != nil) {
             
             // Clear entities
             watsonEntities = [:]
@@ -125,12 +124,9 @@ class MessagesViewModel {
             print ("no text to speech service")
             return
         }
-        tts.synthesize(text,
-                       voice: SynthesisVoice.GB_Kate,
-                       audioFormat: AudioFormat.WAV,
-                       failure: { error in
-                        print("error was generated \(error)")
-        }) { data in
+        let failure = { (error: Error) in print("error was generated: \(error)") }
+        tts.synthesize(text, voice: SynthesisVoice.gb_Kate.rawValue, audioFormat: .wav, failure: failure) {
+            data in
             do {
                 self.player = try AVAudioPlayer(data: data)
                 self.player!.play()
