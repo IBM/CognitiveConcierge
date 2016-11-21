@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		39A907EB378D2C4DA13F61F7 /* Pods_CognitiveConcierge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */; };
+		7ADBC9D51DDD591000837023 /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D11DDD591000837023 /* ConversationV1.framework */; };
+		7ADBC9D61DDD591000837023 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D21DDD591000837023 /* RestKit.framework */; };
+		7ADBC9D71DDD591000837023 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D31DDD591000837023 /* SpeechToTextV1.framework */; };
+		7ADBC9D81DDD591000837023 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D41DDD591000837023 /* TextToSpeechV1.framework */; };
 		7F4F5BBF1D6E1B4400CF0A13 /* CognitiveConcierge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F5BBE1D6E1B4400CF0A13 /* CognitiveConcierge.plist */; };
 		7F642A7E1D610919007A0F53 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F642A7D1D610919007A0F53 /* Conversation.swift */; };
 		7F6FAE771D6A75F700BE7829 /* HorizontalOnePartStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FAE761D6A75F700BE7829 /* HorizontalOnePartStackView.xib */; };
@@ -58,6 +62,10 @@
 
 /* Begin PBXFileReference section */
 		093B8C3845F89B67402347B1 /* Pods-CognitiveConcierge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitiveConcierge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CognitiveConcierge/Pods-CognitiveConcierge.debug.xcconfig"; sourceTree = "<group>"; };
+		7ADBC9D11DDD591000837023 /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
+		7ADBC9D21DDD591000837023 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
+		7ADBC9D31DDD591000837023 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
+		7ADBC9D41DDD591000837023 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		7F4F5BBE1D6E1B4400CF0A13 /* CognitiveConcierge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CognitiveConcierge.plist; sourceTree = "<group>"; };
 		7F642A7D1D610919007A0F53 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		7F6FAE761D6A75F700BE7829 /* HorizontalOnePartStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizontalOnePartStackView.xib; sourceTree = "<group>"; };
@@ -116,6 +124,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADBC9D51DDD591000837023 /* ConversationV1.framework in Frameworks */,
+				7ADBC9D61DDD591000837023 /* RestKit.framework in Frameworks */,
+				7ADBC9D71DDD591000837023 /* SpeechToTextV1.framework in Frameworks */,
+				7ADBC9D81DDD591000837023 /* TextToSpeechV1.framework in Frameworks */,
 				39A907EB378D2C4DA13F61F7 /* Pods_CognitiveConcierge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +340,10 @@
 		D58AA635FF82F295E566095A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7ADBC9D11DDD591000837023 /* ConversationV1.framework */,
+				7ADBC9D21DDD591000837023 /* RestKit.framework */,
+				7ADBC9D31DDD591000837023 /* SpeechToTextV1.framework */,
+				7ADBC9D41DDD591000837023 /* TextToSpeechV1.framework */,
 				87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */,
 			);
 			name = Frameworks;
@@ -346,6 +362,7 @@
 				7FA7F88A1D60CEA70039792A /* Resources */,
 				AC602C9C2CC8488428B28876 /* [CP] Embed Pods Frameworks */,
 				AC03295D12905A521ECC3F5F /* [CP] Copy Pods Resources */,
+				7ADBC9D91DDD591700837023 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -363,7 +380,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = IBM;
 				TargetAttributes = {
 					7FA7F88B1D60CEA70039792A = {
@@ -421,6 +438,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7ADBC9D91DDD591700837023 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ConversationV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SpeechToTextV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RestKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		AC03295D12905A521ECC3F5F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -620,7 +654,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 093B8C3845F89B67402347B1 /* Pods-CognitiveConcierge.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -645,7 +679,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D208A19ADBFAA42F104EF383 /* Pods-CognitiveConcierge.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
