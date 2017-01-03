@@ -1,1 +1,0 @@
-web: restaurant-recommendations -bind 0.0.0.0:$PORT

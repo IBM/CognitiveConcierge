@@ -16,10 +16,11 @@ applications:
 - name: CognitiveConcierge
   path: ./CognitiveConcierge-Server
   random-route: true
+  command: restaurant-recommendations -bind 0.0.0.0:$PORT
   memory: 512M
   disk_quota: 1024M
   instances: 1
-  buildpack: https://github.com/IBM-Swift/swift-buildpack.git#develop
+  buildpack: swift_buildpack
   services:
   - CognitiveConcierge-Conversation
   - CognitiveConcierge-Speech-To-Text
