@@ -59,7 +59,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 	<img src="images/conversation_dialog.png" width="500">
 
     This is also how you can try out the conversation and test your bot.
-	
+
 	<img src="images/conversation_testing.png" width="500">
 
 ### Run the iOS Application
@@ -70,10 +70,10 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 4. Run the following commands to install the necessary dependencies:
   ```
   carthage update --platform iOS
-  
+
   pod install
   ```
-5. Open the CognitiveConcierge.xcworkspace file in Xcode 8 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
+5. Open the CognitiveConcierge.xcworkspace file in Xcode 8.2 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
 6. Enter your credentials for each service required to run the app into the same CognitiveConcierge.plist file you entered the Conversation Service's Workspace ID: `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. Find each credential by returning to your application details page which you can access by clicking on the Bluemix icon within ICT's Cloud Runtime or following these steps:
     1. Go to [Bluemix](https://new-console.ng.bluemix.net/#overview) and make sure you're on the 'Console' screen:
 

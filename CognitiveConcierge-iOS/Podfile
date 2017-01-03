@@ -3,6 +3,6 @@ use_frameworks!
 
 target 'CognitiveConcierge' do
   pod 'JSQMessagesViewController', '7.3.4'
-  pod 'Alamofire', '4.1.0'
+  pod 'Alamofire', '4.2.0'
   pod 'GooglePlaces', '2.1.1'
 end
