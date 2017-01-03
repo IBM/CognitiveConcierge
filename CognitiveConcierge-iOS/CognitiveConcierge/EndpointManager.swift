@@ -16,7 +16,6 @@
 
 import UIKit
 import Alamofire
-import Freddy
 import GooglePlaces
 
 class EndpointManager: NSObject {
@@ -31,38 +30,37 @@ class EndpointManager: NSObject {
     //configuration for URL based on bluemix.plist, populated by ICT or manually.
     let config = BluemixConfiguration()
     
-    func requestRestaurantRecommendations(endpoint: String, failure: [Restaurant] -> Void,
-                                          success: NSArray -> Void) {
-        let request = getBaseRequestURL() + "/api/v1/restaurants?occasion=" + endpoint
+    func requestRestaurantRecommendations(endpoint: String, failure: @escaping ([Restaurant]) -> Void, success: @escaping ([Any]) -> Void) {
+        let url = getBaseRequestURL() + "/api/v1/restaurants?occasion=" + endpoint
         
         // Execute REST request to get all restaurant recommendations from API
-        Alamofire.request(.GET, request, encoding:.JSON).responseJSON {
-            response in switch response.result {
-            case .Success(let theJSON):
-                let jsonResponse = theJSON as! NSArray
+        Alamofire.request(url, encoding: JSONEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success(let theJSON):
+                let jsonResponse = theJSON as! [Any]
                 success(jsonResponse)
 
-            case .Failure(let err):
+            case .failure(let err):
                 print ("using mock data due to err: \(err)")
                 if endpoint == "date" {
-                    failure(self.useMockData("anniversary"))
+                    failure(self.useMockData(fileNameSetting: "anniversary"))
                 }
-                failure(self.useMockData(endpoint))
+                failure(self.useMockData(fileNameSetting: endpoint))
             }
         }
     }
 
     func useMockData(fileNameSetting: String) -> [Restaurant] {
         var restaurants = [Restaurant]()
-        guard let path = NSBundle.mainBundle().pathForResource(fileNameSetting, ofType: "json") else {
+        guard let path = Bundle.main.url(forResource: fileNameSetting, withExtension: "json") else {
             print("unable to find path")
             return restaurants
         }
-        if let restaurantData = NSData(contentsOfFile: path) {
+        if let restaurantData = try? Data(contentsOf: path) {
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData(restaurantData, options: .AllowFragments)
-                if let jsonRestaurants = json["restaurants"] as? [[String: AnyObject]] {
-                    restaurants = Utils.parseRecommendationsJSON(jsonRestaurants)
+                let json = try JSONSerialization.jsonObject(with: restaurantData, options: .allowFragments)
+                if let dict = json as? [String: Any], let jsonRestaurants = dict["restaurants"] as? [[String: Any]] {
+                    restaurants = Utils.parseRecommendationsJSON(recommendations: jsonRestaurants)
                 }
             } catch let error as NSError {
                 print ("json error: \(error.localizedDescription)")

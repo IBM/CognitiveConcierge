@@ -45,37 +45,37 @@ class RestaurantDetailViewController: UIViewController {
         
         // set up navigation items.
 
-        Utils.setNavigationItems(self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [WhitePathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
-        Utils.setupNavigationTitleLabel(self, title: "", spacing: 1.0, titleFontSize: 17, color: UIColor.whiteColor())
+        Utils.setNavigationItems(viewController: self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [WhitePathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
+        Utils.setupNavigationTitleLabel(viewController: self, title: "", spacing: 1.0, titleFontSize: 17, color: UIColor.white)
         
-        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = false
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
         // Set up the navigation bar so that we can color the nav bar to be dark blue, and the default symbols to be white.
-        Utils.setupBackButton(backButton, title: kBackButtonTitle, textColor: UIColor.whiteColor(), frame: buttonFrame)
+        Utils.setupBackButton(button: backButton, title: kBackButtonTitle, textColor: UIColor.white, frame: buttonFrame)
         
         // set up navigation items.
-        Utils.setNavigationItems(self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [WhitePathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
-        Utils.setupNavigationTitleLabel(self, title: "", spacing: 1.0, titleFontSize: 17, color: UIColor.whiteColor())
+        Utils.setNavigationItems(viewController: self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [WhitePathIconBarButtonItem(), UIBarButtonItem(customView: backButton)])
+        Utils.setupNavigationTitleLabel(viewController: self, title: "", spacing: 1.0, titleFontSize: 17, color: UIColor.white)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-    @IBAction func didPressBackButton(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func didPressBackButton(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func setupRecommendedRestaurantDetailView() {
         
         // splice the restaurant address into address, city, state.
-        var locationAddress = self.chosenRestaurant.getAddress().componentsSeparatedByString(",")
+        var locationAddress = self.chosenRestaurant.getAddress().components(separatedBy: ",")
         
         // load data into restaurant details view
-        restaurantDetailView.setupData(self.chosenRestaurant.getOpenNowStatus(),
+        restaurantDetailView.setupData(openNowStatus: self.chosenRestaurant.getOpenNowStatus(),
                                        openingTimeNow: self.chosenRestaurant.getOpeningTimeNow(),
                                        locationName:self.chosenRestaurant.getName(),
                                        locationAddress: locationAddress[0],
@@ -83,8 +83,8 @@ class RestaurantDetailViewController: UIViewController {
                                        fullAddress: self.chosenRestaurant.getAddress(),
                                        priceLevel: Double(self.chosenRestaurant.getExpense()),
                                        rating: self.chosenRestaurant.getRating(),
-                                       reviewNegativeHighlight: self.determineReviewSentiment("negative"),
-                                       reviewPositiveHighlight: self.determineReviewSentiment("positive"))
+                                       reviewNegativeHighlight: self.determineReviewSentiment(type: "negative"),
+                                       reviewPositiveHighlight: self.determineReviewSentiment(type: "positive"))
         
         // Make website view clickable.
         let tap = UITapGestureRecognizer(target: self, action: #selector(visitWebsiteTapped))
@@ -96,7 +96,7 @@ class RestaurantDetailViewController: UIViewController {
     }
     
     func visitWebsiteTapped() {
-        UIApplication.sharedApplication().openURL(NSURL(string: self.chosenRestaurant.getWebsite())!)
+        UIApplication.shared.open(URL(string: self.chosenRestaurant.getWebsite())!, options: [:])
     }
     
     /**
@@ -111,13 +111,13 @@ class RestaurantDetailViewController: UIViewController {
             if self.chosenRestaurant.getNegativeSentiments().count == 0 {
                 return "I found 0 hints to any negative sentiments in the reviews I have."
             } else {
-                return self.chosenRestaurant.getNegativeSentiments().joinWithSeparator(", ")
+                return self.chosenRestaurant.getNegativeSentiments().joined(separator: ", ")
             }
         } else {
             if self.chosenRestaurant.getPositiveSentiments().count == 0 {
                 return "I found 0 hints to any positive sentiments in the reviews I have."
             } else {
-                return self.chosenRestaurant.getPositiveSentiments().joinWithSeparator(", ")
+                return self.chosenRestaurant.getPositiveSentiments().joined(separator: ", ")
             }
         }
     }

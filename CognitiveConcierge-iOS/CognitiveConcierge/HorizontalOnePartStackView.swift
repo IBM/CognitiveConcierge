@@ -42,7 +42,7 @@ class HorizontalOnePartStackView: UIView {
     - returns: HorizontalOnePartStackView
     */
     class func instanceFromNib() -> HorizontalOnePartStackView {
-        return UINib(nibName: "HorizontalOnePartStackView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! HorizontalOnePartStackView
+        return UINib(nibName: "HorizontalOnePartStackView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! HorizontalOnePartStackView
     }
     
     
@@ -55,11 +55,11 @@ class HorizontalOnePartStackView: UIView {
         firstHeaderLabel.textColor = UIColor.customRestaurantLabelColor()
         firstHeaderLabel.font = UIFont.regularSFNSDisplay(size: 11)
         firstHeaderLabel.text = "WATSON RECOMMENDATIONS BASED ON:"
-        firstHeaderLabel.addTextSpacing(0.7)
+        firstHeaderLabel.addTextSpacing(spacing: 0.7)
         
         locationLabel.textColor = UIColor.customDarkBlueColor()
         locationLabel.font = UIFont.regularSFNSDisplay(size: 11)
-        locationLabel.addTextSpacing(0.7)
+        locationLabel.addTextSpacing(spacing: 0.7)
     }
     
     
@@ -77,7 +77,7 @@ class HorizontalOnePartStackView: UIView {
         }
         
         locationLabel.text = locationLabelString
-        locationLabel.addTextSpacing(0.7)
+        locationLabel.addTextSpacing(spacing: 0.7)
     }
 
 }

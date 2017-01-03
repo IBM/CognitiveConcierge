@@ -37,10 +37,9 @@ class ProfileBarButtonItem: UIBarButtonItem {
     
     private func getProfileButton() -> UIButton {
         let profileButton = UIButton()
-        profileButton.setImage(UIImage(named: "avatar"), forState: .Normal)
+        profileButton.setImage(UIImage(named: "avatar"), for: .normal)
         //        profileButton.addTarget(self, action: #selector(ProfileBarButtonItem.goToProfile), forControlEvents: .TouchUpInside)
-        profileButton.addTarget(self, action: nil, forControlEvents: .TouchUpInside)
-        profileButton.frame = CGRectMake(14.5, 27, 30, 30)
+        profileButton.frame = CGRect(x: 14.5, y: 27, width: 30, height: 30)
         
         return profileButton
     }

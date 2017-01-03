@@ -34,15 +34,14 @@ class WhitePathIconBarButtonItem: UIBarButtonItem {
 
     func goToPath() {
         if let currentVC = Utils.getCurrentViewController() {
-            currentVC.navigationController?.popViewControllerAnimated(true)
+            _ = currentVC.navigationController?.popViewController(animated: true)
         }
     }
     
     private func getWhitePathIconButton() -> UIButton {
-        moreWhitePathButton.setImage(UIImage(named: "path_white"), forState: .Normal)
-        moreWhitePathButton.addTarget(self, action: #selector(WhitePathIconBarButtonItem.goToPath), forControlEvents: .TouchUpInside)
-        moreWhitePathButton.addTarget(self, action: nil, forControlEvents: .TouchUpInside)
-        moreWhitePathButton.frame = CGRectMake(11.8, 33.5, 6, 12.2)
+        moreWhitePathButton.setImage(UIImage(named: "path_white"), for: .normal)
+        moreWhitePathButton.addTarget(self, action: #selector(WhitePathIconBarButtonItem.goToPath), for: .touchUpInside)
+        moreWhitePathButton.frame = CGRect(x: 11.8, y: 33.5, width: 6, height: 12.2)
         
         // Set opacity
         moreWhitePathButton.alpha = 0.45

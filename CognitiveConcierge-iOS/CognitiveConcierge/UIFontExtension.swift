@@ -20,11 +20,11 @@ import UIKit
 
 extension UIFont {
     
-    class func regularSFNSDisplay(size size: CGFloat) -> UIFont? {
+    class func regularSFNSDisplay(size: CGFloat) -> UIFont? {
         return UIFont.init(name: "SFNS Display", size: size)
     }
     
-    class func boldSFNSDisplay(size size: CGFloat) -> UIFont? {
+    class func boldSFNSDisplay(size: CGFloat) -> UIFont? {
         return UIFont.init(name: ".HelveticaNeueDeskInterface-Bold", size: size)
     }
 }

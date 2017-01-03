@@ -51,7 +51,7 @@ class RecommendedRestaurantTableViewCell: UITableViewCell {
         
         reviewsFromLabel.textColor = UIColor.customRestaurantLabelColor()
         reviewsFromLabel.font = UIFont.regularSFNSDisplay(size: 10)
-        reviewsFromLabel.addTextSpacing(0.8)
+        reviewsFromLabel.addTextSpacing(spacing: 0.8)
        
         expensiveLabel.textColor = UIColor.customRestaurantViewDarkBlueColor()
         expensiveLabel.font = UIFont.regularSFNSDisplay(size: 16)
@@ -81,23 +81,23 @@ class RecommendedRestaurantTableViewCell: UITableViewCell {
                 subTitleLabel.text = "CLOSED"
                 subTitleLabel.textColor = UIColor.customClosedRedColor()
             }
-            subTitleLabel.addTextSpacing(0.7)
+            subTitleLabel.addTextSpacing(spacing: 0.7)
         }
         
         if let r = rating {
-            Utils.setUpStarStackView(r, starStackView: starStackView)
+            Utils.setUpStarStackView(numberOfStars: r, starStackView: starStackView)
         }
         
         var expensiveString = ""
-        expensiveString = Utils.generateExpensiveString(expensiveness!)
+        expensiveString = Utils.generateExpensiveString(number: expensiveness!)
         
         expensiveLabel.text = expensiveString
-        expensiveLabel.addTextSpacing(1.3)
+        expensiveLabel.addTextSpacing(spacing: 1.3)
 
         if let id = googleID {
             // Only load data for place if data is not mocked.
             if id != "-" {
-                loadFirstPhotoForPlace(id)
+                loadFirstPhotoForPlace(placeID: id)
             }
         } else {
             print ("no googleID given")
@@ -112,23 +112,23 @@ class RecommendedRestaurantTableViewCell: UITableViewCell {
     }
     
     func loadFirstPhotoForPlace(placeID: String) {
-        GMSPlacesClient.sharedClient().lookUpPhotosForPlaceID(placeID) { (photos, error) -> Void in
+        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
             if let error = error {
-                print("Error: \(error.description)")
+                print("Error: \(error)")
             } else {
                 if let firstPhoto = photos?.results.first {
-                    self.loadImageForMetadata(firstPhoto)
+                    self.loadImageForMetadata(photoMetadata: firstPhoto)
                 }
             }
         }
     }
     
     func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
-        GMSPlacesClient.sharedClient()
-            .loadPlacePhoto(photoMetadata, constrainedToSize: restaurantImageView.bounds.size,
+        GMSPlacesClient.shared()
+            .loadPlacePhoto(photoMetadata, constrainedTo: restaurantImageView.bounds.size,
                             scale: self.restaurantImageView.window!.screen.scale) { (photo, error) -> Void in
                                 if let error = error {
-                                    print("Error: \(error.description)")
+                                    print("Error: \(error)")
                                 } else {
                                     self.restaurantImageView.image = photo;
                                 }

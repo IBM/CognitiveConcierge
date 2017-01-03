@@ -34,16 +34,16 @@ public func getName(user: User) -> String{
 }
 
 // JSQMessages Create an avatar with Image
-private let AvatarWatson = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named:"watson_avatar"), diameter: 37);
-private let AvatarHoffman = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named:"avatar_small"), diameter: 37);
+private let avatarWatson = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named:"watson_avatar"), diameter: 37)!
+private let avatarHoffman = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named:"avatar_small"), diameter: 37)!
 
 // JSQMessages Helper Method for getting an avatar for a specific User.
 public func getAvatar(id: String) -> JSQMessagesAvatarImage{
     let user = User(rawValue: id)!
     switch user {
     case .Hoffman:
-        return AvatarHoffman
+        return avatarHoffman
     case .Watson:
-        return AvatarWatson
+        return avatarWatson
     }
 }

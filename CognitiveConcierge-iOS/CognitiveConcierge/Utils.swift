@@ -29,16 +29,16 @@ class Utils {
 
     class func setupDarkNavBar (viewController: UIViewController, title: String) {
         let navigationBarAppearance = UINavigationBar.appearance()
-        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         /// Configure title.
         
         if let navController = viewController.navigationController {
             /// Make the background transluscent and content a navy blue.
-            navController.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+            navController.navigationBar.barStyle = UIBarStyle.blackTranslucent
             navController.navigationBar.barTintColor = UIColor.customNavBarNavyBlueColor()
         }
         
-        setupNavigationTitleLabel(viewController, title: title, spacing: 1.0, titleFontSize: 17, color: UIColor.whiteColor())
+        setupNavigationTitleLabel(viewController: viewController, title: title, spacing: 1.0, titleFontSize: 17, color: UIColor.white)
     }
 
     /** 
@@ -52,19 +52,19 @@ class Utils {
         
         if let navController = viewController.navigationController {
             /// Make the background transluscent and content white.
-            navController.navigationBar.barStyle = UIBarStyle.Default
-            navController.navigationBar.barTintColor = UIColor.whiteColor()
-            navController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+            navController.navigationBar.barStyle = UIBarStyle.default
+            navController.navigationBar.barTintColor = UIColor.white
+            navController.navigationBar.setBackgroundImage(UIImage(), for: .default)
             navController.navigationBar.shadowImage = UIImage()
         }
-        setupNavigationTitleLabel(viewController, title: title, spacing: 2.9, titleFontSize: 11, color: UIColor.blackColor())
+        setupNavigationTitleLabel(viewController: viewController, title: title, spacing: 2.9, titleFontSize: 11, color: UIColor.black)
     }
 
     /** Define title's font name, spacing and color. */
     class func setupNavigationTitleLabel(viewController: UIViewController, title: String, spacing: CGFloat, titleFontSize: CGFloat, color: UIColor) {
 
         let titleLabel = UILabel()
-        let attributes: [String : AnyObject] = [NSFontAttributeName: UIFont(name: "SFNS Display", size: titleFontSize)!, NSForegroundColorAttributeName: color, NSKernAttributeName : spacing]
+        let attributes: [String: Any] = [NSFontAttributeName: UIFont(name: "SFNS Display", size: titleFontSize)!, NSForegroundColorAttributeName: color, NSKernAttributeName : spacing]
         titleLabel.attributedText = NSAttributedString(string: title, attributes: attributes)
 
         titleLabel.sizeToFit()
@@ -73,17 +73,17 @@ class Utils {
 
     }
 
-    class func setupBackButton (button: UIButton, title: String, textColor: UIColor, frame: CGRect = CGRectMake(25.5, 33, 41, 13), spacing: CGFloat = CGFloat(2.9)) {
-        button.setTitleColor(textColor, forState: .Normal)
-        button.setTitle(title, forState: .Normal)
+    class func setupBackButton (button: UIButton, title: String, textColor: UIColor, frame: CGRect = CGRect(x: 25.5, y: 33, width: 41, height: 13), spacing: CGFloat = CGFloat(2.9)) {
+        button.setTitleColor(textColor, for: .normal)
+        button.setTitle(title, for: .normal)
         button.titleLabel?.font = UIFont.regularSFNSDisplay(size: 11)
         button.titleLabel?.text = title
-        button.titleLabel?.addTextSpacing(spacing)
+        button.titleLabel?.addTextSpacing(spacing: spacing)
         button.frame = frame
     }
 
     class func getCurrentViewController() -> UIViewController? {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let currentViewController = appDelegate.window?.rootViewController?.presentedViewController
         
         return currentViewController
@@ -93,21 +93,21 @@ class Utils {
         let border = CALayer()
         
         switch edge {
-        case UIRectEdge.Left:
-            border.frame = CGRectMake(0, 0, thickness, textView.frame.size.height)
+        case UIRectEdge.left:
+            border.frame = CGRect(x: 0, y: 0, width: thickness, height: textView.frame.size.height)
             break
-        case UIRectEdge.Right:
-            border.frame = CGRectMake(CGFloat(textView.widthAnchor.hashValue), 0, thickness, textView.frame.size.height)
+        case UIRectEdge.right:
+            border.frame = CGRect(x: CGFloat(textView.widthAnchor.hashValue), y: 0, width: thickness, height: textView.frame.size.height)
             break
         default:
             break
         }
-        border.backgroundColor = color.CGColor
+        border.backgroundColor = color.cgColor
         textView.layer.addSublayer(border)
         textView.layer.masksToBounds = true
     }
 
-    class func parseRecommendationsJSON (recommendations:NSArray) -> [Restaurant] {
+    class func parseRecommendationsJSON (recommendations: [[String: Any]]) -> [Restaurant] {
         var recommendedRestaurants = [Restaurant]()
         for rec in recommendations {
             let openNowStatus = rec["openNow"] as? Bool ?? false
@@ -131,15 +131,15 @@ class Utils {
     class func convertMilitaryTime(timeArray: [String]) -> String {
         var openingTime = ""
         var count = 0
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         for time in timeArray {
             if time == "OPEN 24 HOURS" {
                 return time
             }
             dateFormatter.dateFormat = "HHmm"
-            if let militaryTime = dateFormatter.dateFromString(time) {
+            if let militaryTime = dateFormatter.date(from: time) {
                 dateFormatter.dateFormat = "h:mm a"
-                let twelveHourTime = dateFormatter.stringFromDate(militaryTime)
+                let twelveHourTime = dateFormatter.string(from: militaryTime)
                 print ("24hr time: \(time), 12hr time: \(twelveHourTime)")
                 // If odd element, add dash and append the closing time.
                 if count % 2 != 0 {
@@ -166,7 +166,7 @@ class Utils {
         //let hour = components.hour
         //let minutes = components.minute
         
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "hhmm"
         return false
     }
@@ -201,7 +201,7 @@ class Utils {
         
         let remainder = numberOfStars - floorStars
         
-        for (index, element) in starStackView.subviews.enumerate() {
+        for (index, element) in starStackView.subviews.enumerated() {
             
             if(index < Int(floorStars)){
                 (element as! UIImageView).image = UIImage(named: "Star")

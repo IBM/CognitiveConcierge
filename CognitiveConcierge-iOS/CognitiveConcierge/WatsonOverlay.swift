@@ -42,31 +42,31 @@ public class WatsonOverlay: UIView {
      - returns: WatsonOverlay
      */
     class func instanceFromNib(view: UIView) -> WatsonOverlay {
-        return UINib(nibName: "WatsonOverlay", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! WatsonOverlay
+        return UINib(nibName: "WatsonOverlay", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! WatsonOverlay
     }
     
     
     private func setupWatsonOverlay() {
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         
     }
     
     private func setupLabel() {
         label.font = UIFont(name: ".HelveticaNeueDeskInterface-Bold", size: 12)
-        label.font = label.font.fontWithSize(15)
+        label.font = label.font.withSize(15)
         label.textColor = UIColor.customWatsonOverlayColor()
         
         label.text = "I'M GATHERING YOUR \n RECOMMENDATIONS"
-        label.textAlignment = NSTextAlignment.Center
-        label.addTextSpacing(4.1)
+        label.textAlignment = NSTextAlignment.center
+        label.addTextSpacing(spacing: 4.1)
     }
     
     private func setupGif() {
         if let asset = NSDataAsset(name: "Watson-blue") {
             let imageData = asset.data
-            watsonGif.loadData(imageData, MIMEType: "image/gif", textEncodingName:"utf-8", baseURL:NSURL(string: "http://localhost/")!)
+            watsonGif.load(imageData, mimeType: "image/gif", textEncodingName:"utf-8", baseURL: URL(string: "http://localhost/")!)
             watsonGif.scalesPageToFit = true
-            watsonGif.userInteractionEnabled = false
+            watsonGif.isUserInteractionEnabled = false
         }
     }
     
@@ -80,7 +80,7 @@ public class WatsonOverlay: UIView {
     
     public func hideWatsonOverlay() {
         //watsonGif.hidden = true
-        label.hidden = true
+        label.isHidden = true
         self.removeFromSuperview()
     }
 }

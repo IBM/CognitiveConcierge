@@ -38,10 +38,9 @@ class MoreIconBarButtonItem: UIBarButtonItem {
     
     private func getMoreIconButton() -> UIButton {
         let moreIconButton = UIButton()
-        moreIconButton.setImage(UIImage(named: "moreIcon"), forState: .Normal)
+        moreIconButton.setImage(UIImage(named: "moreIcon"), for: .normal)
         //        moreIconButton.addTarget(self, action: #selector(MoreIconBarButtonItem.goToMore), forControlEvents: .TouchUpInside)
-        moreIconButton.addTarget(self, action: nil, forControlEvents: .TouchUpInside)
-        moreIconButton.frame = CGRectMake(343, 43.5, 16, 4)
+        moreIconButton.frame = CGRect(x: 343, y: 43.5, width: 16, height: 4)
         moreIconButton.tintColor = UIColor.customGetMoreIconButtonColor()
         return moreIconButton
     }

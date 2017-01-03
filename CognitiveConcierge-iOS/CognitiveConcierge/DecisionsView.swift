@@ -16,12 +16,12 @@ class DecisionsView: UIView {
         setupView()
     }
     
-    @IBAction func keepChattingButtonPressed(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName("keepChattingButtonPressed", object: nil)
+    @IBAction func keepChattingButtonPressed(_ sender: AnyObject) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "keepChattingButtonPressed"), object: nil)
     }
     
-    @IBAction func seeRestaurantsButtonPressed(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName("seeRestaurantsButtonPressed", object: nil)
+    @IBAction func seeRestaurantsButtonPressed(_ sender: AnyObject) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "seeRestaurantsButtonPressed"), object: nil)
     }
     
     /**
@@ -30,11 +30,11 @@ class DecisionsView: UIView {
      - returns: HorizontalOnePartStackView
      */
     class func instanceFromNib() -> DecisionsView {
-        return UINib(nibName: "DecisionsView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! DecisionsView
+        return UINib(nibName: "DecisionsView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! DecisionsView
     }
 
     func setupView() {
-        questionLabel.addTextSpacing(0.7)
+        questionLabel.addTextSpacing(spacing: 0.7)
 //        questionLabel.fon
     }
 }
