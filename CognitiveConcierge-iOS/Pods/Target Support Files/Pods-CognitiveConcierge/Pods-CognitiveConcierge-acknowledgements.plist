@@ -34,8 +34,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </string>
-			<key>License</key>
-			<string>MIT</string>
 			<key>Title</key>
 			<string>Alamofire</string>
 			<key>Type</key>
@@ -44,8 +42,6 @@ THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
-			<key>License</key>
-			<string>Copyright</string>
 			<key>Title</key>
 			<string>GoogleMaps</string>
 			<key>Type</key>
@@ -54,8 +50,6 @@ THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
-			<key>License</key>
-			<string>Copyright</string>
 			<key>Title</key>
 			<string>GooglePlaces</string>
 			<key>Type</key>
@@ -84,8 +78,6 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
-			<key>License</key>
-			<string>MIT</string>
 			<key>Title</key>
 			<string>JSQMessagesViewController</string>
 			<key>Type</key>
@@ -114,8 +106,6 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
-			<key>License</key>
-			<string>MIT</string>
 			<key>Title</key>
 			<string>JSQSystemSoundPlayer</string>
 			<key>Type</key>

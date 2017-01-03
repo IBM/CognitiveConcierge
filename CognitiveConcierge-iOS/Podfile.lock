@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.1.0)
+  - Alamofire (4.2.0)
   - GoogleMaps/Base (2.1.1)
   - GooglePlaces (2.1.1):
     - GoogleMaps/Base (= 2.1.1)
@@ -8,17 +8,17 @@ PODS:
   - JSQSystemSoundPlayer (2.0.1)
 
 DEPENDENCIES:
-  - Alamofire (= 4.1.0)
+  - Alamofire (= 4.2.0)
   - GooglePlaces (= 2.1.1)
   - JSQMessagesViewController (= 7.3.4)
 
 SPEC CHECKSUMS:
-  Alamofire: e266cf991b933498df791e645e0d8ac294492153
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
 
-PODFILE CHECKSUM: 3cfc7c970813e418ee1f19af1c65d4d43f560f04
+PODFILE CHECKSUM: 909638a13fa3cedaed4d0627e85d9b1a28f69ee4
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.0.1
