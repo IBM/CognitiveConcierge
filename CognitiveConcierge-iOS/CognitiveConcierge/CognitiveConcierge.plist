@@ -11,7 +11,7 @@
 	<key>ConversationPassword</key>
 	<string>INSERT_PASSWORD</string>
 	<key>ConversationVersion</key>
-	<string>2016-08-17</string>
+	<string>2016-12-23</string>
 	<key>TextToSpeechUsername</key>
 	<string>INSERT_USERNAME</string>
 	<key>TextToSpeechPassword</key>
