@@ -1,10 +1,11 @@
 import httplib
 import base64
 import json
+import sys
 from urlparse import urlparse
 
 #read cloud_config.json to parse credentials
-with open('../../CognitiveConcierge-Server/cloud_config.json') as data_file:
+with open(sys.argv[1]+'/../../CognitiveConcierge-Server/cloud_config.json') as data_file:
     cloudConfig = json.load(data_file)
 convCredentials = cloudConfig["vcap"]["services"]["conversation"][0]["credentials"]
 
@@ -12,7 +13,7 @@ convCredentials = cloudConfig["vcap"]["services"]["conversation"][0]["credential
 base64string = base64.encodestring('%s:%s' % (convCredentials["username"], convCredentials["password"]))[:-1]
 
 # Parse conversationWorkspace.json file for payload to create conversation workspace
-with open('../../Resources/conversationWorkspace.json') as json_data:
+with open(sys.argv[1]+'/../../Resources/conversationWorkspace.json') as json_data:
     d = json.load(json_data)
 payload = json.dumps(d)
 
