@@ -3,6 +3,8 @@ import base64
 import json
 import sys
 from urlparse import urlparse
+sys.path.append("../")
+from plistGen import generatePlist
 
 #read cloud_config.json to parse credentials
 with open(sys.argv[1]+'/../../CognitiveConcierge-Server/cloud_config.json') as data_file:
@@ -27,5 +29,7 @@ headers = {
     }
 conn.request("POST", convURL.path+"/v1/workspaces?version=2016-09-20", payload, headers)
 res = conn.getresponse()
-data = res.read()
-print(data.decode("utf-8"))
+data = json.loads(res.read())
+
+workspaceid = data["workspace_id"]
+generatePlist(workspaceid)
