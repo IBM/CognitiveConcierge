@@ -3,7 +3,7 @@ import base64
 import json
 import sys
 from urlparse import urlparse
-sys.path.append("../")
+sys.path.append(sys.argv[1]+"/../")
 from plistGen import generatePlist
 
 #read cloud_config.json to parse credentials
