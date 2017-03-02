@@ -66,17 +66,13 @@ class Restaurant {
             reviewStrings.append(review)
             reviewStrings.append(" ")
         }
-        print(reviewStrings)
-        //let naturalLanguageUnderstanding = NaturalLanguageUnderstanding(username: nluCreds["username"], password: nluCreds["password"], version: nluCreds["version"])
-        let nlu = NaturalLanguageUnderstanding(username: "INSERT_USERNAME", password: "INSERT_PASSWORD", version: "INSERT_VERSION")
+        let naturalLanguageUnderstanding = NaturalLanguageUnderstanding(username: nluCreds["username"]!, password: nluCreds["password"]!, version: nluCreds["version"]!)
         let features = Features(keywords:  KeywordsOptions(sentiment: true))
         let parameters = Parameters(features: features, text: reviewStrings)
-        nlu.analyzeContent(withParameters: parameters, failure: { error in
+        naturalLanguageUnderstanding.analyzeContent(withParameters: parameters, failure: { error in
             print(error)
         }) { results in
-            print(results)
             let theKeywords = results.keywords
-            
             for keyword in theKeywords! {
                 let wordsArray = keyword.text?.components(separatedBy: " ")
                 for word in wordsArray! {

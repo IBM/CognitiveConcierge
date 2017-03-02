@@ -26,7 +26,7 @@ import CloudFoundryDeploymentTracker
 HeliumLogger.use()
 let configFile = "cloud_config.json"
 let alchemyServiceName = "CognitiveConcierge-Alchemy"
-let nluServiceName = "CognitiveConcierge-NLU"
+let nluServiceName = "CognitiveConcierge-Natural-Language-Understanding"
 
 func initNLUServices() -> [String:String] {
     var creds: [String:String] = [:]
@@ -46,23 +46,7 @@ func initNLUServices() -> [String:String] {
     }
     return creds
 }
-func initServices() -> String {
-    var key = ""
-    do {
-        let service = try getConfiguration(configFile: configFile,
-                                           serviceName: alchemyServiceName)
-        if let credentials = service.credentials {
-            key = credentials["apikey"].stringValue
-        } else {
-            Log.error("No credentials available for " + alchemyServiceName)
-            //no credentials for the service
-        }
-    } catch {
-        Log.error("No configuration file with credentials")
-    }
-    return key
-}
-let watsonAPIKey = initServices()
+
 let nluCreds = initNLUServices()
 
 let router = Router()
