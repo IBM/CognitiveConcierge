@@ -58,22 +58,21 @@
           "syslog_drain_url" : null
         }
       ],
-      "alchemy_api" : [
+      "natural-language-understanding" : [
         {
           "tags" : [
             "watson",
-            "ibm_created",
-            "ibm_dedicated_public"
+            "ibm_created"
           ],
           "provider" : null,
           "credentials" : {
-            "url" : "https://gateway-a.watsonplatform.net/calls",
-            "apikey" : "c401b35b7659a0e21e8e52770b90c75d4a575418",
-            "note" : "It may take up to 5 minutes for this key to become active"
+            "url" : "https://gateway.watsonplatform.net/natural-language-understanding/api",
+            "username" : "b944070b-1523-0123-ace2-3067de90f543",
+            "password" : "ExlACSzmLAbz"
           },
           "plan" : "free",
-          "label" : "alchemy_api",
-          "name" : "CognitiveConcierge-Alchemy",
+          "label" : "natural-language-understanding",
+          "name" : "CognitiveConcierge-Natural-Language-Understanding",
           "syslog_drain_url" : null
         }
       ]
