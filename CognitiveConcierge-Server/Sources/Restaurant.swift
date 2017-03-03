@@ -18,7 +18,6 @@ import Foundation
 import SwiftyJSON
 import KituraNet
 import LoggerAPI
-import NaturalLanguageUnderstandingV1
 
 class Restaurant {
 
@@ -55,7 +54,7 @@ class Restaurant {
         self.positiveSentiments = []
         self.website = website
     }
-    
+
     /// Append reviews from restaurant into a string to pass to watson
     ///
     /// - parameter completion: Completion closure invoked on success
@@ -66,26 +65,52 @@ class Restaurant {
             reviewStrings.append(review)
             reviewStrings.append(" ")
         }
-        let naturalLanguageUnderstanding = NaturalLanguageUnderstanding(username: nluCreds["username"]!, password: nluCreds["password"]!, version: nluCreds["version"]!)
-        let features = Features(keywords:  KeywordsOptions(sentiment: true))
-        let parameters = Parameters(features: features, text: reviewStrings)
-        naturalLanguageUnderstanding.analyzeContent(withParameters: parameters, failure: { error in
-            print(error)
-        }) { results in
-            let theKeywords = results.keywords
-            for keyword in theKeywords! {
-                let wordsArray = keyword.text?.components(separatedBy: " ")
-                for word in wordsArray! {
-                    self.keywords.append(word)
+        let path = "/calls/text/TextGetRankedKeywords"
+        var requestOptions: [ClientRequest.Options] = []
+        requestOptions.append(.method("POST"))
+        requestOptions.append(.schema("https://"))
+        requestOptions.append(.hostname("gateway-a.watsonplatform.net"))
+        requestOptions.append(.path(path))
+
+        let req = HTTP.request(requestOptions) { resp in
+            if let resp = resp, resp.statusCode == HTTPStatusCode.OK {
+                do {
+                    var body = Data()
+                    try resp.readAllData(into: &body)
+                    let response = JSON(data: body)
+                    for (_, keyword):(String, JSON) in response["keywords"] {
+                        if let keytext = keyword["text"].string {
+                            if let keySentiment = keyword["sentiment"]["type"].string {
+                                if keySentiment == "negative" {
+                                    self.negativeSentiments.append(keytext)
+                                } else if keySentiment == "positive" {
+                                    self.positiveSentiments.append(keytext)
+                                }
+
+                            }
+                            let wordsArray = keytext.components(separatedBy: " ")
+                            for word in wordsArray {
+                                self.keywords.append(word)
+                            }
+                        } else {
+                            Log.error ("key: text does not exist in review. Skipping review: \(response["keywords"])")
+                            break
+                        }
+                    }
+                    completion(self.keywords)
+                } catch {
+                    //bad JSON data
+                    failure("failed to parse review JSON correctly")
                 }
-                if (keyword.sentiment!.score! <= 0.0) {
-                    self.negativeSentiments.append(keyword.text!)
-                } else {
-                    self.positiveSentiments.append(keyword.text!)
+            } else {
+                if let resp = resp {
+                    //request failed
+                    Log.error("Request failed with status code: \(resp.statusCode)")
                 }
             }
-            completion(self.keywords)
         }
+        req.write(from: "apikey=" + watsonAPIKey + "&outputMode=json&sentiment=1&text=" + reviewStrings)
+        req.end()
     }
 
     //increment the match score by 1
