@@ -1,18 +1,18 @@
 /**
-* Copyright IBM Corporation 2016
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright IBM Corporation 2016
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import Foundation
 import SwiftyJSON
@@ -31,7 +31,7 @@ func bestMatches(_ restaurants: [Restaurant], occasion: String) -> [JSON] {
     let occasionKeywords = occasionGen.getOccasionKeywords(occasion)
     var bestMatches=[Restaurant]()
     var matches=[JSON]()
-
+    
     for restaurant in restaurants {
         let restKeywords = restaurant.getWatsonKeywords()
         for keyword in restKeywords {
@@ -58,7 +58,7 @@ func bestMatches(_ restaurants: [Restaurant], occasion: String) -> [JSON] {
 /// Returns closest restaurants that match the location. Currently limited to return the nearest 20.
 func getClosestRestaurants(_ occasion:String, success: ([RestaurantJ]) -> Void) {
     Log.verbose("Getting closest restaurants")
-
+    
     let path = "/maps/api/place/nearbysearch/json" + "?"
         + "key=" + Constants.googleAPIKey + "&" // api key
         + "location=" + Constants.location + "&" // replace with the location we want to search in
@@ -70,9 +70,9 @@ func getClosestRestaurants(_ occasion:String, success: ([RestaurantJ]) -> Void) 
     requestOptions.append(.schema("https://"))
     requestOptions.append(.hostname("maps.googleapis.com"))
     requestOptions.append(.path(path))
-
+    
     var closestRestaurants: [JSON] = []
-
+    
     let req = HTTP.request(requestOptions) { resp in
         if let resp = resp, resp.statusCode == HTTPStatusCode.OK {
             do {
@@ -84,7 +84,7 @@ func getClosestRestaurants(_ occasion:String, success: ([RestaurantJ]) -> Void) 
                     Log.error("Error in closest restaurants response: " + errorMessageStr)
                 }
                 closestRestaurants = response["results"].arrayValue
-
+                
             } catch {
                 Log.error("Error parsing JSON from closest restaurants response")
             }
@@ -103,13 +103,13 @@ func getClosestRestaurants(_ occasion:String, success: ([RestaurantJ]) -> Void) 
 
 func getRestaurantDetails(_ restaurantID: String, success: (RestaurantDetails) -> Void) {
     Log.verbose("Getting restaurant details")
-
+    
     let path = "/maps/api/place/details/json" + "?"
         + "key="+Constants.googleAPIKey + "&" // api key
         + "placeid=\(restaurantID)" // the ID of the restaurant we want details for
-
+    
     var restaurantDetails: JSON = JSON("")
-
+    
     var requestOptions: [ClientRequest.Options] = []
     requestOptions.append(.method("GET"))
     requestOptions.append(.schema("https://"))
@@ -125,7 +125,7 @@ func getRestaurantDetails(_ restaurantID: String, success: (RestaurantDetails) -
                 if let errorMessageStr = errorMessage.rawString(), errorMessageStr != "null" {
                     Log.error("Error in restaurant details response: " + errorMessageStr)
                 }
-
+                
                 restaurantDetails = response["result"]
             } catch {
                 Log.error("Error parsing JSON from restaurant details response")
@@ -146,13 +146,13 @@ func getRestaurantDetails(_ restaurantID: String, success: (RestaurantDetails) -
 public func parsePeriods(periods: [JSON]) -> [String] {
     let date = Date()
     var times = [String]()
-
+    
     // Grab day
     guard let dayOfWeek = date.dayOfWeek() else {
         Log.error("unable to grab day of the week")
         return times
     }
-
+    
     for period in periods {
         if period["open"]["day"].int == dayOfWeek {
             // check if there's a closing time according to API:
@@ -164,7 +164,7 @@ public func parsePeriods(periods: [JSON]) -> [String] {
             if let openTime = period["open"]["time"].string {
                 times.append(openTime)
             }
-
+            
             if let closeTime = period["close"]["time"].string {
                 times.append(closeTime)
             }
