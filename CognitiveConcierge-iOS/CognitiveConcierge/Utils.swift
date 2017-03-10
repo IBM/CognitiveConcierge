@@ -140,7 +140,6 @@ class Utils {
             if let militaryTime = dateFormatter.date(from: time) {
                 dateFormatter.dateFormat = "h:mm a"
                 let twelveHourTime = dateFormatter.string(from: militaryTime)
-                print ("24hr time: \(time), 12hr time: \(twelveHourTime)")
                 // If odd element, add dash and append the closing time.
                 if count % 2 != 0 {
                     openingTime += " - \(twelveHourTime)"
