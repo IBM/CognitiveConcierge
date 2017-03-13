@@ -18,7 +18,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 2. Once you've installed the application, you can open it to get started.
 3. Click the Create (+) button to set up a new project, and then select the Cognitive Concierge Application.
 4. Click Save Files to Local Computer to clone the project.
-5. Once the project is cloned, open up the .xcodeproj file that was created for you in ICT under Local Server Repository. Edit the Sources/restaurant-recommendations/Configuration.swift file's Constants struct with your own Google API Key for Web.
+5. Once the project is cloned, open up the .xcodeproj file that was created for you in ICT under Local Server Repository. Edit the Sources/restaurant-recommendations/main.swift file's Constants struct with your own Google API Key for Web.
 
 	<img src="images/xcodeproj.png" width="500">
 
