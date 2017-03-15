@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>appRouteLocal</key>
-	<string>http://localhost:8090</string>
+	<string>http://localhost:8080</string>
 	<key>appRouteRemote</key>
 	<string>appRouteRemote</string>
 	<key>bluemixAppGUID</key>
