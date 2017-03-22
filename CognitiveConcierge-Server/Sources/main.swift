@@ -23,7 +23,7 @@ import LoggerAPI
 
 
 struct Constants {
-    static var googleAPIKey = "INSERT_GOOGLE_API_KEY_HERE"
+    static var googleAPIKey = "AIzaSyByxl8X64J_KGWHGBYcZk2MkRolYcL1euw"
     static var location = "36.11,-115.17"
 }
 
