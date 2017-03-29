@@ -38,7 +38,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 ### Run the iOS Application
 1. Install Cocoapods Dependency Manager in Terminal with the command `sudo gem install cocoapods`
 
-2. Install Carthage Dependency Manager.  Either download and run the .pkg file for their latest release https://github.com/Carthage/Carthage/releases or simply run `brew update` followed by `brew install carthage`
+2. Install Carthage Dependency Manager.  Download and run the .pkg file for their latest release https://github.com/Carthage/Carthage/releases
 3. From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder.
 4. Run the following commands to install the necessary dependencies:
   ```
