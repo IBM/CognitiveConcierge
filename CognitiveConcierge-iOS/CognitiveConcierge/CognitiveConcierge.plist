@@ -2,23 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>googlePlacesAPIKey</key>
-	<string>INSERT_GOOGLE_API_KEY</string>
-	<key>ConversationWorkspaceID</key>
-	<string>INSERT_WORKSPACE_ID</string>
-	<key>ConversationUsername</key>
-	<string>INSERT_USERNAME</string>
 	<key>ConversationPassword</key>
-	<string>INSERT_PASSWORD</string>
+	<string>n5s8iYOzuG2K</string>
+	<key>ConversationUsername</key>
+	<string>22078b7d-6a8f-45f5-a546-b463e32ff3f9</string>
 	<key>ConversationVersion</key>
 	<string>2016-12-23</string>
-	<key>TextToSpeechUsername</key>
-	<string>INSERT_USERNAME</string>
-	<key>TextToSpeechPassword</key>
-	<string>INSERT_PASSWORD</string>
-	<key>SpeechToTextUsername</key>
-	<string>INSERT_USERNAME</string>
+	<key>ConversationWorkspaceID</key>
+	<string>43f34dda-5708-4e5e-a278-b550b348dd9c</string>
 	<key>SpeechToTextPassword</key>
-	<string>INSERT_PASSWORD</string>
+	<string>zXOvBR8nG68H</string>
+	<key>SpeechToTextUsername</key>
+	<string>c8c019c4-d12f-4fed-b921-bd6676c0c43f</string>
+	<key>TextToSpeechPassword</key>
+	<string>IIB2ovVTd3sF</string>
+	<key>TextToSpeechUsername</key>
+	<string>7a9a398d-4d78-476e-907a-85306a88e959</string>
+	<key>googlePlacesAPIKey</key>
+	<string>INSERT_GOOGLE_API_KEY</string>
 </dict>
 </plist>
