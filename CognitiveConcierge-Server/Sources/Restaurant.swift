@@ -19,7 +19,6 @@ import SwiftyJSON
 import KituraNet
 import LoggerAPI
 import Kitura
-import CloudFoundryEnv
 import CloudFoundryConfig
 
 

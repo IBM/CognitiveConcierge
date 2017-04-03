@@ -9,7 +9,6 @@
 import Foundation
 import Kitura
 import Configuration
-import CloudFoundryEnv
 import CloudFoundryConfig
 import LoggerAPI
 import SwiftyJSON
