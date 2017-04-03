@@ -46,7 +46,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
   pod install
   ```
-5. Open the CognitiveConcierge.xcworkspace file in Xcode 8.2 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
+5. Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
 
 6. For your iOS application to run, it needs access to some credentials from Bluemix.  ICT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key.
 
