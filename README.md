@@ -38,7 +38,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 ### Run the iOS Application
 2. Install Carthage Dependency Manager.  Download and run the .pkg file for their latest release https://github.com/Carthage/Carthage/releases
 3. From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder.
-4. Run the following command to install the necessary dependencies:
+4. Run the following command to install the necessary dependencies (This may take some time):
   ```
   carthage update --platform iOS
   ```
