@@ -8,47 +8,43 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
 <img src="images/CC1.png" width="250"><img src="images/CC2.png" width="250"><img src="images/CC7.png" width="250">
 
-## IBM Cloud Tools for Swift (ICT) Instructions
+## IBM Cloud Application Tools (ICAT) Instructions
 ### Obtain a Google Places API Key for Web
 1. For this project, you'll need an API Key from Google Places, so that app can have access to review text which will be sent to the Natural Language Understanding service for analysis.  Instructions for obtaining a key can be found [here](https://developers.google.com/places/web-service/get-api-key).
 2. Once you have an API Key, go to the Google Developer's Console, and enable the Google Places API for iOS as well.  Make note of the API key for later use in your server and iOS applications.
 
-### Deploy the Server Application to Bluemix using ICT.
-1. Install [IBM Cloud Tools for Swift] (http://cloudtools.bluemix.net/) for MacOS.
+### Deploy the Server Application to Bluemix using ICAT.
+1. Install [IBM Cloud Application Tools] (http://cloudtools.bluemix.net/) for MacOS.
 2. Once you've installed the application, you can open it to get started.
-3. Click the Create (+) button to set up a new project, and then select the Cognitive Concierge Application.
-4. Click Save Files to Local Computer to clone the project.
-5. Once the project is cloned, open up the .xcodeproj file that was created for you in ICT under Local Server Repository. Edit the Sources/restaurant-recommendations/main.swift file's Constants struct with your own Google API Key for Web.
+3. Click the **Create (+)** button to set up a new project, and then select the Cognitive Concierge Sample Application.
+4. Click **Save Files to Local Computer** to clone the project.
+5. Once the project is cloned, open up the .xcodeproj file that was created for you in ICAT under Local Server Repository. Edit the Sources/restaurant-recommendations/main.swift file's Constants struct with your own Google API Key for Web.
 
 	<img src="images/xcodeproj.png" width="500">
 
-6. Finally, you can use ICT to deploy the updated server to Bluemix.  Click Provision and Deploy Sample Server on Bluemix under Cloud Runtimes.
+6. Finally, you can use ICAT to deploy the updated server to Bluemix.  Click **Provision and Deploy Sample Server on Bluemix** under Cloud Runtimes.
 
 	<img src="images/provision.png" width="500">
 
-7. Give your Cloud Runtime a unique name, and click Next.  This deployment to Bluemix may take a few minutes.
+7. Give your Cloud Runtime a unique name, and click **Next**.  This deployment to Bluemix may take a few minutes.
 
 ### Point iOS Application to Server Application
-1. In ICT, ensure that the Connected to: field in the Client application is pointed to your server instance running on Bluemix.  You can also point to your localhost for local testing, but you need to be running a local instance of the server application for this to work.
+1. In ICAT, ensure that the Connected to: field in the Client application is pointed to your server instance running on Bluemix.  You can also point to your localhost for local testing, but you need to be running a local instance of the server application for this to work.
 
-### Conversation Service Created and Updated by ICT
-1. Once ICT has provisioned your Cloud Runtime, you should see that you have a Conversation Service instance in your Bluemix dashboard.  This Service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, ICT has run some set up scripts (found in the `Cloud-Scripts/conversation` folder) to add a populated workspace to your conversation service.  This workspace is populated using the json found in `Resources/conversationWorkspace.json`
+### Conversation Service Created and Updated by ICAT
+1. Once ICAT has provisioned your Cloud Runtime, you should see that you have a Conversation Service instance in your Bluemix dashboard.  This Service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, ICAT has run some set up scripts (found in the `Cloud-Scripts/conversation` folder) to add a populated workspace to your conversation service.  This workspace is populated using the json found in `Resources/conversationWorkspace.json`
 
 
 ### Run the iOS Application
-1. Install Cocoapods Dependency Manager in Terminal with the command `sudo gem install cocoapods`
-
 2. Install Carthage Dependency Manager.  Download and run the .pkg file for their latest release https://github.com/Carthage/Carthage/releases
 3. From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder.
-4. Run the following commands to install the necessary dependencies:
+4. Run the following command to install the necessary dependencies:
   ```
   carthage update --platform iOS
-
-  pod install
   ```
-5. Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICT or from your terminal using `open CognitiveConcierge.xcworkspace`
+5. Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICAT or from your terminal using `open CognitiveConcierge.xcworkspace`
 
-6. For your iOS application to run, it needs access to some credentials from Bluemix.  ICT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key.
+6. For your iOS application to run, it needs access to some credentials from Bluemix.  ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key.
 
 7. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
 
