@@ -9,7 +9,7 @@ declared-services:
   CognitiveConcierge-Text-To-Speech:
     label: text_to_speech
     plan: standard
-  CognitiveConcierge-Natural-Language-Understanding:
+  CognitiveConcierge-NLU:
     label: natural-language-understanding
     plan: free
 applications:
