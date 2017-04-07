@@ -25,4 +25,4 @@ applications:
   - CognitiveConcierge-Conversation
   - CognitiveConcierge-Speech-To-Text
   - CognitiveConcierge-Text-To-Speech
-  - CognitiveConcierge-Natural-Language-Understanding
+  - CognitiveConcierge-NLU
