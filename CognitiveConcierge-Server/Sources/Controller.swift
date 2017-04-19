@@ -17,7 +17,7 @@ import SwiftyJSON
 public class Controller {
     let router: Router
     private var configMgr: ConfigurationManager
-    private let nluServiceName = "CognitiveConcierge-Natural-Language-Understanding"
+    private let nluServiceName = "CognitiveConcierge-NLU"
     
     var port: Int {
         get { return configMgr.port }
