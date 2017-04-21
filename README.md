@@ -65,6 +65,6 @@ This data is collected from the parameters of the `CloudFoundryDeploymentTracker
 ### Disabling Deployment Tracking
 Deployment tracking can be disabled by removing the following line from main.swift:
 ```
-CloudFoundryDeploymentTracker(repositoryURL: "https://github.ibm.com/MIL/CognitiveConcierge", codeVersion: nil).track()
+CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/CognitiveConcierge/", codeVersion: nil).track()
 
 ```
