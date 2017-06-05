@@ -1,5 +1,6 @@
 .build/*
 Packages/*
+*.DS_Store
 restaurant-recommendations.xcodeproj/project.xcworkspace/xcuserdata/
 restaurant-recommendations.xcodeproj/xcuserdata/
 restaurant-recommendations.xcodeproj/
