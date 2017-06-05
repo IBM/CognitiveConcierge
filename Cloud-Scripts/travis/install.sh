@@ -37,7 +37,7 @@ function destroy_application() {
   #statements
   echo "Destroying application"
   echo "y" | bx app delete CognitiveConcierge
-  echo "y" | bx service delete CognitiveConcierge-Conversation
+  echo "y" | bx service delete CognitiveConcierge-NLU
   echo "y" | bx service delete CognitiveConcierge-Text-To-Speech
   echo "y" | bx service delete CognitiveConcierge-Speech-To-Text
   echo "y" | bx service delete CognitiveConcierge-Conversation
