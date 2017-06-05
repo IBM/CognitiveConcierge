@@ -26,6 +26,8 @@ function deploy_application() {
   bx service create text_to_speech standard "CognitiveConcierge-Text-To-Speech"
   bx service create natural-language-understanding free "CognitiveConcierge-NLU"
   echo "Services created."
+  git clone https://github.com/ishangulhane/CognitiveConcierge.git
+  cd CognitiveConcierge
   echo "Starting Application"
   bx app push
   echo "Application Started"
