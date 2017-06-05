@@ -203,4 +203,4 @@ CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/Cogniti
 - If the IOS application is not able to connect to Watson Services, recheck the credential values in CognitiveConcierge.plist and bluemix.plist files.
 
 ## License
-[Apache 2.0](LICENSE)
+[Apache 2.0](License.txt)
