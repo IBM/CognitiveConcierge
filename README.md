@@ -1,30 +1,53 @@
+[![Build Status](https://travis-ci.org/ishangulhane/CognitiveConcierge.svg?branch=master)](https://travis-ci.org/ishangulhane/CognitiveConcierge)
 [![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 ![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f4ae263f304ffe32cbb17f3238c3ac86/badge.svg)
-
-[![cognitive concierge video](http://img.youtube.com/vi/kQqE0hMg0Q8/0.jpg)](http://www.youtube.com/watch?v=kQqE0hMg0Q8 "Video Title")
 
 # CognitiveConcierge
 CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end. This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's iOS SDKs, including Conversation, Text to Speech, Speech to Text, and the Natural Language Understanding service.
 
 <img src="images/CC1.png" width="250"><img src="images/CC2.png" width="250"><img src="images/CC7.png" width="250">
 
-# Prerequisite
+## Included Components
+- Bluemix Watson Conversation service
+- Bluemix Watson Text to Speech service
+- Bluemix Watson Speech to Text service
+- Bluemix Watson Natural Language Understanding service
+- Google Places API
 
+## Application Workflow Diagram
+![Application Workflow](images/archi.png)
+
+* The user deploys the server application to bluemix.
+* The user interacts with the IOS application.
+* When the user performs any action, IOS application the server application API which uses the Watson services and Google Places API to provide the user recommendations.
+
+## Prerequisite
 * **Obtain a Google Places API Key for Web:** For this project, you'll need an API Key from Google Places, so that app can have access to review text which will be sent to the Natural Language Understanding service for analysis.  Instructions for obtaining a key can be found [here](https://developers.google.com/places/web-service/get-api-key).
 Once you have an API Key, go to the Google Developer's Console, and enable the Google Places API for iOS as well.  Make note of the API key for later use in your server and iOS applications.
+* [Carthage Dependency Manager](https://github.com/Carthage/Carthage/releases)
+* [CocoaPods](https://cocoapods.org/?q=cvxv)
 
-# Deploy the Server Application
+## Steps
+Use the following steps top deploy the application
+- Deploy the Server Application
+- Update Conversation Service
+- Run the IOS Application
 
-You can deploy the server application using any one of the following:
+## 1. Deploy the Server Application
 
-##  Using the Deploy to Bluemix button
+You can deploy the server application using any one of the following ways:
+- Deploy to Bluemix button
+- IBM Cloud Application Tools (ICAT)
+- Bluemix command line
+
+### a) Using the Deploy to Bluemix button
 Clicking on the button below creates a Bluemix DevOps Toolchain and deploys this application to Bluemix. The `manifest.yml` file [included in the repo] is parsed to obtain the name of the application, configuration details, and the list of services that should be provisioned. For further details on the structure of the `manifest.yml` file, see the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#minimal-manifest).
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/CognitiveConcierge.git)
 
 Once deployment to Bluemix is completed, you can view the deployed application and services from your bluemix account.
 
-## Using IBM Cloud Application Tools (ICAT)
+### b) Using IBM Cloud Application Tools (ICAT)
 
 1. Install [IBM Cloud Application Tools](http://cloudtools.bluemix.net/) for MacOS.
 2. Once you've installed the application, you can open it to get started.
@@ -43,7 +66,7 @@ Once deployment to Bluemix is completed, you can view the deployed application a
 8. In ICAT, ensure that the Connected to: field in the Client application is pointed to your server instance running on Bluemix. You can also point to your localhost for local testing, but you need to be running a local instance of the server application for this to work.
 
 
-## Using the Bluemix command line
+### c) Using the Bluemix command line
 
 You can also manually deploy the Server Application to Bluemix. Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes. Remember that you'd need the Bluemix [command line](http://clis.ng.bluemix.net/ui/home.html) installed on your system to deploy the app to Bluemix.
 
@@ -107,11 +130,11 @@ buildpack: swift_buildpack
 #0   running   2017-06-05 11:05:41 AM   0.3%   6.4M of 512M   269.8M of 1G
 ```
 
-# Update Conversation Service
-Conversation service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, ICAT has run some setup scripts (found in the `Cloud-Scripts/conversation` folder) to add a populated workspace to your conversation service. If you are not using ICAT, then populate the workspace using the JSON found in `Resources/conversationWorkspace.json`.
+## 2. Update Conversation Service
+- Conversation service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, ICAT has run some setup scripts (found in the `Cloud-Scripts/conversation` folder) to add a populated workspace to your conversation service.
+- If you are not using ICAT, go to bluemix dashboard and launch the Conversation service. Now manually populate the workspace by uploading the JSON found in `Resources/conversationWorkspace.json`. Make note of the workspace id for later use in running the iOS application.
 
-
-# Run the iOS Application
+## 3. Run the iOS Application
 1. Install Carthage Dependency Manager.  Download and run the .pkg file for their latest release https://github.com/Carthage/Carthage/releases
 2. From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder.
 3. Run the following command to install the necessary dependencies (This may take some time):
@@ -121,7 +144,7 @@ pod install
 ```
 4. Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICAT or from your terminal using `open CognitiveConcierge.xcworkspace`
 
-5. For your iOS application to run, it needs access to some credentials from Bluemix.  ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key. If you are not using ICAT, then manually update the credentials for all the services. You can get the credentials for services either from the environment variables section present in the runtime tab from your Bluemix dashboard or using the command 'bx app env CognitiveConcierge'.
+5. For your iOS application to run, it needs access to some credentials from Bluemix.  ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key. If you are not using ICAT, then manually update the credentials for all the services. You can get the credentials for services either from the environment variables section present in the runtime tab from your Bluemix dashboard or using the command 'bx app env CognitiveConcierge'. ConversationWorkspaceID is the workspace id of the conversation service.
 
 6. If you are running the server application on bluemix, ensure the values for appRouteRemote, bluemixAppGUID, bluemixAppRegion are correct in `CognitiveConcierge-iOS/CognitiveConcierge/bluemix.plist` file. Also, set the value for the isLocal field to 'NO'. You can verify the values either from the environment variables section present in the runtime tab from your Bluemix dashboard or using the command 'bx app env CognitiveConcierge' where appRouteRemote is uris, bluemixAppGUID is application_id and bluemixAppRegion is your Bluemix region for eg: us-south.
 ```bash
@@ -171,5 +194,13 @@ Deployment tracking can be disabled by removing the following line from main.swi
 ```
 CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/CognitiveConcierge/", codeVersion: nil).track()
 ```
-# License
+## CognitiveConcierge App video
+
+[![cognitive concierge video](http://img.youtube.com/vi/kQqE0hMg0Q8/0.jpg)](http://www.youtube.com/watch?v=kQqE0hMg0Q8 "Video Title")
+
+## Troubleshooting
+- If the deployment for server application stage fails, redeploy the pipeline stage.
+- If the IOS application is not able to connect to Watson Services, recheck the credential values in CognitiveConcierge.plist and bluemix.plist files.
+
+## License
 [Apache 2.0](LICENSE)

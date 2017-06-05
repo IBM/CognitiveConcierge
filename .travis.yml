@@ -1,0 +1,7 @@
+language: bash
+sudo: required
+script:
+- bash Cloud-Scripts/travis/install.sh
+group: stable
+dist: precise
+os: linux
