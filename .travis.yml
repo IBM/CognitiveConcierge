@@ -1,7 +1,21 @@
-language: bash
-sudo: required
+branches:
+  only:
+    - master
+    - develop
+    - /^issue.*$/
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
+    - os: osx
+      osx_image: xcode8.2
+
+before_install:
+  - git clone https://github.com/IBM-Swift/Package-Builder.git CognitiveConcierge-Server/Package-Builder
+  - git clone -b master https://$GITHUB_USER:$GITHUB_PWD@github.com/IBM-Swift/Testing-Credentials.git
+
 script:
-- bash Cloud-Scripts/travis/install.sh
-group: stable
-dist: precise
-os: linux
+  - cd CognitiveConcierge-Server && ./Package-Builder/build-package.sh -projectDir $TRAVIS_BUILD_DIR -credentialsDir $TRAVIS_BUILD_DIR/Testing-Credentials/BluePic/ci
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $TRAVIS_BUILD_DIR/CognitiveConcierge-iOS; xcodebuild -workspace CognitiveConcierge.xcworkspace/ -scheme CognitiveConcierge -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=NO -quiet; fi
