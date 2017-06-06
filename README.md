@@ -23,12 +23,14 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
 ## Prerequisite
 * **Obtain a Google Places API Key for Web:** For this project, you'll need an API Key from Google Places, so that app can have access to review text which will be sent to the Natural Language Understanding service for analysis.  Instructions for obtaining a key can be found [here](https://developers.google.com/places/web-service/get-api-key).
-Once you have an API Key, go to the Google Developer's Console, and enable the Google Places API for iOS as well.  Make note of the API key for later use in your server and iOS applications.
+Once you have an API Key, go to the [Google Developer's Console](https://console.developers.google.com/flows/enableapi?apiid=places_backend&reusekey=true), create a project, add your API key and enable the Google Places API for iOS as well.  Make note of the API key for later use in your server and iOS applications.
+
+If you haven't so yet, you also need to download and install the following:
 * [Carthage Dependency Manager](https://github.com/Carthage/Carthage/releases)
 * [CocoaPods](https://cocoapods.org/?q=cvxv)
 
 ## Steps
-Use the following steps top deploy the application
+Use the following steps to deploy the application
 - Deploy the Server Application
 - Update Conversation Service
 - Run the IOS Application
@@ -146,7 +148,7 @@ pod install
 ### Update configuration for iOS app
 - Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICAT or from your terminal using `open CognitiveConcierge.xcworkspace`
 
-- **Update CognitiveConcierge.plist file:** ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key. If you are not using ICAT, then manually update the credentials for all the services. You can get the credentials for services either from the environment variables section present in the runtime tab from your Bluemix dashboard or using the command `bx app env CognitiveConcierge`. ConversationWorkspaceID is the workspace id of the conversation service.
+- **Update CognitiveConcierge.plist file:** One way to persist data in Swift is through the property list or .plist file. ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key. If you are not using ICAT, then manually update the credentials for all the services. You can get the credentials for services either from the environment variables section present in the runtime tab from your Bluemix dashboard or using the command `bx app env CognitiveConcierge`. ConversationWorkspaceID is the workspace id of the conversation service.
 
 - **Update bluemix.plist file:**
 	- You should set the isLocal value to YES if you'd like to use a locally running server; if you set the value to NO, then you will be accessing the server instance running on Bluemix.
@@ -191,6 +193,8 @@ REGION US SOUTH | REGION UK | REGION SYDNEY
 
 ### Running the application
 Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
+![](images/playbutton.png)
+
 
 ## Running the Kitura-based server locally
 You can build the CognitiveConcierge-Server by going to the `CognitiveConcierge-Server` directory of the cloned repository and running `swift build`. To start the Kitura-based server for the CognitiveConcierge app on your local system, go to the `CognitiveConcierge-Server` directory of the cloned repository and run `.build/debug/CognitiveConcierge`. You should also update the `bluemix.plist` and `CognitiveConcierge.plist` file in the Xcode project in order to have the iOS app connect to this local server. See the [Update configuration for iOS app](#update-configuration-for-ios-app) section for details.

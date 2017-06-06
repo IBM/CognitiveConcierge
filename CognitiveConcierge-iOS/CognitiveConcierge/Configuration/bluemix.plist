@@ -5,12 +5,12 @@
 	<key>appRouteLocal</key>
 	<string>http://localhost:8080</string>
 	<key>appRouteRemote</key>
-	<string>appRouteRemote</string>
+	<string>https://cognitiveconcierge-20170606190241365-noninvincible-formularisation.mybluemix.net</string>
 	<key>bluemixAppGUID</key>
 	<string>appGuid</string>
 	<key>bluemixAppRegion</key>
-	<string>appRegion</string>
+	<string>.ng.bluemix.net</string>
 	<key>isLocal</key>
-	<true/>
+	<false/>
 </dict>
 </plist>
