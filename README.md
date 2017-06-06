@@ -135,45 +135,62 @@ buildpack: swift_buildpack
 - If you are not using ICAT, go to bluemix dashboard and launch the Conversation service. Now manually populate the workspace by uploading the JSON found in `Resources/conversationWorkspace.json`. Make note of the workspace id for later use in running the iOS application.
 
 ## 3. Run the iOS Application
-1. Install Carthage Dependency Manager.  Download and run the .pkg file for their latest release https://github.com/Carthage/Carthage/releases
-2. From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder.
-3. Run the following command to install the necessary dependencies (This may take some time):
+
+### Install the necessary dependencies
+- From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder and run the following command to install the necessary dependencies (This may take some time):
 ```bash
 carthage update --platform iOS
 pod install
 ```
-4. Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICAT or from your terminal using `open CognitiveConcierge.xcworkspace`
 
-5. For your iOS application to run, it needs access to some credentials from Bluemix.  ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key. If you are not using ICAT, then manually update the credentials for all the services. You can get the credentials for services either from the environment variables section present in the runtime tab from your Bluemix dashboard or using the command 'bx app env CognitiveConcierge'. ConversationWorkspaceID is the workspace id of the conversation service.
+### Update configuration for iOS app
+- Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICAT or from your terminal using `open CognitiveConcierge.xcworkspace`
 
-6. If you are running the server application on bluemix, ensure the values for appRouteRemote, bluemixAppGUID, bluemixAppRegion are correct in `CognitiveConcierge-iOS/CognitiveConcierge/bluemix.plist` file. Also, set the value for the isLocal field to 'NO'. You can verify the values either from the environment variables section present in the runtime tab from your Bluemix dashboard or using the command 'bx app env CognitiveConcierge' where appRouteRemote is uris, bluemixAppGUID is application_id and bluemixAppRegion is your Bluemix region for eg: us-south.
-```bash
-{
- "VCAP_APPLICATION": {
-  "application_id": "3d06c0e7-1fff-4dbf-b0cb-b289770eccfe",
-  "application_name": "CognitiveConcierge",
-  "application_uris": [
-   "cognitiveconcierge-lazarlike-archaizer.mybluemix.net"
-  ],
-  "application_version": "3ef63168-35f5-4517-84e9-e8f19c8f34b4",
-  "limits": {
-   "disk": 1024,
-   "fds": 16384,
-   "mem": 512
-  },
-  "name": "CognitiveConcierge",
-  "space_id": "2b3083b9-7ef9-4d55-9741-34433be4cea1",
-  "space_name": "dev",
-  "uris": [
-   "cognitiveconcierge-lazarlike-archaizer.mybluemix.net"
-  ],
-  "users": null,
-  "version": "3ef63168-35f5-4517-84e9-e8f19c8f34b4"
- }
-}
-```
+- **Update CognitiveConcierge.plist file:** ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key. If you are not using ICAT, then manually update the credentials for all the services. You can get the credentials for services either from the environment variables section present in the runtime tab from your Bluemix dashboard or using the command `bx app env CognitiveConcierge`. ConversationWorkspaceID is the workspace id of the conversation service.
 
-7. Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
+- **Update bluemix.plist file:**
+	- You should set the isLocal value to YES if you'd like to use a locally running server; if you set the value to NO, then you will be accessing the server instance running on Bluemix.
+	- To get the appRouteRemote value, you should go to your application's page on Bluemix. There, you will find a View App button near the top right. Clicking on it should open up your app in a new tab, the url for this page is your route which maps to the appRouteRemote key in the plist. Make sure to include the http:// protocol in your appRouteRemote and to exclude a forward slash at the end of the url.
+	- You can also use the command 'bx app env CognitiveConcierge' where appRouteRemote is uris, bluemixAppGUID is application_id and bluemixAppRegion is your Bluemix region for eg: us-south.
+	```bash
+	{
+	 "VCAP_APPLICATION": {
+	  "application_id": "3d06c0e7-1fff-4dbf-b0cb-b289770eccfe",
+	  "application_name": "CognitiveConcierge",
+	  "application_uris": [
+	   "cognitiveconcierge-lazarlike-archaizer.mybluemix.net"
+	  ],
+	  "application_version": "3ef63168-35f5-4517-84e9-e8f19c8f34b4",
+	  "limits": {
+	   "disk": 1024,
+	   "fds": 16384,
+	   "mem": 512
+	  },
+	  "name": "CognitiveConcierge",
+	  "space_id": "2b3083b9-7ef9-4d55-9741-34433be4cea1",
+	  "space_name": "dev",
+	  "uris": [
+	   "cognitiveconcierge-lazarlike-archaizer.mybluemix.net"
+	  ],
+	  "users": null,
+	  "version": "3ef63168-35f5-4517-84e9-e8f19c8f34b4"
+	 }
+	}
+
+	Running Environment Variable Groups:
+	BLUEMIX_REGION: ibm:yp:us-south
+
+	Staging Environment Variable Groups:
+	BLUEMIX_REGION: ibm:yp:us-south
+	```
+	- We need to get the value for `bluemixAppRegion`, which can be one of three options currently:
+
+REGION US SOUTH | REGION UK | REGION SYDNEY
+--- | --- | ---
+`.ng.bluemix.net` | `.eu-gb.bluemix.net` | `.au-syd.bluemix.net`
+
+### Running the application
+Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
 
 ## Privacy Notice
 This Swift application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service on each deployment:
