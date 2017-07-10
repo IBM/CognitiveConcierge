@@ -223,6 +223,7 @@ CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/Cogniti
 
 [![cognitive concierge video](http://i.imgur.com/hsFxooD.png)](http://vimeo.com/222564546 "Cognitive Concierge Overview")
 
+
 ## Troubleshooting
 - If the deployment for server application stage fails, redeploy the pipeline stage.
 - If the IOS application is not able to connect to Watson Services, recheck the credential values in CognitiveConcierge.plist and bluemix.plist files.
