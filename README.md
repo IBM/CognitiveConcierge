@@ -221,7 +221,8 @@ CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/Cogniti
 ```
 ## CognitiveConcierge App video
 
-[![cognitive concierge video](http://imgur.com/a/7EwWt)](http://vimeo.com/222564546 "Cognitive Concierge Overview")
+[![cognitive concierge video](http://i.imgur.com/hsFxooD.png)](http://vimeo.com/222564546 "Cognitive Concierge Overview")
+
 
 ## Troubleshooting
 - If the deployment for server application stage fails, redeploy the pipeline stage.
