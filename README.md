@@ -1,4 +1,4 @@
-[![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
+![[Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 ![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f4ae263f304ffe32cbb17f3238c3ac86/badge.svg)
 
 # CognitiveConcierge
@@ -16,9 +16,11 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 ## Application Workflow Diagram
 ![Application Workflow](images/archi.png)
 
-* The user deploys the server application to bluemix.
-* The user interacts with the IOS application.
-* When the user performs any action, IOS application the server application API which uses the Watson services and Google Places API to provide the user recommendations.
+1. The user deploys the server application to bluemix.
+
+2. The user interacts with the IOS application.
+
+3. When the user performs any action, IOS application the server application API which uses the Watson services and Google Places API to provide the user recommendations.
 
 ## Prerequisite
 * **Obtain a Google Places API Key for Web:** For this project, you'll need an API Key from Google Places, so that app can have access to review text which will be sent to the Natural Language Understanding service for analysis.  Instructions for obtaining a key can be found [here](https://developers.google.com/places/web-service/get-api-key).
