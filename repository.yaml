@@ -1,0 +1,11 @@
+id: CognitiveConcierge
+event_id: web
+event_organizer: dev-journeys
+runtimes: 
+  - Cloud Foundry
+services: 
+  - conversation
+  - speech to text
+  - text to speech
+  - natural language understanding
+language: swift

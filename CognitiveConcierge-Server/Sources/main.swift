@@ -23,6 +23,7 @@ import LoggerAPI
 import Configuration
 import CloudFoundryConfig
 import CloudFoundryDeploymentTracker
+import MetricsTrackerClient
 
 
 struct Constants {
@@ -35,6 +36,7 @@ HeliumLogger.use(LoggerMessageType.info)
 var nluCreds: [String:String]
 CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/CognitiveConcierge").track()
 do {
+    MetricsTrackerClient(repository: "CognitiveConcierge", organization: "IBM").track()
     let controller = try Controller()
     Kitura.addHTTPServer(onPort: controller.port, with: controller.router)
     Kitura.run()
