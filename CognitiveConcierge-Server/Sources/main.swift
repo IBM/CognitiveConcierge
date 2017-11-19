@@ -31,7 +31,7 @@ struct Constants {
     static var location = "36.11,-115.17"
 }
 
-// Init logger - update
+// Init logger - adding
 HeliumLogger.use(LoggerMessageType.info)
 var nluCreds: [String:String]
 CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/CognitiveConcierge").track()
