@@ -1,32 +1,7 @@
-branches:
-  only:
-    - master
-    - develop
-    - /^issue.*$/
-
-matrix:
-  include:
-    - os: linux
-      dist: trusty
-      sudo: required
-    - os: osx
-      osx_image: xcode8.2
-branches:
-  only:
-    - master
-    - develop
-    - /^issue.*$/
-
-matrix:
-  include:
-    - os: linux
-      dist: trusty
-      sudo: required
-    - os: osx
-      osx_image: xcode8.2
-
-before_install:
-  - git clone https://github.com/IBM-Swift/Package-Builder.git CognitiveConcierge-Server/Package-Builder
-
+language: bash
+sudo: required
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $TRAVIS_BUILD_DIR/CognitiveConcierge-iOS; xcodebuild -workspace CognitiveConcierge.xcworkspace/ -scheme CognitiveConcierge -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=NO -quiet; fi
+- bash Cloud-Scripts/travis/install.sh
+group: stable
+dist: precise
+os: linux
