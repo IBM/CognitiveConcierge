@@ -11,7 +11,3 @@ matrix:
       sudo: required
     - os: osx
       osx_image: xcode8.2
-
-before_install:
-  - git clone https://github.com/IBM-Swift/Package-Builder.git CognitiveConcierge-Server/Package-Builder
-
