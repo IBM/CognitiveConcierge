@@ -15,8 +15,7 @@ sudo ./install_bluemix_cli
 
 function bluemix_auth() {
 echo "Authenticating with Bluemix"
-echo "y" | BLUEMIX_API_KEY=$API_KEY bx login -api https://api.ng.bluemix.net
-#echo "y" | bx login -a https://api.ng.bluemix.net --apikey $API_KEY
+echo "y" | bx login -a https://api.ng.bluemix.net --apikey $API_KEY
 #bx login -a https://$BLUEMIX_REGION -u lbenn@us.ibm.com -p $BLUEMIX_PWD -s applications-dev -o $BLUEMIX_ORGANIZATION
 }
 
