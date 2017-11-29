@@ -23,7 +23,8 @@ Package-Builder/build/Makefile:
 
 run: build
 	@echo --- Invoking restaurant-recommendations executable
-	./.build/debug/restaurant-recommendations
+	#./.build/debug/restaurant-recommendations
+	./.build/debug/CognitiveConcierge
 
 .PHONY: run
 
