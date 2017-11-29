@@ -4,4 +4,4 @@ app:
     - "8080:8080"
   volumes:
     - .:/root/watson-recommendations-api-kitura
-  command: bash -c "cd /root/watson-recommendations-api-kitura && swift build --clean && swift build && .build/debug/restaurant-recommendations"
+  command: bash -c "cd /root/Kitura-Starter && swift package clean && swift build && swift test && ./.build/debug/Kitura-Starter"
