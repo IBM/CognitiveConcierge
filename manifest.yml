@@ -16,7 +16,7 @@ applications:
 - name: CognitiveConcierge
   path: ./CognitiveConcierge-Server
   random-route: true
-  command: restaurant-recommendations -bind 0.0.0.0:$PORT
+  command: CognitiveConcierge -bind 0.0.0.0:$PORT
   memory: 512M
   disk_quota: 1024M
   instances: 1
