@@ -13,7 +13,7 @@ declared-services:
     label: natural-language-understanding
     plan: free
 applications:
-- name: CognitiveConcierge
+- name: restaurant-recommendations
   path: ./CognitiveConcierge-Server
   random-route: true
   command: restaurant-recommendations -bind 0.0.0.0:$PORT
