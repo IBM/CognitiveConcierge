@@ -1,5 +1,5 @@
-﻿![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)(https://www.apache.org/licenses/LICENSE-2.0) 
-![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f4ae263f304ffe32cbb17f3238c3ac86/badge.svg) 
+![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
+<!-- ![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f4ae263f304ffe32cbb17f3238c3ac86/badge.svg) -->
 
 # CognitiveConcierge 
 
@@ -215,4 +215,4 @@ CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/Cogniti
 
 ## Licença 
 
-[Apache 2.0](License.txt) 
+[Apache 2.0](LICENSE) 
