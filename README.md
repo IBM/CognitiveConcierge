@@ -1,5 +1,5 @@
-![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)(https://www.apache.org/licenses/LICENSE-2.0)
-![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f4ae263f304ffe32cbb17f3238c3ac86/badge.svg)
+![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
+<!--![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f4ae263f304ffe32cbb17f3238c3ac86/badge.svg)-->
 
 # CognitiveConcierge
 CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end. This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's [Swift SDK](https://github.com/watson-developer-cloud/swift-sdk), including Conversation, Text to Speech, Speech to Text, and the Natural Language Understanding service.
@@ -235,4 +235,4 @@ CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/Cogniti
 - If the IOS application is not able to connect to Watson Services, recheck the credential values in CognitiveConcierge.plist and bluemix.plist files.
 
 ## License
-[Apache 2.0](License.txt)
+[Apache 2.0](LICENSE)
