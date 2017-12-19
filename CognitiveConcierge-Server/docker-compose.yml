@@ -1,7 +1,7 @@
 app:
-  image: swift-08-30
+  image: ibmcom/swift-ubuntu:3.1
   ports:
-    - "8090:8090"
+    - "8080:8080"
   volumes:
     - .:/root/watson-recommendations-api-kitura
-  command: bash -c "make clean -C watson-recommendations-api-kitura && make -C watson-recommendations-api-kitura && watson-recommendations-api-kitura/.build/debug/restaurant-recommendations"
+  command: bash -c "cd /root/watson-recommendations-api-kitura && swift build --clean && swift build && .build/debug/restaurant-recommendations"

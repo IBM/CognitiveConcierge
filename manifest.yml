@@ -9,8 +9,8 @@ declared-services:
   CognitiveConcierge-Text-To-Speech:
     label: text_to_speech
     plan: standard
-  CognitiveConcierge-Alchemy:
-    label: alchemy_api
+  CognitiveConcierge-NLU:
+    label: natural-language-understanding
     plan: free
 applications:
 - name: CognitiveConcierge
@@ -25,4 +25,4 @@ applications:
   - CognitiveConcierge-Conversation
   - CognitiveConcierge-Speech-To-Text
   - CognitiveConcierge-Text-To-Speech
-  - CognitiveConcierge-Alchemy
+  - CognitiveConcierge-NLU
