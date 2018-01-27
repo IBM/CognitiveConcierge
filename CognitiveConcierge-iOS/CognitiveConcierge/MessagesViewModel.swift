@@ -21,6 +21,14 @@ import AVFoundation
 import JSQMessagesViewController
 
 class MessagesViewModel {
+    // encode and decode nodes from conversation
+    struct ConvoNode: Decodable {
+        let dialog_node: String
+    }
+    struct ConvoNodeEnc: Encodable {
+        let dialog_node: String
+    }
+    
     static var sharedInstance = MessagesViewModel()
     
     var tts: TextToSpeech?
@@ -40,9 +48,9 @@ class MessagesViewModel {
             return
         }
 
-        let request = MessageRequest(text: text, context: watsonContext)
+        let request = MessageRequest(input: InputData.init(text: text), context: watsonContext)
         let failure = { (error: Error) in print("error was generated when sending a message to service: \(error)") }
-        convoService.message(withWorkspace: workspaceID, request: request, failure: failure) { dataResponse in
+        convoService.message(workspaceID: workspaceID, request: request, failure: failure) { dataResponse in
             // Check if time question has been answered to grab input
             if self.timeFlag {
                 self.timeInput = dataResponse.input?.text ?? ""
@@ -80,7 +88,7 @@ class MessagesViewModel {
      [3] = (key = "time", value = "none")
      }
      */
-    func storeEntities(entities: [Entity]) {
+    func storeEntities(entities: [RuntimeEntity]) {
         if !entities.isEmpty {
             for e in entities {
                 let key = e.entity
@@ -102,19 +110,29 @@ class MessagesViewModel {
     
     func checkProgress(convoContext: Context) -> Bool {
         var displaySuggestions = false
-        guard convoContext.system.dialogStack.count > 0 else {
+        let stackIndex = convoContext.system.additionalProperties.index(forKey: "dialog_stack")
+        let dialogStack = convoContext.system.additionalProperties[stackIndex!].value
+        do {
+            let dialogArray = try dialogStack.toValue([ConvoNode].self)
+            guard dialogArray.count > 0 else {
+                return displaySuggestions;
+            }
+            
+            let node = dialogArray[0];
+            // Check if watson has reached the end of the conversation.
+            if node.dialog_node.range(of: "root") != nil {
+                displaySuggestions = true
+            }
+            // Check if the conversation has restarted to the first node or the "anything else" node.
+            if (node.dialog_node.range(of: "node_1_") != nil) || (node.dialog_node.range(of: "node_3_") != nil) {
+    
+                // Clear entities
+                watsonEntities = [:]
+            }
             return displaySuggestions
         }
-        let node = convoContext.system.dialogStack[0]
-        // Check if watson has reached the end of the conversation.
-        if node.range(of: "root") != nil {
-            displaySuggestions = true
-        }
-        // Check if the conversation has restarted to the first node or the "anything else" node.
-        if (node.range(of: "node_1_") != nil) || (node.range(of: "node_3_") != nil) {
-            
-            // Clear entities
-            watsonEntities = [:]
+        catch {
+            print("error");
         }
         return displaySuggestions
     }

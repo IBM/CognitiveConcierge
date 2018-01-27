@@ -29,7 +29,7 @@ class Utils {
 
     class func setupDarkNavBar (viewController: UIViewController, title: String) {
         let navigationBarAppearance = UINavigationBar.appearance()
-        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         /// Configure title.
         
         if let navController = viewController.navigationController {
@@ -64,7 +64,7 @@ class Utils {
     class func setupNavigationTitleLabel(viewController: UIViewController, title: String, spacing: CGFloat, titleFontSize: CGFloat, color: UIColor) {
 
         let titleLabel = UILabel()
-        let attributes: [String: Any] = [NSFontAttributeName: UIFont(name: "SFNS Display", size: titleFontSize)!, NSForegroundColorAttributeName: color, NSKernAttributeName : spacing]
+        let attributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "SFNS Display", size: titleFontSize)!, NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): color, NSAttributedStringKey(rawValue: NSAttributedStringKey.kern.rawValue) : spacing]
         titleLabel.attributedText = NSAttributedString(string: title, attributes: attributes)
 
         titleLabel.sizeToFit()

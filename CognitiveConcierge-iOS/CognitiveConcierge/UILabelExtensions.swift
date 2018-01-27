@@ -19,7 +19,7 @@ import UIKit
 extension UILabel {
     func addTextSpacing(spacing : CGFloat) {
         let attributedString = NSMutableAttributedString(string: self.text!)
-        attributedString.addAttribute(NSKernAttributeName, value: spacing, range: NSRange(location: 0, length : self.text!.characters.count))
+        attributedString.addAttribute(NSAttributedStringKey.kern, value: spacing, range: NSRange(location: 0, length : self.text!.count))
         self.attributedText = attributedString
     }
 }
