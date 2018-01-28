@@ -54,19 +54,19 @@ Once deployment to the IBM Cloud is completed, you can view the deployed applica
 
 1. Install [IBM Cloud Application Tools](http://cloudtools.bluemix.net/) for MacOS.
 2. Once you've installed the application, you can open it to get started.
-3. Click the **Create (+)** button to set up a new project, and then select the Cognitive Concierge Sample Application.
-4. Click **Save Files to Local Computer** to clone the project.
-5. Once the project is cloned, open up the .xcodeproj file that was created for you in ICAT under Local Server Repository. Edit the Sources/restaurant-recommendations/main.swift file's Constants struct with your own Google API Key for Web.
+3. Click the `Create (+)` button to set up a new project, and then select the Cognitive Concierge Sample Application.
+4. Click `Save Files to Local Computer` to clone the project.
+5. Once the project is cloned, open up the .xcodeproj file that was created for you in ICAT under Local Server Repository. Edit the `Sources/restaurant-recommendations/main.swift` file's Constants struct with your own Google API Key for Web.
 
 	<img src="images/xcodeproj.png" width="500">
 
-6. Finally, you can use ICAT to deploy the updated server to Bluemix.  Click **Provision and Deploy Sample Server on Bluemix** under Cloud Runtimes.
+6. Finally, you can use ICAT to deploy the updated server to Bluemix.  Click `Provision and Deploy Sample Server on Bluemix` under `Cloud Runtimes`.
 
 	<img src="images/provision.png" width="500">
 
-7. Give your Cloud Runtime a unique name, and click **Next**.  This deployment to Bluemix may take a few minutes.
+7. Give your `Cloud Runtime` a unique name, and click `Next`.  This deployment to Bluemix may take a few minutes.
 
-8. In ICAT, ensure that the Connected to: field in the Client application is pointed to your server instance running on Bluemix. You can also point to your localhost for local testing, but you need to be running a local instance of the server application for this to work.
+8. In ICAT, ensure that the `Connected to:` field in the Client application is pointed to your server instance running on Bluemix. You can also point to your localhost for local testing, but you need to be running a local instance of the server application for this to work.
 
 
 ### c) Using the Bluemix command line
@@ -140,21 +140,21 @@ buildpack: swift_buildpack
 ## 3. Run the iOS Application
 
 ### Install the necessary dependencies
-- From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder and run the following command to install the necessary dependencies (This may take some time):
+- From Terminal, change directories into the `YourProjectName/CognitiveConcierge-iOS` folder and run the following command to install the necessary dependencies (This may take some time):
 ```bash
 carthage update --platform iOS
 pod install
 ```
 
 ### Update configuration for iOS app
-- Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICAT or from your terminal using `open CognitiveConcierge.xcworkspace`
+- Open the `CognitiveConcierge.xcworkspace` file in Xcode 8.3 either from ICAT or from your terminal using `open CognitiveConcierge.xcworkspace`
 
 - **Update CognitiveConcierge.plist file:** One way to persist data in Swift is through the property list or .plist file. ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key. If you are not using ICAT, then manually update the credentials for all the services. You can get the credentials for services either from the environment variables section present in the runtime tab from your IBM Cloud dashboard or using the command `bx app env CognitiveConcierge`. ConversationWorkspaceID is the workspace id of the conversation service.
 
 - **Update bluemix.plist file:**
-	- You should set the isLocal value to YES if you'd like to use a locally running server; if you set the value to NO, then you will be accessing the server instance running on the IBM Cloud.
-	- To get the appRouteRemote value, you should go to your application's page on the IBM Cloud. There, you will find a View App button near the top right. Clicking on it should open up your app in a new tab, the url for this page is your route which maps to the appRouteRemote key in the plist. Make sure to include the http:// protocol in your appRouteRemote and to exclude a forward slash at the end of the url.
-	- You can also use the command 'bx app env CognitiveConcierge' where appRouteRemote is uris, bluemixAppGUID is application_id and bluemixAppRegion is your IBM Cloud region for eg: us-south.
+	- You should set the `isLocal` value to `YES` if you'd like to use a locally running server; if you set the value to `NO`, then you will be accessing the server instance running on the IBM Cloud.
+	- To get the `appRouteRemote` value, you should go to your application's page on the IBM Cloud. There, you will find a `View App` button near the top right. Clicking on it should open up your app in a new tab, the url for this page is your route which maps to the appRouteRemote key in the plist. Make sure to include the `http://` protocol in your `appRouteRemote` and to exclude a forward slash at the end of the url.
+	- You can also use the command 'bx app env CognitiveConcierge' where appRouteRemote is uris, `bluemixAppGUID` is `application_id` and `bluemixAppRegion` is your IBM Cloud region for eg: us-south.
 	```bash
 	{
 	 "VCAP_APPLICATION": {
@@ -193,7 +193,7 @@ REGION US SOUTH | REGION UK | REGION SYDNEY
 `.ng.bluemix.net` | `.eu-gb.bluemix.net` | `.au-syd.bluemix.net`
 
 ### Running the application
-Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
+Press the `Play` button in Xcode to build and run the project in the simulator or on your iPhone!
 ![](images/playbutton.png)
 
 
@@ -216,7 +216,7 @@ This Swift application includes code to track deployments to [IBM Cloud](https:/
 This data is collected from the parameters of the `CloudFoundryDeploymentTracker`, the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in the IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to the IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
 ### Disabling Deployment Tracking
-Deployment tracking can be disabled by removing the following line from main.swift:
+Deployment tracking can be disabled by removing the following line from `main.swift`:
 ```
 CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/CognitiveConcierge/", codeVersion: nil).track()
 ```
@@ -232,7 +232,7 @@ CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/Cogniti
 
 ## Troubleshooting
 - If the deployment for server application stage fails, redeploy the pipeline stage.
-- If the IOS application is not able to connect to Watson Services, recheck the credential values in CognitiveConcierge.plist and bluemix.plist files.
+- If the IOS application is not able to connect to Watson Services, recheck the credential values in `CognitiveConcierge.plist` and `bluemix.plist` files.
 
 ## License
 [Apache 2.0](LICENSE)
