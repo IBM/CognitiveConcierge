@@ -1,0 +1,8 @@
+{
+  "CognitiveConcierge-NLU": {
+    "searchPatterns": [
+      "cloudfoundry:CognitiveConcierge-NLU",
+      "file:config/nlu-creds.json"
+    ]
+  }
+}

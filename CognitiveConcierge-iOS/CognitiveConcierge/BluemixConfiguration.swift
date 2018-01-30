@@ -23,13 +23,8 @@ class BluemixConfiguration: NSObject {
     private let kIsLocalKey = "isLocal"
     private let kAppRouteLocal = "appRouteLocal"
     private let kAppRouteRemote = "appRouteRemote"
-    private let kBluemixAppGUIDKey = "bluemixAppGUID"
-    private let kBluemixAppRegionKey = "bluemixAppRegion"
-    
     
     var isLocal: Bool = true
-    let appGUID: String
-    let appRegion: String
     let localBaseRequestURL: String
     let remoteBaseRequestURL: String
     
@@ -37,14 +32,10 @@ class BluemixConfiguration: NSObject {
         if let path = Bundle.main.path(forResource: kBluemixKeysPlistName, ofType: "plist"),
             let plist = NSDictionary(contentsOfFile: path),
             let isLocal              = plist[kIsLocalKey] as? Bool,
-            let appGUID              = plist[kBluemixAppGUIDKey] as? String,
-            let appRegion            = plist[kBluemixAppRegionKey] as? String,
             let localBaseRequestURL  = plist[kAppRouteLocal] as? String,
             let remoteBaseRequestURL = plist[kAppRouteRemote] as? String {
             
             self.isLocal = isLocal
-            self.appGUID = appGUID
-            self.appRegion = appRegion
             self.localBaseRequestURL = localBaseRequestURL
             self.remoteBaseRequestURL = remoteBaseRequestURL
             

@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>ConversationPassword</key>
-	<string>L0mozJQdhUei</string>
+	<string>CONVERSATION_PASSWORD</string>
 	<key>ConversationUsername</key>
-	<string>0664e296-5387-4c70-bb6c-f21eab9d9df5</string>
+	<string>CONVERSATION_USERNAME</string>
 	<key>ConversationVersion</key>
 	<string>2016-12-23</string>
 	<key>ConversationWorkspaceID</key>
-	<string>ce8f2845-a720-4180-8572-8851fc346eea</string>
+	<string>CONVERSATION_WORKSPACE_ID</string>
 	<key>SpeechToTextPassword</key>
-	<string>1ZnBA3b8kodN</string>
+	<string>SPEECH_TO_TEXT_PASSWORD</string>
 	<key>SpeechToTextUsername</key>
-	<string>1d8b54e3-4036-4692-b95b-837036b15b3c</string>
+	<string>SPEECH_TO_TEXT_USERNAME</string>
 	<key>TextToSpeechPassword</key>
-	<string>NE4rFu0uzvtM</string>
+	<string>TEXT_TO_SPEECH_PASSWORD</string>
 	<key>TextToSpeechUsername</key>
-	<string>9534cda3-a610-4ed9-adc1-5b5d74bc9713</string>
+	<string>TEXT_TO_SPEECH_USERNAME</string>
 	<key>googlePlacesAPIKey</key>
-	<string>AIzaSyCsXg4LjDogZkLz4nOKKCjH7oMnWSnh4DA</string>
+	<string>GOOGLE_PLACES_API_KEY</string>
 </dict>
 </plist>

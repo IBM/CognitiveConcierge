@@ -22,8 +22,7 @@ Package-Builder/build/Makefile:
 	git submodule update --init --remote --merge --recursive
 
 run: build
-	@echo --- Invoking restaurant-recommendations executable
-	./.build/debug/restaurant-recommendations
+	@echo --- Invoking CognitiveConcierge executable
+	./.build/debug/CognitiveConcierge
 
 .PHONY: run
-

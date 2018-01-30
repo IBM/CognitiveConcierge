@@ -8,29 +8,24 @@
 
 import Foundation
 import Kitura
-import Configuration
-import CloudFoundryConfig
+import CloudEnvironment
 import LoggerAPI
 import SwiftyJSON
 
+private let cloudEnv = CloudEnv()
+private let nluServiceName = "CognitiveConcierge-NLU"
+var nluCreds = cloudEnv.getNaturalLangUnderstandingCredentials(name: nluServiceName)
 
 public class Controller {
-    let router: Router
-    private var configMgr: ConfigurationManager
+    public let router: Router
     private let nluServiceName = "CognitiveConcierge-NLU"
     
-    var port: Int {
-        get { return configMgr.port }
+    public var port: Int {
+        get { return cloudEnv.port }
     }
     
-    init() throws {
-        // Get environment variables from config.json or environment variables
-        let configFile = URL(fileURLWithPath: #file).appendingPathComponent("../../cloud_config.json").standardized
-        configMgr = ConfigurationManager()
-        configMgr.load(url:configFile).load(.environmentVariables)
+    public init() throws {
         router = Router()
-        nluCreds = [String:String]()
-        nluCreds = initService(serviceName: nluServiceName)
         router.all("/api/v1/restaurants", middleware:BodyParser())
         router.get("/api/v1/restaurants", handler: getRecommendations)
     }
@@ -78,7 +73,7 @@ public class Controller {
                         theRestaurants.append(theRestaurant)
                     }, failure: { error in
                         do {
-                            try response.status(.failedDependency).send(json: JSON(error)).end()
+                            try response.status(.failedDependency).send(json: error).end()
                         } catch {
                             Log.error(error.localizedDescription)
                         }
@@ -94,19 +89,7 @@ public class Controller {
             }
         }
         print(response)
-        
-    }
-    
-    func initService(serviceName:String) -> [String:String] {
-        let serv = configMgr.getService(spec: serviceName)
-        var creds: [String:String] = [:]
-        if let credentials = serv?.credentials {
-            creds["username"] = credentials["username"] as? String
-            creds["password"] = credentials["password"] as? String
-            creds["version"] = "2017-03-01"
-        } else {
-            Log.error("no credentials available for " + serviceName)
-        }
-        return creds
     }
 }
+
+
