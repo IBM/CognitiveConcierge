@@ -66,7 +66,9 @@ Executing the `Cloud-Scripts/services/services.sh` script:
 $ ./Cloud-Scripts/cloud-foundry/services.sh
 ```
 
-After the services are created, you can issue the `bx app push YOUR_APP_NAME` command from the Server project's root folder `CognitiveConcierge-Server` to deploy the server application to IBM Cloud.
+Before deploying your application to the cloud, you will need to update it with the google API Key.  In the main.swift folder, update the struct value with your google API Key.
+
+After the services are created and you've updated this file, you can issue the `bx app push YOUR_APP_NAME` command from the project's root folder `CognitiveConcierge` to deploy the server application to IBM Cloud.
 
 Once the application is running on the IBM Cloud, you can access your application's assigned URL (i.e. route). To find the route, you can log on to your [IBM Cloud account](https://console.ng.bluemix.net), or you can inspect the output from the execution of the `bluemix app push` or `bx app show <application name>` commands. The string value shown next to the `urls` field contains the assigned route.  Use that route as the URL to access the sample server using the browser of your choice.
 
@@ -109,7 +111,7 @@ pod install
 - **Update bluemix.plist file:**
 	- You should set the isLocal value to YES if you'd like to use a locally running server; if you set the value to NO, then you will be accessing the server instance running on the IBM Cloud.
 	- To get the appRouteRemote value, you should go to your application's page on the IBM Cloud. There, you will find a View App button near the top right. Clicking on it should open up your app in a new tab, the url for this page is your route which maps to the appRouteRemote key in the plist. Make sure to include the http:// protocol in your appRouteRemote and to exclude a forward slash at the end of the url.
-	- You can also use the command 'bx app env CognitiveConcierge' where appRouteRemote is uris, bluemixAppGUID is application_id and bluemixAppRegion is your IBM Cloud region for eg: us-south.
+	- You can also use the command 'bx app env CognitiveConcierge' where appRouteRemote is uris.
 	```bash
 	{
 	 "VCAP_APPLICATION": {
@@ -141,11 +143,6 @@ pod install
 	Staging Environment Variable Groups:
 	BLUEMIX_REGION: ibm:yp:us-south
 	```
-	- We need to get the value for `bluemixAppRegion`, which can be one of three options currently:
-
-REGION US SOUTH | REGION UK | REGION SYDNEY
---- | --- | ---
-`.ng.bluemix.net` | `.eu-gb.bluemix.net` | `.au-syd.bluemix.net`
 
 ### Running the application
 Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
@@ -153,7 +150,9 @@ Press the Play button in Xcode to build and run the project in the simulator or 
 
 
 ## Running the Kitura-based server locally
-You can build the CognitiveConcierge-Server by going to the `CognitiveConcierge-Server` directory of the cloned repository and running `swift build`. To start the Kitura-based server for the CognitiveConcierge app on your local system, go to the `CognitiveConcierge-Server` directory of the cloned repository and run `.build/debug/CognitiveConcierge`. You should also update the `bluemix.plist` and `CognitiveConcierge.plist` file in the Xcode project in order to have the iOS app connect to this local server. See the [Update configuration for iOS app](#update-configuration-for-ios-app) section for details.
+Before building the CognitiveConcierge-Server application, first update the credentials in the config/nlu-creds file for local development.
+
+You can then build the CognitiveConcierge-Server by going to the `CognitiveConcierge-Server` directory of the cloned repository and running `swift build`. To start the Kitura-based server for the CognitiveConcierge app on your local system, go to the `CognitiveConcierge-Server` directory of the cloned repository and run `.build/debug/CognitiveConcierge`. You should also update the `bluemix.plist` and `CognitiveConcierge.plist` file in the Xcode project in order to have the iOS app connect to this local server. See the [Update configuration for iOS app](#update-configuration-for-ios-app) section for details.
 
 
 ## Privacy Notice
