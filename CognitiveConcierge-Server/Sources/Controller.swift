@@ -8,36 +8,30 @@
 
 import Foundation
 import Kitura
-import Configuration
+import CloudEnvironment
 import LoggerAPI
 import SwiftyJSON
 
+private let cloudEnv = CloudEnv()
+private let nluServiceName = "CognitiveConcierge-NLU"
+var nluCreds = cloudEnv.getNaturalLangUnderstandingCredentials(name: nluServiceName)
 
 public class Controller {
-    let router: Router
-    private var configMgr: ConfigurationManager
+    public let router: Router
     private let nluServiceName = "CognitiveConcierge-NLU"
-    private let googleServiceName = "google"
-
-    var port: Int {
-        get { return configMgr.port }
+    
+    public var port: Int {
+        get { return cloudEnv.port }
     }
-
-    init() throws {
-        // Get environment variables from config.json or environment variables
-        let configFile = URL(fileURLWithPath: #file).appendingPathComponent("../../cloud_config.json").standardized
-        configMgr = ConfigurationManager()
-        configMgr.load(url:configFile).load(.environmentVariables)
-        let configsNLU = configMgr["vcap_services:\(nluServiceName):0"] as! [String:Any]
-        nluCreds = configsNLU[configsNLU.index(forKey: "credentials")!].value as! [String:String]
-        googleAPIKey = configMgr["\(googleServiceName):apiKey"] as! String
+    
+    public init() throws {
         router = Router()
         router.all("/api/v1/restaurants", middleware:BodyParser())
         router.get("/api/v1/restaurants", handler: getRecommendations)
     }
-
+    
     public func getRecommendations(request: RouterRequest, response: RouterResponse, next: @escaping() -> Void) throws {
-
+        
         guard let occasion = request.queryParameters["occasion"] else {
             response.status(.badRequest)
             Log.error("Request does not contain occasion")
@@ -45,12 +39,12 @@ public class Controller {
         }
         response.headers["Content-type"] = "text/plain; charset=utf-8"
         getClosestRestaurants(occasion) { restaurants in
-
+            
             var restaurantDetails = [JSON]()
             var theRestaurants = [Restaurant]()
             for restaurant in restaurants {
                 let restaurantID = restaurant["place_id"].stringValue
-
+                
                 getRestaurantDetails(restaurantID) { details in
                     Log.verbose("Restaurant details returned")
                     //if no expense, set to 0
@@ -71,9 +65,9 @@ public class Controller {
                         reviewText = reviewText.replacingOccurrences(of: "\n", with: " ")
                         theReviews.append(reviewText)
                     }
-
+                    
                     let openingTimeNow = parsePeriods(periods: periods)
-
+                    
                     let theRestaurant = Restaurant(googleID: restaurantID, isOpenNow: isOpenNow, openingTimeNow: openingTimeNow, name: name, rating: rating, expense: expense, address: address, reviews: theReviews, website: website)
                     theRestaurant.populateWatsonKeywords({(result) in
                         theRestaurants.append(theRestaurant)
@@ -96,17 +90,6 @@ public class Controller {
         }
         print(response)
     }
-
-    func initService(serviceName:String) -> [String:String] {
-        let serv = configMgr.getService(spec: serviceName)
-        var creds: [String:String] = [:]
-        if let credentials = serv?.credentials {
-            creds["username"] = credentials["username"] as? String
-            creds["password"] = credentials["password"] as? String
-            creds["version"] = "2017-03-01"
-        } else {
-            Log.error("no credentials available for " + serviceName)
-        }
-        return creds
-    }
 }
+
+

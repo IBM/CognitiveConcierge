@@ -1,28 +1,10 @@
 ---
-declared-services:
-  CognitiveConcierge-Conversation:
-    label: conversation
-    plan: free
-  CognitiveConcierge-Speech-To-Text:
-    label: speech_to_text
-    plan: standard
-  CognitiveConcierge-Text-To-Speech:
-    label: text_to_speech
-    plan: standard
-  CognitiveConcierge-NLU:
-    label: natural-language-understanding
-    plan: free
 applications:
 - name: CognitiveConcierge
   path: ./CognitiveConcierge-Server
   random-route: true
-  command: restaurant-recommendations -bind 0.0.0.0:$PORT
-  memory: 512M
+  command: CognitiveConcierge
+  memory: 1024M
   disk_quota: 1024M
   instances: 1
   buildpack: swift_buildpack
-  services:
-  - CognitiveConcierge-Conversation
-  - CognitiveConcierge-Speech-To-Text
-  - CognitiveConcierge-Text-To-Speech
-  - CognitiveConcierge-NLU

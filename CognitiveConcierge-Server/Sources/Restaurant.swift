@@ -22,7 +22,7 @@ import Kitura
 
 
 class Restaurant {
-
+    
     fileprivate var name: String
     fileprivate var rating: Double
     fileprivate var expense: Int
@@ -35,10 +35,10 @@ class Restaurant {
     fileprivate var isOpenNow: Bool
     fileprivate var openingTimeNow: Array<String>
     fileprivate var website: String
-
+    
     var negativeSentiments: Array<String>
     var positiveSentiments: Array<String>
-
+    
     // MARK: Initializer
     init(googleID: String, isOpenNow: Bool, openingTimeNow: Array<String>, name: String, rating: Double, expense: Int, address: String, reviews: Array<String>, website: String) {
         self.googleID = googleID
@@ -56,24 +56,24 @@ class Restaurant {
         self.positiveSentiments = []
         self.website = website
     }
-
+    
     /// Append reviews from restaurant into a string to pass to watson
     ///
     /// - parameter completion: Completion closure invoked on success
     /// - parameter failure:    Failure closure invoked on error
     func populateWatsonKeywords(_ completion: @escaping ( Array<String>)->(), failure: @escaping (String) -> Void) {
-
+        
         var reviewStrings = ""
         for review in self.reviews {
             reviewStrings.append(review)
             reviewStrings.append(" ")
         }
         let path = "/natural-language-understanding/api/v1/analyze?version=2017-02-27"
-        guard let username = nluCreds["username"] else {
+        guard let username = nluCreds?.username else {
             print("no username")
             return
         }
-        guard let password = nluCreds["password"] else {
+        guard let password = nluCreds?.password else {
             print("no password")
             return
         }
@@ -103,13 +103,13 @@ class Restaurant {
         requestOptions.append(.username(username))
         requestOptions.append(.password(password))
         requestOptions.append(.headers(headers))
-
+        
         let req = HTTP.request(requestOptions) { resp in
             if let resp = resp, resp.statusCode == HTTPStatusCode.OK {
                 do {
                     var body = Data()
                     try resp.readAllData(into: &body)
-                    let response = try JSON(data: body)
+                    let response = JSON(data: body)
                     for (_, keyword):(String, JSON) in response["keywords"] {
                         if let keytext = keyword["text"].string {
                             if let keySentiment = keyword["sentiment"]["score"].double {
@@ -143,7 +143,7 @@ class Restaurant {
         req.write(from: theData)
         req.end()
     }
-
+    
     //increment the match score by 1
     func incrementMatchScore() {
         self.matchScore += 1
@@ -174,7 +174,7 @@ class Restaurant {
     func getReviews() -> Array<String> {
         return self.reviews
     }
-
+    
     func getMatchScore() -> Int {
         return self.matchScore
     }
@@ -193,9 +193,11 @@ class Restaurant {
     func getWebsite() -> String {
         return self.website
     }
-
+    
     //Setters
     func setMatchPercentage(_ percentage: Double) {
         self.matchPercentage = percentage
     }
 }
+
+

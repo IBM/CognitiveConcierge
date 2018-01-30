@@ -33,14 +33,13 @@ If you haven't so yet, you also need to download and install the following:
 ## Steps
 Use the following steps to deploy the application
 - Deploy the Server Application
-- Update Conversation Service
+- Update the Conversation Service on IBM Cloud
 - Run the IOS Application
 
 ## 1. Deploy the Server Application
 
 You can deploy the server application using any one of the following ways:
 - Deploy to Bluemix button
-- IBM Cloud Application Tools (ICAT)
 - Bluemix command line
 
 ### a) Using the Deploy to Bluemix button
@@ -50,26 +49,7 @@ Clicking on the button below creates a IBM Cloud DevOps Toolchain and deploys th
 
 Once deployment to the IBM Cloud is completed, you can view the deployed application and services from your IBM Cloud account.
 
-### b) Using IBM Cloud Application Tools (ICAT)
-
-1. Install [IBM Cloud Application Tools](http://cloudtools.bluemix.net/) for MacOS.
-2. Once you've installed the application, you can open it to get started.
-3. Click the **Create (+)** button to set up a new project, and then select the Cognitive Concierge Sample Application.
-4. Click **Save Files to Local Computer** to clone the project.
-5. Once the project is cloned, open up the .xcodeproj file that was created for you in ICAT under Local Server Repository. Edit the Sources/restaurant-recommendations/main.swift file's Constants struct with your own Google API Key for Web.
-
-	<img src="images/xcodeproj.png" width="500">
-
-6. Finally, you can use ICAT to deploy the updated server to Bluemix.  Click **Provision and Deploy Sample Server on Bluemix** under Cloud Runtimes.
-
-	<img src="images/provision.png" width="500">
-
-7. Give your Cloud Runtime a unique name, and click **Next**.  This deployment to Bluemix may take a few minutes.
-
-8. In ICAT, ensure that the Connected to: field in the Client application is pointed to your server instance running on Bluemix. You can also point to your localhost for local testing, but you need to be running a local instance of the server application for this to work.
-
-
-### c) Using the Bluemix command line
+### b) Using the Bluemix command line
 
 You can also manually deploy the Server Application to the IBM Cloud. Though not as magical as using the Bluemix button above, manually deploying the app gives you some insights about what is happening behind the scenes. Remember that you'd need the Bluemix [command line](http://clis.ng.bluemix.net/ui/home.html) installed on your system to deploy the app to the IBM Cloud.
 
@@ -83,36 +63,12 @@ Go to the project's root folder on your system and execute the `Cloud-Scripts/se
 
 Executing the `Cloud-Scripts/services/services.sh` script:
 ```bash
-$ Cloud-Scripts/cloud-foundry/services.sh
-Creating services...
-Invoking 'cf create-service conversation free CognitiveConcierge-Conversation'...
-
-Creating service instance CognitiveConcierge-Conversation in org ishan.gulhane@ibm.com / space dev as ishan.gulhane@ibm.com...
-OK
-Invoking 'cf create-service speech_to_text standard CognitiveConcierge-Speech-To-Text'...
-
-Creating service instance CognitiveConcierge-Speech-To-Text in org ishan.gulhane@ibm.com / space dev as ishan.gulhane@ibm.com...
-OK
-
-Attention: The plan `standard` of service `speech_to_text` is not free.  The instance `CognitiveConcierge-Speech-To-Text` will incur a cost.  Contact your administrator if you think this is in error.
-
-Invoking 'cf create-service text_to_speech standard CognitiveConcierge-Text-To-Speech'...
-
-Creating service instance CognitiveConcierge-Text-To-Speech in org ishan.gulhane@ibm.com / space dev as ishan.gulhane@ibm.com...
-OK
-
-Attention: The plan `standard` of service `text_to_speech` is not free.  The instance `CognitiveConcierge-Text-To-Speech` will incur a cost.  Contact your administrator if you think this is in error.
-
-Invoking 'cf create-service natural-language-understanding free CognitiveConcierge-NLU'...
-
-Creating service instance CognitiveConcierge-NLU in org ishan.gulhane@ibm.com / space dev as ishan.gulhane@ibm.com...
-OK
-Services created.
+$ ./Cloud-Scripts/cloud-foundry/services.sh
 ```
 
-After the services are created, you can issue the `bx app push` command from the project's root folder to deploy the server application to IBM Cloud.
+After the services are created, you can issue the `bx app push YOUR_APP_NAME` command from the Server project's root folder `CognitiveConcierge-Server` to deploy the server application to IBM Cloud.
 
-Once the application is running on the IBM Cloud, you can access your application assigned URL (i.e. route). To find the route, you can log on to your [IBM Cloud account](https://console.ng.bluemix.net), or you can inspect the output from the execution of the `bluemix app push` or `bx app show <application name>` commands. The string value shown next to the `urls` field contains the assigned route.  Use that route as the URL to access the sample server using the browser of your choice.
+Once the application is running on the IBM Cloud, you can access your application's assigned URL (i.e. route). To find the route, you can log on to your [IBM Cloud account](https://console.ng.bluemix.net), or you can inspect the output from the execution of the `bluemix app push` or `bx app show <application name>` commands. The string value shown next to the `urls` field contains the assigned route.  Use that route as the URL to access the sample server using the browser of your choice.
 
 ```bash
 $ bx app show CognitiveConcierge
@@ -134,8 +90,7 @@ buildpack: swift_buildpack
 ```
 
 ## 2. Update Conversation Service
-- Conversation service enables you to add a natural language interface to your applications.  While you could create a conversation tree manually, ICAT has run some setup scripts (found in the `Cloud-Scripts/conversation` folder) to add a populated workspace to your conversation service.
-- If you are not using ICAT, go to the IBM Cloud dashboard and launch the Conversation service. Now manually populate the workspace by uploading the JSON found in `Resources/conversationWorkspace.json`. Make note of the workspace id for later use in running the iOS application.
+- The Conversation service enables you to add a natural language interface to your applications.  The Conversation service requires some initial workspace configuration.  Go to the IBM Cloud dashboard and launch the Conversation service.  It should be named something like CognitiveConcierge-Conversation.  Manually populate the workspace by clicking the upload button, and then upload the JSON found in `Resources/conversationWorkspace.json`. Make note of the workspace id for later use in running the iOS application.
 
 ## 3. Run the iOS Application
 
@@ -147,9 +102,9 @@ pod install
 ```
 
 ### Update configuration for iOS app
-- Open the CognitiveConcierge.xcworkspace file in Xcode 8.3 either from ICAT or from your terminal using `open CognitiveConcierge.xcworkspace`
+- Open the CognitiveConcierge.xcworkspace file in Xcode 9.2 from your terminal using `open CognitiveConcierge.xcworkspace`
 
-- **Update CognitiveConcierge.plist file:** One way to persist data in Swift is through the property list or .plist file. ICAT has run some set up scripts to generate and populate the `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist` file. You will need to open this file and add your Google API Key. If you are not using ICAT, then manually update the credentials for all the services. You can get the credentials for services either from the environment variables section present in the runtime tab from your IBM Cloud dashboard or using the command `bx app env CognitiveConcierge`. ConversationWorkspaceID is the workspace id of the conversation service.
+- **Update CognitiveConcierge.plist file:** One way to persist data in Swift is through the property list or .plist file. You will need to open this file and add the credentials for all of the services that were created for you earlier, as well as the Google Places API Key mentioned in the Prerequisites section.  You can find these services in the Bluemix dashboard.  Click the service name you're interested in, and then click `Service Credentials`.  If there is no Credential created, click `New Credential`.
 
 - **Update bluemix.plist file:**
 	- You should set the isLocal value to YES if you'd like to use a locally running server; if you set the value to NO, then you will be accessing the server instance running on the IBM Cloud.

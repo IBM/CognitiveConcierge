@@ -1,7 +1,7 @@
 app:
-  image: ibmcom/swift-ubuntu:3.1
+  image: ibmcom/swift-ubuntu:4.0.3
   ports:
     - "8080:8080"
   volumes:
-    - .:/root/watson-recommendations-api-kitura
-  command: bash -c "cd /root/watson-recommendations-api-kitura && swift build --clean && swift build && .build/debug/restaurant-recommendations"
+    - .:/CognitiveConcierge
+  command: bash -c "cd /CognitiveConcierge && swift package --build-path .build-ubuntu clean && swift build --build-path .build-ubuntu && ./.build-ubuntu/debug/CognitiveConcierge"

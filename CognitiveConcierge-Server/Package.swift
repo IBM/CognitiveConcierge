@@ -1,11 +1,25 @@
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
     name: "CognitiveConcierge",
+    products: [
+      .executable(
+        name: "CognitiveConcierge",
+        targets:  ["CognitiveConcierge"]
+      )
+    ],
     dependencies: [
-        .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 2, minor: 1),
-        .Package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", majorVersion: 7),
-        .Package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", majorVersion:4),
-        .Package(url: "https://github.com/IBM/metrics-tracker-client-swift.git", majorVersion: 5)
-        ]
+        .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "2.1.0")),
+        .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/IBM/metrics-tracker-client-swift.git", .upToNextMinor(from: "5.0.0")),
+        .package(url: "https://github.com/IBM-Swift/SwiftyJSON.git", .upToNextMajor(from: "17.0.0"))
+	],
+  targets: [
+    .target(
+      name: "CognitiveConcierge",
+      dependencies: ["Kitura", "SwiftyJSON", "CloudEnvironment", "MetricsTrackerClient"],
+      path: "."
+    )
+  ]
 )

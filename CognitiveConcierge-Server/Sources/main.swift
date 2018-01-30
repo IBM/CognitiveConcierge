@@ -17,24 +17,22 @@
 import Kitura
 import Foundation
 import KituraNet
-import SwiftyJSON
 import LoggerAPI
-import Configuration
 import MetricsTrackerClient
 
-
 struct Constants {
-    static var location = "36.11,-115.17"
+    static var location = "36.11,-115.17" //choose your latitude and longitude for recommendations
+    static var googleAPIKey = "INSERT_GOOGLE_API_KEY"
 }
 
-// Init logger
-var nluCreds: [String:String]
-var googleAPIKey: String
 do {
     MetricsTrackerClient(repository: "CognitiveConcierge", organization: "IBM").track()
     let controller = try Controller()
+    Log.info("HELLOOOOOO")
+    Log.info(String(controller.port))
     Kitura.addHTTPServer(onPort: controller.port, with: controller.router)
     Kitura.run()
 } catch {
     Log.error("Oops... something went wrong. Server did not start!")
 }
+
