@@ -21,7 +21,7 @@ import LoggerAPI
 import MetricsTrackerClient
 
 struct Constants {
-    static var googleAPIKey = "INSERT_GOOGLE_API_KEY_HERE"
+    static var googleAPIKey = "AIzaSyCiUkg40BrEshxnmZF43vmWHM9w36NFspw"
     static var location = "36.11,-115.17" //choose your latitude and longitude for recommendations
 }
 

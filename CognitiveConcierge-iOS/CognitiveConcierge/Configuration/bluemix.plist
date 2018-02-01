@@ -5,8 +5,8 @@
 	<key>appRouteLocal</key>
 	<string>http://localhost:8080</string>
 	<key>appRouteRemote</key>
-	<string>https://cognitiveconcierge-20170606190241365-noninvincible-formularisation.mybluemix.net</string>
+	<string>cognitiveconcierge-snappiest-isomorph.mybluemix.net</string>
 	<key>isLocal</key>
-	<true/>
+	<false/>
 </dict>
 </plist>

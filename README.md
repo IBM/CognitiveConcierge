@@ -63,7 +63,7 @@ Go to the project's root folder on your system and execute the `Cloud-Scripts/se
 
 Executing the `Cloud-Scripts/services/services.sh` script:
 ```bash
-$ ./Cloud-Scripts/cloud-foundry/services.sh
+$ ./Cloud-Scripts/services/services.sh
 ```
 
 Before deploying your application to the cloud, you will need to update it with the google API Key.  In the main.swift folder, update the struct value with your google API Key.
