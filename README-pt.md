@@ -3,13 +3,13 @@
 
 # CognitiveConcierge 
 
-O CognitiveConcierge é uma amostra de aplicativo Swift de ponta a ponta com front-end de iOS e backend de estrutura da web Kitura. Esse aplicativo também demonstra como reunir vários serviços diferentes do Watson nos seus aplicativos Swift no lado do cliente e do servidor por meio dos SDKs de iOS do Watson Developer Cloud, incluindo os serviços Conversation, Text to Speech, Speech to Text e Natural Language Understanding. 
+O CognitiveConcierge é uma amostra de aplicativo Swift de ponta a ponta com front-end de iOS e backend de estrutura da web Kitura. Esse aplicativo também demonstra como reunir vários serviços diferentes do Watson nos seus aplicativos Swift no lado do cliente e do servidor por meio dos SDKs de iOS do Watson Developer Cloud, incluindo os serviços Assistant for Business, Text to Speech, Speech to Text e Natural Language Understanding. 
 
 <img src="images/CC1.png" width="250" /><img src="images/CC2.png" width="250" /><img src="images/CC7.png" width="250" /> 
 
 ## Componentes inclusos:
 
-Serviço Bluemix Watson Conversation 
+Serviço Bluemix Watson Assistant for Business 
 - Serviço Bluemix Watson Text to Speech 
 - Serviço Bluemix Watson Speech to Text 
 - Serviço Bluemix Watson Natural Language Understanding 
@@ -83,8 +83,8 @@ Executando o script
 `Cloud-Scripts/services/services.sh`: 
 ```bash 
 $ Cloud-Scripts/cloud-foundry/services.sh Creating services... 
-Invoking 'cf create-service conversation free CognitiveConcierge-Conversation'... 
-Creating service instance CognitiveConcierge-Conversation in org ishan.gulhane@ibm.com / space dev as ishan.gulhane@ibm.com... 
+Invoking 'cf create-service conversation free CognitiveConcierge-Assistant for Business'... 
+Creating service instance CognitiveConcierge-Assistant for Business in org ishan.gulhane@ibm.com / space dev as ishan.gulhane@ibm.com... 
 OK 
 Invoking 'cf create-service speech_to_text standard CognitiveConcierge-Speech-To-Text'... 
 Creating service instance CognitiveConcierge-Speech-To-Text in org ishan.gulhane@ibm.com / space dev as ishan.gulhane@ibm.com... 
@@ -136,7 +136,7 @@ carthage update --platform iOS pod install
 
 ### Atualize a configuração para o aplicativo de iOS 
 - Abra o arquivo CognitiveConcierge.xcworkspace no Xcode 8.3 a partir da ICAT ou do seu terminal usando `open CognitiveConcierge.xcworkspace` 
-- **Atualize o arquivo CognitiveConcierge.plist:** Uma forma de persistir dados no Swift é por meio da lista de propriedade ou do arquivo .plist. A ICAT executou alguns scripts configurados para gerar e preencher o arquivo `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. Você precisará abrir esse arquivo e incluir sua chave da API do Google. Caso não esteja usando a ICAT, atualize manualmente as credenciais para todos os serviços. As credenciais para os serviços podem ser obtidas na seção de variáveis do ambiente presente na guia Runtime do painel do Bluemix ou usando o comando `bx app env CognitiveConcierge`. ConversationWorkspaceID é o ID da área de trabalho do serviço de conversação. 
+- **Atualize o arquivo CognitiveConcierge.plist:** Uma forma de persistir dados no Swift é por meio da lista de propriedade ou do arquivo .plist. A ICAT executou alguns scripts configurados para gerar e preencher o arquivo `CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist`. Você precisará abrir esse arquivo e incluir sua chave da API do Google. Caso não esteja usando a ICAT, atualize manualmente as credenciais para todos os serviços. As credenciais para os serviços podem ser obtidas na seção de variáveis do ambiente presente na guia Runtime do painel do Bluemix ou usando o comando `bx app env CognitiveConcierge`. Assistant for BusinessWorkspaceID é o ID da área de trabalho do serviço de conversação. 
 - **Atualize o arquivo bluemix.plist:** 
 - Você deverá definir o valor isLocal como YES se quiser usar um servidor de execução local; se o valor for definido como NO, você acessará a instância do servidor em execução no Bluemix. 
 - Para obter o valor appRouteRemote, acesse a página do seu aplicativo no Bluemix. Lá, haverá um botão View App perto do canto superior direito. Ao clicar nele, seu aplicativo será aberto em uma nova guia. A URL dessa página é a rota que leva até a chave appRouteRemote na plist. Não se esqueça de incluir o protocolo http:// na appRouteRemote e de excluir uma barra invertida no final da URL. 
