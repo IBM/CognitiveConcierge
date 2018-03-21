@@ -2,6 +2,9 @@
 <!--![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f4ae263f304ffe32cbb17f3238c3ac86/badge.svg)-->
 
 # CognitiveConcierge
+
+> Watson Conversation is now Watson Assistant. Although some images in this code pattern may show the service as Watson Conversation, the steps and processes will still work.
+
 CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end. This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's [Swift SDK](https://github.com/watson-developer-cloud/swift-sdk), including Watson Assistant, Text to Speech, Speech to Text, and the Natural Language Understanding service.
 
 <img src="images/CC1.png" width="250"><img src="images/CC2.png" width="250"><img src="images/CC7.png" width="250">
@@ -179,7 +182,7 @@ CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/Cogniti
 [![cognitive concierge video](http://i.imgur.com/hsFxooD.png)](http://vimeo.com/222564546 "Cognitive Concierge Overview")
 
 ## Learn More About
-* https://www.ibm.com/cloud/garage/content/architecture/cognitiveAssistantDomain/
+* https://www.ibm.com/cloud/garage/content/architecture/cognitiveConversationDomain/
 * https://github.com/IBM-Swift/swift-buildpack
 * https://developer.ibm.com/swift/
 * https://swift.sandbox.bluemix.net/#/repl?cm_sp=dw-bluemix-_-code-_-devcenter
