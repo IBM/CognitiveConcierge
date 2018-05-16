@@ -15,26 +15,16 @@
 //*/
 //
 import Kitura
-import HeliumLogger
 import Foundation
 import KituraNet
-import SwiftyJSON
 import LoggerAPI
-import Configuration
-import CloudFoundryConfig
-import CloudFoundryDeploymentTracker
 import MetricsTrackerClient
 
-
 struct Constants {
-    static var googleAPIKey = "INSERT_YOUR_GOOGLE_API_KEY_HERE"
-    static var location = "36.11,-115.17"
+    static var googleAPIKey = "AIzaSyCiUkg40BrEshxnmZF43vmWHM9w36NFspw"
+    static var location = "36.11,-115.17" //choose your latitude and longitude for recommendations
 }
 
-// Init logger
-HeliumLogger.use(LoggerMessageType.info)
-var nluCreds: [String:String]
-CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/CognitiveConcierge").track()
 do {
     MetricsTrackerClient(repository: "CognitiveConcierge", organization: "IBM").track()
     let controller = try Controller()
@@ -43,3 +33,4 @@ do {
 } catch {
     Log.error("Oops... something went wrong. Server did not start!")
 }
+

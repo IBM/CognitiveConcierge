@@ -126,7 +126,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Qe9-tA-mKB">
-                        <barButtonItem key="leftBarButtonItem" title="BACK" style="plain" id="rUG-24-exM">
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="rUG-24-exM">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r10-jj-0pQ">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,7 +174,7 @@
                                     <constraint firstAttribute="height" constant="74" id="eEC-fB-Ih9"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W0x-2F-s9K">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W0x-2F-s9K">
                                 <rect key="frame" x="16" y="149" width="343" height="474"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -200,7 +200,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Restaurants" id="0GN-Tf-rX7">
-                        <barButtonItem key="leftBarButtonItem" title="BACK" style="plain" id="rKQ-yY-YdI">
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="rKQ-yY-YdI">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pws-Cf-kir">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -296,7 +296,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Restaurant Details" id="hKZ-Kk-hze">
-                        <barButtonItem key="leftBarButtonItem" title="BACK" style="plain" id="TUE-WO-iq9">
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="TUE-WO-iq9">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NZa-Ut-ADa">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

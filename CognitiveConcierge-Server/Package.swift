@@ -1,12 +1,25 @@
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
     name: "CognitiveConcierge",
+    products: [
+      .executable(
+        name: "CognitiveConcierge",
+        targets:  ["CognitiveConcierge"]
+      )
+    ],
     dependencies: [
-        .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 1, minor: 6),
-        .Package(url: "https://github.com/IBM-Swift/HeliumLogger.git", majorVersion: 1, minor: 6),
-        .Package(url: "https://github.com/IBM-Swift/CloudConfiguration.git", majorVersion: 2),
-        .Package(url: "https://github.com/IBM-Bluemix/cf-deployment-tracker-client-swift.git", majorVersion: 3, minor: 0),
-        .Package(url: "https://github.com/IBM/metrics-tracker-client-swift.git", majorVersion: 5)
-        ]
+        .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "2.1.0")),
+        .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/IBM/metrics-tracker-client-swift.git", .upToNextMinor(from: "5.0.0")),
+        .package(url: "https://github.com/IBM-Swift/SwiftyJSON.git", .upToNextMajor(from: "17.0.0"))
+	],
+  targets: [
+    .target(
+      name: "CognitiveConcierge",
+      dependencies: ["Kitura", "SwiftyJSON", "CloudEnvironment", "MetricsTrackerClient"],
+      path: "."
+    )
+  ]
 )
