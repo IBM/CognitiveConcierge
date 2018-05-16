@@ -100,21 +100,21 @@ buildpack: swift_buildpack
 ## 3. Run the iOS Application
 
 ### Install the necessary dependencies
-- From Terminal, change directories into the YourProjectName/CognitiveConcierge-iOS folder and run the following command to install the necessary dependencies (This may take some time):
+- From Terminal, change directories into the `YourProjectName/CognitiveConcierge-iOS` folder and run the following command to install the necessary dependencies (This may take some time):
 ```bash
 carthage update --platform iOS
 pod install
 ```
 
 ### Update configuration for iOS app
-- Open the CognitiveConcierge.xcworkspace file in Xcode 9.2 from your terminal using `open CognitiveConcierge.xcworkspace`
+- Open the `CognitiveConcierge.xcworkspace` file in Xcode 9.2 from your terminal using `open CognitiveConcierge.xcworkspace`
 
 - **Update CognitiveConcierge.plist file:** One way to persist data in Swift is through the property list or .plist file. You will need to open this file and add the credentials for all of the services that were created for you earlier, as well as the Google Places API Key mentioned in the Prerequisites section.  You can find these services in the Bluemix dashboard.  Click the service name you're interested in, and then click `Service Credentials`.  If there is no Credential created, click `New Credential`.
 
 - **Update bluemix.plist file:**
-	- You should set the isLocal value to YES if you'd like to use a locally running server; if you set the value to NO, then you will be accessing the server instance running on the IBM Cloud.
-	- To get the appRouteRemote value, you should go to your application's page on the IBM Cloud. There, you will find a View App button near the top right. Clicking on it should open up your app in a new tab, the url for this page is your route which maps to the appRouteRemote key in the plist. Make sure to include the http:// protocol in your appRouteRemote and to exclude a forward slash at the end of the url.
-	- You can also use the command 'bx app env CognitiveConcierge' where appRouteRemote is uris.
+	- You should set the `isLocal` value to `YES` if you'd like to use a locally running server; if you set the value to `NO`, then you will be accessing the server instance running on the IBM Cloud.
+	- To get the `appRouteRemote` value, you should go to your application's page on the IBM Cloud. There, you will find a `View App` button near the top right. Clicking on it should open up your app in a new tab, the url for this page is your route which maps to the appRouteRemote key in the plist. Make sure to include the `http:// protocol` in your `appRouteRemote` and to exclude a forward slash at the end of the url.
+	- You can also use the command `bx app env CognitiveConcierge` where appRouteRemote is uris.
 	```bash
 	{
 	 "VCAP_APPLICATION": {
@@ -148,7 +148,7 @@ pod install
 	```
 
 ### Running the application
-Press the Play button in Xcode to build and run the project in the simulator or on your iPhone!
+Press the `Play` button in Xcode to build and run the project in the simulator or on your iPhone!
 ![](images/playbutton.png)
 
 
@@ -173,7 +173,7 @@ This Swift application includes code to track deployments to [IBM Cloud](https:/
 This data is collected from the parameters of the `CloudFoundryDeploymentTracker`, the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in the IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to the IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
 ### Disabling Deployment Tracking
-Deployment tracking can be disabled by removing the following line from main.swift:
+Deployment tracking can be disabled by removing the following line from `main.swift`:
 ```
 CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/CognitiveConcierge/", codeVersion: nil).track()
 ```
@@ -189,7 +189,7 @@ CloudFoundryDeploymentTracker(repositoryURL: "https://github.com/IBM-MIL/Cogniti
 
 ## Troubleshooting
 - If the deployment for server application stage fails, redeploy the pipeline stage.
-- If the IOS application is not able to connect to Watson Services, recheck the credential values in CognitiveConcierge.plist and bluemix.plist files.
+- If the IOS application is not able to connect to Watson Services, recheck the credential values in `CognitiveConcierge.plist` and `bluemix.plist` files.
 
 ## License
 [Apache 2.0](LICENSE)
