@@ -2,12 +2,15 @@
 <!--![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/f4ae263f304ffe32cbb17f3238c3ac86/badge.svg)-->
 
 # CognitiveConcierge
-CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end. This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's [Swift SDK](https://github.com/watson-developer-cloud/swift-sdk), including Conversation, Text to Speech, Speech to Text, and the Natural Language Understanding service.
+
+> Watson Conversation is now Watson Assistant. Although some images in this code pattern may show the service as Watson Conversation, the steps and processes will still work.
+
+CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end. This application also demonstrates how to pull in a number of different Watson services to your Swift client and server side apps via the Watson Developer Cloud's [Swift SDK](https://github.com/watson-developer-cloud/swift-sdk), including Watson Assistant, Text to Speech, Speech to Text, and the Natural Language Understanding service.
 
 <img src="images/CC1.png" width="250"><img src="images/CC2.png" width="250"><img src="images/CC7.png" width="250">
 
 ## Included Components
-- Watson Conversation service
+- Watson Assistant service
 - Watson Text to Speech service
 - Watson Speech to Text service
 - Watson Natural Language Understanding service
@@ -33,7 +36,7 @@ If you haven't so yet, you also need to download and install the following:
 ## Steps
 Use the following steps to deploy the application
 - Deploy the Server Application
-- Update the Conversation Service on IBM Cloud
+- Update the Watson Assistant Service on IBM Cloud
 - Run the IOS Application
 
 ## 1. Deploy the Server Application
@@ -91,8 +94,8 @@ buildpack: swift_buildpack
 #0   running   2017-06-05 11:05:41 AM   0.3%   6.4M of 512M   269.8M of 1G
 ```
 
-## 2. Update Conversation Service
-- The Conversation service enables you to add a natural language interface to your applications.  The Conversation service requires some initial workspace configuration.  Go to the IBM Cloud dashboard and launch the Conversation service.  It should be named something like CognitiveConcierge-Conversation.  Manually populate the workspace by clicking the upload button, and then upload the JSON found in `Resources/conversationWorkspace.json`. Make note of the workspace id for later use in running the iOS application.
+## 2. Update Assistant Service
+- The Watson Assistant service enables you to add a natural language interface to your applications.  The Watson Assistant service requires some initial workspace configuration.  Go to the IBM Cloud dashboard and launch the Watson Assistant service.  It should be named something like CognitiveConcierge-Assistant.  Manually populate the workspace by clicking the upload button, and then upload the JSON found in `Resources/conversationWorkspace.json`. Make note of the workspace id for later use in running the iOS application.
 
 ## 3. Run the iOS Application
 
