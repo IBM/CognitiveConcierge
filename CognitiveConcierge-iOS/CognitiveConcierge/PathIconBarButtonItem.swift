@@ -31,7 +31,7 @@ class PathIconBarButtonItem: UIBarButtonItem {
         setupPathIconButton()
     }
     
-    func goToPath() {
+    @objc func goToPath() {
         if let currentVC = Utils.getCurrentViewController() {
             _ = currentVC.navigationController?.popViewController(animated: true)
         }

@@ -57,7 +57,8 @@ class EntertainmentOptionsViewController: UIViewController {
             return
         }
         let configuration = NSDictionary(contentsOfFile: configurationPath)
-        workspaceID = WorkspaceID(configuration?["ConversationWorkspaceID"] as! String)
+        //workspaceID = workspaceID(configuration?["ConversationWorkspaceID"] as! String)
+        workspaceID = (configuration?["ConversationWorkspaceID"] as! String)
         convoContext = nil
         
         // Instantiating to start first conversation with Watson.
@@ -111,7 +112,7 @@ class EntertainmentOptionsViewController: UIViewController {
         }
         
         // Call conversation service for Watson to initiate conversation.
-        let request = MessageRequest(text: "Hi")
+        let request = MessageRequest(input: InputData.init(text:"Hi"))
         let failure = { (error: Error) in
             // Alert user to connect to internet
             self.alertUserWithMessage(title: "Error", message: "\(error)")
@@ -119,7 +120,7 @@ class EntertainmentOptionsViewController: UIViewController {
             
             NSLog ("error generated when sending message to service: \(error)")
         }
-        convoService.message(withWorkspace: id, request: request, failure: failure) { dataResponse in
+        convoService.message(workspaceID: id, request: request, failure: failure) { dataResponse in
             // Save the Watson's greeting response.
             self.greeting = dataResponse.output.text[0]
             

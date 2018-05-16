@@ -47,9 +47,9 @@ class MessagesViewController: JSQMessagesViewController {
     private var stt: SpeechToText?
     private var recorder: AVAudioRecorder?
     private var isStreamingDefault = false
-    private var stopStreamingDefault: ((Void) -> Void)? = nil
+    private var stopStreamingDefault: (() -> Void)? = nil
     private var isStreamingCustom = false
-    private var stopStreamingCustom: ((Void) -> Void)? = nil
+    private var stopStreamingCustom: (() -> Void)? = nil
     private var captureSession: AVCaptureSession? = nil
     
     /// Acts as a store for messages sent and received.
@@ -208,7 +208,6 @@ class MessagesViewController: JSQMessagesViewController {
     
     private func startStreaming() {
         var settings = RecognitionSettings(contentType: .opus)
-        settings.continuous = false
         settings.interimResults = true
         
         // ensure SpeechToText service is up

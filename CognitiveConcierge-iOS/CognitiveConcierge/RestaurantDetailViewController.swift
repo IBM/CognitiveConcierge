@@ -95,7 +95,7 @@ class RestaurantDetailViewController: UIViewController {
         restaurantDetailView = RecommendedRestaurantDetailView.instanceFromNib()
     }
     
-    func visitWebsiteTapped() {
+    @objc func visitWebsiteTapped() {
         UIApplication.shared.open(URL(string: self.chosenRestaurant.getWebsite())!, options: [:])
     }
     

@@ -19,7 +19,6 @@ import SwiftyJSON
 import KituraNet
 import LoggerAPI
 import Kitura
-import CloudFoundryConfig
 
 
 class Restaurant {
@@ -70,11 +69,11 @@ class Restaurant {
             reviewStrings.append(" ")
         }
         let path = "/natural-language-understanding/api/v1/analyze?version=2017-02-27"
-        guard let username = nluCreds["username"] else {
+        guard let username = nluCreds?.username else {
             print("no username")
             return
         }
-        guard let password = nluCreds["password"] else {
+        guard let password = nluCreds?.password else {
             print("no password")
             return
         }
@@ -200,3 +199,5 @@ class Restaurant {
         self.matchPercentage = percentage
     }
 }
+
+
