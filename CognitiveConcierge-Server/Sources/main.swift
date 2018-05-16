@@ -18,7 +18,6 @@ import Kitura
 import Foundation
 import KituraNet
 import LoggerAPI
-import MetricsTrackerClient
 
 struct Constants {
     static var googleAPIKey = "AIzaSyCiUkg40BrEshxnmZF43vmWHM9w36NFspw"
@@ -26,7 +25,6 @@ struct Constants {
 }
 
 do {
-    MetricsTrackerClient(repository: "CognitiveConcierge", organization: "IBM").track()
     let controller = try Controller()
     Kitura.addHTTPServer(onPort: controller.port, with: controller.router)
     Kitura.run()
