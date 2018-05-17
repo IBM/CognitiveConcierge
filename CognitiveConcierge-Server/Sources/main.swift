@@ -20,7 +20,7 @@ import KituraNet
 import LoggerAPI
 
 struct Constants {
-    static var googleAPIKey = "AIzaSyCiUkg40BrEshxnmZF43vmWHM9w36NFspw"
+    static var googleAPIKey = "YOUR_API_KEY_HERE"
     static var location = "36.11,-115.17" //choose your latitude and longitude for recommendations
 }
 
@@ -31,4 +31,3 @@ do {
 } catch {
     Log.error("Oops... something went wrong. Server did not start!")
 }
-
