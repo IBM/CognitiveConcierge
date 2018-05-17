@@ -1,6 +1,0 @@
-framework module Pods_CognitiveConcierge {
-  umbrella header "Pods-CognitiveConcierge-umbrella.h"
-
-  export *
-  module * { export * }
-}
