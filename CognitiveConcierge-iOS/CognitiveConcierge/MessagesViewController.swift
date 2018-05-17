@@ -207,7 +207,7 @@ class MessagesViewController: JSQMessagesViewController {
     }
     
     private func startStreaming() {
-        var settings = RecognitionSettings(contentType: .opus)
+        var settings = RecognitionSettings(contentType: "audio/ogg;codecs=opus")
         settings.interimResults = true
         
         // ensure SpeechToText service is up
@@ -217,7 +217,22 @@ class MessagesViewController: JSQMessagesViewController {
         }
         let failure = { (error: Error) in print(error) }
         stt.recognizeMicrophone(settings: settings, failure: failure) { results in
-            self.inputToolbar.contentView.textView.text = results.bestTranscript
+            var text: String = ""
+            var confidence: Double = 0.0
+            if let speechRecognitionResults = results.results {
+                for result in speechRecognitionResults{
+                    for alternative in result.alternatives {
+                        if alternative.confidence != nil, let confidenceResponse = alternative.confidence {
+                            if confidenceResponse > confidence {
+                                confidence = confidenceResponse
+                                text = alternative.transcript
+                            }
+                        }
+                    }
+                }
+            }
+            
+            self.inputToolbar.contentView.textView.text = text
             self.sendButton.isEnabled = true
             stt.stopRecognizeMicrophone()
             self.microphoneButton.isEnabled = true
