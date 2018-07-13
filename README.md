@@ -108,7 +108,7 @@ pod install
 ### Update configuration for iOS app
 - Open the `CognitiveConcierge.xcworkspace` file in Xcode 9.2 from your terminal using `open CognitiveConcierge.xcworkspace`
 
-- **Update CognitiveConcierge.plist file:** One way to persist data in Swift is through the property list or .plist file. You will need to open this file and add the credentials for all of the services that were created for you earlier, as well as the Google Places API Key mentioned in the Prerequisites section.  You can find these services in the Bluemix dashboard.  Click the service name you're interested in, and then click `Service Credentials`.  If there is no Credential created, click `New Credential`.
+- **Update CognitiveConcierge.plist file:** One way to persist data in Swift is through the property list or .plist file. You will need to open this file and add the credentials for all of the services that were created for you earlier, as well as the Google Places API Key mentioned in the Prerequisites section.  You can find these services in the Bluemix dashboard.  Click the service name you're interested in, and then click `Service Credentials`.  If there is no Credential created, click `New Credential`. If your Assistant service uses an API Key, remove the ConversationUsername and ConversationPassword keys from the file; if not, remove the ConversationIamApiKey key.
 
 - **Update bluemix.plist file:**
 	- You should set the `isLocal` value to `YES` if you'd like to use a locally running server; if you set the value to `NO`, then you will be accessing the server instance running on the IBM Cloud.
