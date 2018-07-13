@@ -2,12 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-        <key>ConversationIamApiKey</key>
+        <key>ConversationApiKey</key>
         <string>your_key_here</string>
 	<key>ConversationPassword</key>
-	<string>Vzah3JxwdpuI</string>
+	<string>your_password_here</string>
 	<key>ConversationUsername</key>
-	<string>ff96dc70-612c-461f-874b-5ba5a6f0971f</string>
+	<string>your_username_here</string>
 	<key>ConversationVersion</key>
 	<string>2016-12-23</string>
 	<key>ConversationWorkspaceID</key>
