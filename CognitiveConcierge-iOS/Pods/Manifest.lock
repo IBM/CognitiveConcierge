@@ -12,6 +12,14 @@ DEPENDENCIES:
   - GooglePlaces (= 2.1.1)
   - JSQMessagesViewController (= 7.3.4)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - GoogleMaps
+    - GooglePlaces
+    - JSQMessagesViewController
+    - JSQSystemSoundPlayer
+
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
@@ -21,4 +29,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 32655b18e78d2939969ca43cdbcf0cbf5241c055
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
