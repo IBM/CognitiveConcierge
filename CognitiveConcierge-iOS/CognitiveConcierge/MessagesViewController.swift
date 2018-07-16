@@ -207,7 +207,7 @@ class MessagesViewController: JSQMessagesViewController {
     }
     
     private func startStreaming() {
-        var settings = RecognitionSettings(contentType: .opus)
+        var settings = RecognitionSettings(contentType: "opus")
         settings.interimResults = true
         
         // ensure SpeechToText service is up
@@ -217,7 +217,9 @@ class MessagesViewController: JSQMessagesViewController {
         }
         let failure = { (error: Error) in print(error) }
         stt.recognizeMicrophone(settings: settings, failure: failure) { results in
-            self.inputToolbar.contentView.textView.text = results.bestTranscript
+            var accumulator = SpeechRecognitionResultsAccumulator()
+            accumulator.add(results: results)
+            self.inputToolbar.contentView.textView.text = accumulator.bestTranscript
             self.sendButton.isEnabled = true
             stt.stopRecognizeMicrophone()
             self.microphoneButton.isEnabled = true

@@ -31,7 +31,7 @@ class EntertainmentOptionsViewController: UIViewController {
     var tts: TextToSpeech!
     
     // To use for Watson conversation service
-    private var convoService: Conversation!
+    private var convoService: Assistant!
     private var workspaceID: String?
     
     private let kNavigationBarTitle = "Watson Recommendations"
