@@ -15,7 +15,7 @@
  **/
 
 import Foundation
-import ConversationV1
+import AssistantV1
 import TextToSpeechV1
 import AVFoundation
 import JSQMessagesViewController
