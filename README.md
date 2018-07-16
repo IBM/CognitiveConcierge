@@ -75,8 +75,8 @@ $ ./Cloud-Scripts/services/services.sh
 ```
 
 ### c) Using the IBM Cloud GUI
-
-If you'd like to create the services manually online, or don't have the IBM Cloud CLI, create the following services:
+=======
+If you'd like to create the services manually, or don't have the IBM Cloud CLI, you can create the following services:
 
 * [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
 * [**Watson Speech to Text**](https://console.ng.bluemix.net/catalog/services/speech-to-text)
