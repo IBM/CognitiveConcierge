@@ -15,7 +15,7 @@
  **/
 
 import Foundation
-import ConversationV1
+import AssistantV1
 import TextToSpeechV1
 import AVFoundation
 import JSQMessagesViewController
@@ -33,7 +33,7 @@ class MessagesViewModel {
     
     var tts: TextToSpeech?
     var player: AVAudioPlayer? = nil
-    var convoService: Conversation?
+    var convoService: Assistant?
     var workspaceID = ""
     var watsonContext: Context?
     var watsonEntities: [String: String] = [:]
@@ -110,8 +110,8 @@ class MessagesViewModel {
     
     func checkProgress(convoContext: Context) -> Bool {
         var displaySuggestions = false
-        let stackIndex = convoContext.system.additionalProperties.index(forKey: "dialog_stack")
-        let dialogStack = convoContext.system.additionalProperties[stackIndex!].value
+        let stackIndex = convoContext.system!.additionalProperties.index(forKey: "dialog_stack")
+        let dialogStack = convoContext.system!.additionalProperties[stackIndex!].value
         do {
             let dialogArray = try dialogStack.toValue([ConvoNode].self)
             guard dialogArray.count > 0 else {
@@ -143,7 +143,7 @@ class MessagesViewModel {
             return
         }
         let failure = { (error: Error) in print("error was generated: \(error)") }
-        tts.synthesize(text, voice: SynthesisVoice.gb_Kate.rawValue, audioFormat: .wav, failure: failure) {
+        tts.synthesize(text: text, accept: "wav", voice: "gb_Kate", failure: failure) {
             data in
             do {
                 self.player = try AVAudioPlayer(data: data)

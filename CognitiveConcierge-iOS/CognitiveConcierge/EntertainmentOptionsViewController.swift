@@ -16,7 +16,7 @@
 
 import UIKit
 import Foundation
-import ConversationV1
+import AssistantV1
 import TextToSpeechV1
 
 class EntertainmentOptionsViewController: UIViewController {
@@ -31,7 +31,7 @@ class EntertainmentOptionsViewController: UIViewController {
     var tts: TextToSpeech!
     
     // To use for Watson conversation service
-    private var convoService: Conversation!
+    private var convoService: Assistant!
     private var workspaceID: String?
     
     private let kNavigationBarTitle = "Watson Recommendations"
@@ -62,8 +62,12 @@ class EntertainmentOptionsViewController: UIViewController {
         convoContext = nil
         
         // Instantiating to start first conversation with Watson.
-        convoService = Conversation(username: configuration?["ConversationUsername"] as! String, password: configuration?["ConversationPassword"] as! String, version: configuration?["ConversationVersion"] as! String)
-        
+        if let iamApiKey = configuration?["ConversationApiKey"] as? String, !iamApiKey.isEmpty {
+            convoService = Assistant(version: configuration?["ConversationVersion"] as! String, apiKey: iamApiKey, iamUrl: configuration?["ConversationIamUrl"] as? String)
+        } else {
+            convoService = Assistant(username: configuration?["ConversationUsername"] as! String, password: configuration?["ConversationPassword"] as! String, version: configuration?["ConversationVersion"] as! String)
+        }
+
         // Instantiating to start text to speech service.
         tts = TextToSpeech(username: configuration?["TextToSpeechUsername"] as! String, password: configuration?["TextToSpeechPassword"] as! String)
         
