@@ -36,7 +36,7 @@ If you haven't so yet, you also need to download and install the following:
 Use the following steps to deploy the application
 - Deploy the Server Application
 - Update the Watson Assistant Service on IBM Cloud
-- Run the IOS Application
+- Run the iOS Application
 
 ## 1. Deploy the Server Application
 
@@ -67,6 +67,13 @@ Executing the `Cloud-Scripts/services/services.sh` script:
 ```bash
 $ ./Cloud-Scripts/services/services.sh
 ```
+
+If you'd like to create the services manually, or don't have the IBM Cloud CLI, you can create the following services:
+
+* [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
+* [**Watson Speech to Text**](https://console.ng.bluemix.net/catalog/services/speech-to-text)
+* [**Watson Text to Speech**](https://console.ng.bluemix.net/catalog/services/text-to-speech)
+* [**Watson Natural Language Understanding**](https://console.ng.bluemix.net/catalog/services/natural-language-understanding)
 
 Before deploying your application to the cloud, you will need to update it with the google API Key.  In the main.swift folder, update the struct value with your google API Key.
 
