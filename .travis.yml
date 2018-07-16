@@ -16,4 +16,4 @@ before_install:
   - git clone https://github.com/IBM-Swift/Package-Builder.git CognitiveConcierge-Server/Package-Builder
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $TRAVIS_BUILD_DIR/CognitiveConcierge-iOS; xcodebuild -workspace CognitiveConcierge.xcworkspace/ -scheme CognitiveConcierge -sdk iphonesimulator11.4 ONLY_ACTIVE_ARCH=NO -quiet; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd $TRAVIS_BUILD_DIR/CognitiveConcierge-iOS; xcodebuild -workspace CognitiveConcierge.xcworkspace/ -scheme CognitiveConcierge -sdk iphonesimulator11.4 ONLY_ACTIVE_ARCH=NO; fi
