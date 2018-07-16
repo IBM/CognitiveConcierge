@@ -1,35 +1,47 @@
-import httplib
-import base64
 import json
+import os
 import sys
-from urlparse import urlparse
-sys.path.append(sys.argv[1]+"/../")
-from plistGen import generatePlist
 
-#read cloud_config.json to parse credentials
-with open(sys.argv[1]+'/../../CognitiveConcierge-Server/cloud_config.json') as data_file:
+import watson_developer_cloud
+
+sys.path.append(sys.argv[1] + "/../")
+import plistGen
+
+
+CLOUD_CONFIG_PATH = os.path.join(
+    sys.argv[1], '..', '..', 'CognitiveConcierge-Server', 'cloud_config.json')
+
+WORKSPACE_PATH = os.path.join(
+    sys.argv[1], '..', '..', 'Resources', 'conversationWorkspace.json')
+
+# Load credentials file.
+with open(CLOUD_CONFIG_PATH, 'r') as data_file:
     cloudConfig = json.load(data_file)
-convCredentials = cloudConfig["vcap"]["services"]["conversation"][0]["credentials"]
 
-#encode the username and password for basic auth
-base64string = base64.encodestring('%s:%s' % (convCredentials["username"], convCredentials["password"]))[:-1]
+# Extract assistant service credentials.
+vcap_services = cloudConfig['vcap']['services']
+asstCredentials = vcap_services["conversation"][0]["credentials"]
 
-# Parse conversationWorkspace.json file for payload to create conversation workspace
-with open(sys.argv[1]+'/../../Resources/conversationWorkspace.json') as json_data:
-    d = json.load(json_data)
-payload = json.dumps(d)
+# Instantiate a client instance.
+assistant = watson_developer_cloud.AssistantV1(
+    version='2018-07-06',
+    url=asstCredentials.get(
+        'url', watson_developer_cloud.AssistantV1.default_url),
+    iam_api_key=asstCredentials.get('apikey'),
+    username=asstCredentials.get('username'),
+    password=asstCredentials.get('password'))
 
-#get conversation URL, set up post request
-convURL = urlparse(convCredentials["url"])
-conn = httplib.HTTPSConnection(convURL.netloc)
-headers = {
-    'content-type': "application/json",
-    'authorization': "Basic %s" % base64string,
-    'cache-control': "no-cache"
-    }
-conn.request("POST", convURL.path+"/v1/workspaces?version=2016-09-20", payload, headers)
-res = conn.getresponse()
-data = json.loads(res.read())
+# Parse file for payload to create conversation workspace
+with open(WORKSPACE_PATH, 'r') as json_data:
+    payload = json.load(json_data)
 
-workspaceid = data["workspace_id"]
-generatePlist(workspaceid)
+# Create conversation workspace
+data = assistant.request(
+    method='POST',
+    url='/v1/workspaces',
+    headers={},
+    params={'version': assistant.version},
+    json=payload,
+    accept_json=True)
+
+plistGen.generatePlist(data["workspace_id"])
