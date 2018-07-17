@@ -1,4 +1,4 @@
-![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
+![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat) [![Build Status](https://travis-ci.org/IBM/CognitiveConcierge.svg?branch=master)](https://travis-ci.org/IBM/CognitiveConcierge)
 
 # CognitiveConcierge
 
