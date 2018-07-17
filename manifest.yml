@@ -1,4 +1,17 @@
 ---
+declared-services:
+  cc-conversation-service:
+    label: conversation
+    plan: free
+  cc-speech-to-text-service:
+    label: speech_to_text
+    plan: lite
+  cc-text-to-speech-service:
+    label: text_to_speech
+    plan: lite
+  cc-natural-language-understanding-service:
+    label: natural-language-understanding
+    plan: free
 applications:
 - name: CognitiveConcierge
   path: ./CognitiveConcierge-Server
@@ -8,3 +21,8 @@ applications:
   disk_quota: 1024M
   instances: 1
   buildpack: swift_buildpack
+  services:
+  - cc-conversation-service
+  - cc-speech-to-text-service
+  - cc-text-to-speech-service
+  - cc-natural-language-understanding-service
