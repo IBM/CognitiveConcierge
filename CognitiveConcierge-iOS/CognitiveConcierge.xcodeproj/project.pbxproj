@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7ADBC9D51DDD591000837023 /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D11DDD591000837023 /* ConversationV1.framework */; };
+		016B12D920FE362200C85321 /* AssistantV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B12D820FE362200C85321 /* AssistantV1.framework */; };
 		7ADBC9D71DDD591000837023 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D31DDD591000837023 /* SpeechToTextV1.framework */; };
 		7ADBC9D81DDD591000837023 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D41DDD591000837023 /* TextToSpeechV1.framework */; };
 		7F4F5BBF1D6E1B4400CF0A13 /* CognitiveConcierge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F5BBE1D6E1B4400CF0A13 /* CognitiveConcierge.plist */; };
@@ -61,8 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		016B12D820FE362200C85321 /* AssistantV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssistantV1.framework; path = Carthage/Build/iOS/AssistantV1.framework; sourceTree = "<group>"; };
 		093B8C3845F89B67402347B1 /* Pods-CognitiveConcierge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitiveConcierge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CognitiveConcierge/Pods-CognitiveConcierge.debug.xcconfig"; sourceTree = "<group>"; };
-		7ADBC9D11DDD591000837023 /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
 		7ADBC9D31DDD591000837023 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
 		7ADBC9D41DDD591000837023 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		7F4F5BBE1D6E1B4400CF0A13 /* CognitiveConcierge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CognitiveConcierge.plist; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				978F8BFA201BCE3400F6F74F /* Starscream.framework in Frameworks */,
-				7ADBC9D51DDD591000837023 /* ConversationV1.framework in Frameworks */,
+				016B12D920FE362200C85321 /* AssistantV1.framework in Frameworks */,
 				7ADBC9D71DDD591000837023 /* SpeechToTextV1.framework in Frameworks */,
 				7ADBC9D81DDD591000837023 /* TextToSpeechV1.framework in Frameworks */,
 				978F8BF6201BCD3C00F6F74F /* Pods_CognitiveConcierge.framework in Frameworks */,
@@ -343,7 +343,7 @@
 			children = (
 				978F8BF9201BCE3400F6F74F /* Starscream.framework */,
 				978F8BF7201BCD3C00F6F74F /* Pods_CognitiveConcierge.framework */,
-				7ADBC9D11DDD591000837023 /* ConversationV1.framework */,
+				016B12D820FE362200C85321 /* AssistantV1.framework */,
 				7ADBC9D31DDD591000837023 /* SpeechToTextV1.framework */,
 				7ADBC9D41DDD591000837023 /* TextToSpeechV1.framework */,
 				87BB7C94DAD466B58261E3B8 /* Pods_CognitiveConcierge.framework */,
