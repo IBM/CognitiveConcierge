@@ -188,4 +188,6 @@ You can then build the CognitiveConcierge-Server by going to the `CognitiveConci
 - If the IOS application is not able to connect to Watson Services, recheck the credential values in `CognitiveConcierge.plist` and `bluemix.plist` files.
 
 ## License
-[Apache 2.0](LICENSE)
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+
+[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
