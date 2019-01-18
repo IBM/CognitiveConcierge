@@ -53,21 +53,21 @@ There are 3 ways to deploy the server application:
 
 Clicking on the button below creates an IBM Cloud DevOps Toolchain and deploys this application to the IBM Cloud. The `manifest.yml` file [included in the repo] is parsed to obtain the name of the application, configuration details, and the list of services that should be provisioned. For further details on the structure of the `manifest.yml` file, see the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#minimal-manifest).
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/CognitiveConcierge.git)
+[![Deploy to Bluemix](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/CognitiveConcierge)
 
 Once deployment to the IBM Cloud is completed, you can view the deployed application and services from your IBM Cloud account.
 
 ### b) Using the IBM Cloud command line interface
 
-You can also manually deploy the Server Application to the IBM Cloud. While it isn't as magical as using the "Deploy to IBM Cloud" button above, manually deploying the app provides some insight as to what's happening behind the scenes. Remember that you'd need the IBM Cloud [command line](http://clis.ng.bluemix.net/ui/home.html) installed on your system to deploy the app to the IBM Cloud.
+You can also manually deploy the Server Application to the IBM Cloud. While it isn't as magical as using the "Deploy to IBM Cloud" button above, manually deploying the app provides some insight as to what's happening behind the scenes. Remember that you'd need the IBM Cloud [command line](https://cloud.ibm.com/docs/cli/index.html) installed on your system to deploy the app to the IBM Cloud.
 
 Execute the following command to clone the Git repository:
 
 ```bash
-git clone https://github.com/IBM/CognitiveConcierge.git
+git clone https://github.com/IBM/CognitiveConcierge
 ```
 
-Go to the project's root folder on your system and execute the `Cloud-Scripts/services/services.sh` script to create the services that CognitiveConcierge depends on. Please note that you should have logged on to the IBM Cloud before attempting to execute this script. For information on how to log in, see the IBM Cloud [documentation](https://console.ng.bluemix.net/docs/starters/install_cli.html).
+Go to the project's root folder on your system and execute the `Cloud-Scripts/services/services.sh` script to create the services that CognitiveConcierge depends on. Please note that you should have logged on to the IBM Cloud before attempting to execute this script. For information on how to log in, see the IBM Cloud [documentation](https://cloud.ibm.com/docs/starters/install_cli.html).
 
 Executing the `Cloud-Scripts/services/services.sh` script:
 ```bash
@@ -78,16 +78,16 @@ $ ./Cloud-Scripts/services/services.sh
 
 If you'd like to create the services manually, or don't have the IBM Cloud CLI, you can create the following services:
 
-* [**Watson Assistant**](https://console.ng.bluemix.net/catalog/services/conversation)
-* [**Watson Speech to Text**](https://console.ng.bluemix.net/catalog/services/speech-to-text)
-* [**Watson Text to Speech**](https://console.ng.bluemix.net/catalog/services/text-to-speech)
-* [**Watson Natural Language Understanding**](https://console.ng.bluemix.net/catalog/services/natural-language-understanding)
+* [**Watson Assistant**](https://cloud.ibm.com/catalog/services/conversation)
+* [**Watson Speech to Text**](https://cloud.ibm.com/catalog/services/speech-to-text)
+* [**Watson Text to Speech**](https://cloud.ibm.com/catalog/services/text-to-speech)
+* [**Watson Natural Language Understanding**](https://cloud.ibm.com/catalog/services/natural-language-understanding)
 
 Before deploying your application to the cloud, you will need to update it with the Google Places API Key.  In the main.swift folder, update the value in the struct with your Google Places API Key.
 
 After the services are created and you've updated this file, you can run the `bx app push YOUR_APP_NAME` command from the project's root folder (`CognitiveConcierge`) to deploy the server application to IBM Cloud.
 
-Once the application is running on the IBM Cloud, you can access your application's assigned URL (i.e. route). To find the route, you can log on to your [IBM Cloud account](https://console.ng.bluemix.net), or you can inspect the output from the execution of the `bluemix app push` or `bx app show <application name>` commands. The string value shown next to the `urls` field contains the assigned route. Use that route as the URL to access the sample server.
+Once the application is running on the IBM Cloud, you can access your application's assigned URL (i.e. route). To find the route, you can log on to your [IBM Cloud account](https://cloud.ibm.com), or you can inspect the output from the execution of the `bluemix app push` or `bx app show <application name>` commands. The string value shown next to the `urls` field contains the assigned route. Use that route as the URL to access the sample server.
 
 ```bash
 $ bx app show CognitiveConcierge
@@ -175,19 +175,18 @@ You can then build the CognitiveConcierge-Server by going to the `CognitiveConci
 
 ## CognitiveConcierge App video
 
-[![cognitive concierge video](http://i.imgur.com/hsFxooD.png)](http://vimeo.com/222564546 "Cognitive Concierge Overview")
+[![cognitive concierge video](https://i.imgur.com/hsFxooD.png)](https://vimeo.com/222564546 "Cognitive Concierge Overview")
 
 ## Learn More About
-* https://www.ibm.com/cloud/garage/content/architecture/cognitiveConversationDomain/
+* https://www.ibm.com/cloud/garage/architectures/cognitiveConversationDomain
 * https://github.com/IBM-Swift/swift-buildpack
 * https://developer.ibm.com/swift/
-* https://swift.sandbox.bluemix.net/#/repl?cm_sp=dw-bluemix-_-code-_-devcenter
 
 ## Troubleshooting
 - If the deployment for server application stage fails, redeploy the pipeline stage.
 - If the IOS application is not able to connect to Watson Services, recheck the credential values in `CognitiveConcierge.plist` and `bluemix.plist` files.
 
 ## License
-This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
