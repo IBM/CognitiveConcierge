@@ -1,3 +1,7 @@
+# WARNING: This repository is no longer maintained :warning:
+
+> This repository will not be updated. The repository will be kept available in read-only mode.
+
 ![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat) [![Build Status](https://travis-ci.org/IBM/CognitiveConcierge.svg?branch=master)](https://travis-ci.org/IBM/CognitiveConcierge)
 
 # CognitiveConcierge
